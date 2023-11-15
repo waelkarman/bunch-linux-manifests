@@ -26,8 +26,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - grid alignment in sensors-app.
-- CUPS Scheduler failure 
 
 ### Known bug
 - delay in communications response time.
 - vc4 errors reported in kernel buffer dmesg
+- CUPS Scheduler failure 
