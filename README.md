@@ -71,7 +71,7 @@ For going through the development process a fundamental step is to set-up a prop
 STATUS: Configuration and Boot script IN PROGRESS
 
 ## Wifi & Bluetooth 
-Wifi and Bluetooth setting-app still not available but connection is working but should be set up manually:<br>
+Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
 - list interfaces:<br>
 > ip link show<br>
 - enable wlan0 interface:<br>
