@@ -30,5 +30,5 @@ wip-preview release pubblished
 
 ### Known bug
 - delay in communications response time.
-- vc4 errors reported in kernel buffer dmesg
+- vc4-drm gpu: swiotlb buffer is full reported in kernel buffer dmesg
 - CUPS Scheduler failure 
