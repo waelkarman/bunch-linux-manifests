@@ -124,7 +124,7 @@ Software:<br/>
 > attrs>=17.4.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (23.1.0)<br/>
 
 Bunch-Linux a day will become OpenSource but for now is just an experimental system build for learning purpose. Currently to build the system a TOKEN is required. Please ask to the administrator. <br/>
-The building process could arise some warning due to some feature in development.
+The building process could arise some warning due to some features in development.
 ### Using KAS project
 KAS 4 provide an easy way to collect the sources, setup the environment and start the build process.
 Install kas :<br/>
