@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## Turtle [0.1] -  2023-9-11
+## Turtle [0.0.1] -  2023-9-11
 ### Added
 - desktop environment configuration.
 - buzzer service.
@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 ### Note
 - first release !
 
-## Lama [0.2] -  ##-##-## -> WORK IN PROGRESS
+## Lama [0.0.2] -  ##-##-## -> WORK IN PROGRESS
 ### Added
 - ssh service.
 - wifi driver.
