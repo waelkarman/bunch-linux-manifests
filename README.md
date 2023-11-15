@@ -30,7 +30,7 @@ As highlighted, the primary goal is to grasp the essential principles of applica
 ##### Weston
 Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/master/miscellaneous/qtappwaylandalpha.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/qtappwaylandalpha.png?raw=true)
 
 To get *weston* manage the qt application should be set the variable *QT_QPA_PLATFORM* to wayland or just using the option *--platform wayland* launching the app.
 
@@ -47,7 +47,7 @@ Publish–Subscribe<br/>
 
 In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
 
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/master/miscellaneous/sensorappcommunication.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/sensorappcommunication.png?raw=true)
 
 Similar to any advanced embedded device like an infotainment, a dashboard and so forth the *sensor-app* allows the users to check the status of the supported sensors and to control it directly from the GUI. 
 
@@ -66,7 +66,7 @@ Here are examples of services utilizing interprocess communication (IPC) written
 
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. Rauc looks a good choice for separing applications from system and be able to update both separately without any loss of data. <br/>
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/master/miscellaneous/update-mechanism.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/update-mechanism.png?raw=true)
 
 STATUS: Configuration and Boot script IN PROGRESS
 
