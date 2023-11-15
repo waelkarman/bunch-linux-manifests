@@ -34,9 +34,9 @@ Native weston interface had been customized with some patches to create a nice H
 
 To get *weston* manage the qt application should be set the variable *QT_QPA_PLATFORM* to wayland or just using the option *--platform wayland* launching the app.
 
-## Audio
-##### ALSA + PipeWire 
-WORK IN PROGRESS (..)
+## Audio 
+ALSA + PipeWire, 
+aplay and arecord [WORK IN PROGRESS: NOT TESTED] 
 
 ## IPC
 ##### ZeroMQ
