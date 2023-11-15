@@ -4,7 +4,7 @@
 Bunch Linux is a project created for learning purposes. The goal is to learn how to build your own custom version of Linux for Embedded Systems as well as the well-known goal of every developer, have fun!
 The idea is to fully understand the foundations of systems and applications starting from the lowest possible level. 
 
-To get an overview about current and future state refer to the CHANGELOG.md.
+To get an overview about current and future state refer to the [CHANGELOG.md](https://github.com/waelkarman/bunch-linux-manifests/blob/main/CHANGELOG.md) .
 
 Bunch Linux was built over the Yocto project and it's currently based on *kirkstone*. Starting from poky distro is slowly getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *KAS* *project* that will download the sources and setup the directory ready to start building the system. 
 
