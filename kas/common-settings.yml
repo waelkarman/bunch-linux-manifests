@@ -1,0 +1,19 @@
+header:
+  version: 11
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+    YOCTOROOT = "${@os.path.abspath(os.path.join("${TOPDIR}", os.pardir))}"
+
+local_conf_header:
+  standard:
+    BB_GENERATE_MIRROR_TARBALLS = "1"
+    
+    TOOLCHAIN_TARGET_TASK:append = " gdb"
+
+  buildinfo:
+    INHERIT += " rm_work"
+   
