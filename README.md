@@ -70,6 +70,32 @@ For going through the development process a fundamental step is to set-up a prop
 
 STATUS: Configuration and Boot script IN PROGRESS
 
+## Wifi & Bluetooth 
+Wifi and Bluetooth setting-app still not available but connection is working but should be set up manually:<br>
+- list interfaces:<br>
+> ip link show<br>
+- enable wlan0 interface:<br>
+> ip link set wlan0 up<br>
+
+add configuration to /etc/wpa_supplicant.conf :
+
+> ctrl_interface=/var/run/wpa_supplicant<br>
+> ctrl_interface_group=0<br>
+> update_config=1<br>
+> 
+> network={<br>
+>         ssid="insert here your SSID"<br>
+>         scan_ssid=1<br>
+>         key_mgmt=WPA-PSK<br>
+>         psk="insert here your password"<br>
+> }<br>
+
+Activate connection:<br>
+
+> wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf<br>
+> udhcpc -i wlan0<br>
+
+
 ## How to build
 Working tested configuration and requirements:<br/>
 Host machine:<br/> 
