@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 - button service.
 - interprocess communication realized with ZeroMQ.
 - network checking service.
-- qt5 support app.
+- support to qt5 lib.
 - basic hmi sensor-app.
 
 ### Note
