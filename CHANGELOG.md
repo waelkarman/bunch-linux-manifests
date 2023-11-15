@@ -32,3 +32,8 @@ wip-preview release pubblished
 - delay in communications response time.
 - vc4-drm gpu: swiotlb buffer is full reported in kernel buffer dmesg
 - CUPS Scheduler failure 
+
+## Camel [0.0.3] -  ##-##-## 
+ideas for future releases
+### Ideas
+- add a file manager 
