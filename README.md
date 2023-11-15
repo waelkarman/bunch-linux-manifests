@@ -72,21 +72,30 @@ STATUS: Configuration and Boot script IN PROGRESS
 
 ## How to build
 Working tested configuration and requirements:<br/>
-Host machine: Ubuntu 20.04.6 LTS (Focal Fossa)<br/>
-Target: RaspberryPi 4 Model B<br/>
-Connected GPIO: 17 for Passive Buzzer signal, 18 for Button Signal<br/>
+Host machine:<br/> 
+
+> Ubuntu 20.04.6 LTS (Focal Fossa)<br>
+
+Target:<br/>
+
+> RaspberryPi 4 Model B<br/>
+
+Connected GPIO:<br>
+> 17 for Passive Buzzer signal<br/>
+> 18 for Button Signal<br/>
 
 Software:<br/>
-Python 3.8.10<br/>
-kas in /usr/local/lib/python3.8/dist-packages (4.0)<br/>
-distro<2,>=1.0.0 in /usr/lib/python3/dist-packages (from kas) (1.4.0)<br/>
-kconfiglib<15,>=14.1.0 in /usr/local/lib/python3.8/dist-packages (from kas) (14.1.0)<br/>
-jsonschema<4,>=2.5.0 in /usr/local/lib/python3.8/dist-packages (from kas) (3.2.0)<br/>
-PyYAML<6,>=3.0 in /usr/lib/python3/dist-packages (from kas) (5.3.1)<br/>
-six>=1.11.0 in /usr/lib/python3/dist-packages (from jsonschema<4,>=2.5.0->kas) (1.14.0)<br/>
-pyrsistent>=0.14.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (0.19.3)<br/>
-setuptools in /usr/lib/python3/dist-packages (from jsonschema<4,>=2.5.0->kas) (45.2.0)<br/>
-attrs>=17.4.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (23.1.0)<br/>
+
+> Python 3.8.10<br/>
+> kas in /usr/local/lib/python3.8/dist-packages (4.0)<br/>
+> distro<2,>=1.0.0 in /usr/lib/python3/dist-packages (from kas) (1.4.0)<br/>
+> kconfiglib<15,>=14.1.0 in /usr/local/lib/python3.8/dist-packages (from kas) (14.1.0)<br/>
+> jsonschema<4,>=2.5.0 in /usr/local/lib/python3.8/dist-packages (from kas) (3.2.0)<br/>
+> PyYAML<6,>=3.0 in /usr/lib/python3/dist-packages (from kas) (5.3.1)<br/>
+> six>=1.11.0 in /usr/lib/python3/dist-packages (from jsonschema<4,>=2.5.0->kas) (1.14.0)<br/>
+> pyrsistent>=0.14.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (0.19.3)<br/>
+> setuptools in /usr/lib/python3/dist-packages (from jsonschema<4,>=2.5.0->kas) (45.2.0)<br/>
+> attrs>=17.4.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (23.1.0)<br/>
 
 Bunch-Linux a day will become OpenSource but for now is just an experimental system build for learning purpose. Currently to build the system a TOKEN is required. Please ask to the administrator. <br/>
 The building process could arise some warning due to some feature in development.
