@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file.
 - first release !
 
 ## Lama [0.0.2] -  ##-##-## -> WORK IN PROGRESS
-### Added
+### Scheduled
 - ssh service.
 - wifi driver.
 - wifi setting app.
