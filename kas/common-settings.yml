@@ -9,10 +9,10 @@ bblayers_conf_header:
     YOCTOROOT = "${@os.path.abspath(os.path.join("${TOPDIR}", os.pardir))}"
 
 local_conf_header:
-  standard:
+  standard: |
     BB_GENERATE_MIRROR_TARBALLS = "1"
-    
-    TOOLCHAIN_TARGET_TASK:append = " gdb"
+    BOOT_DELAY = "0"
+    BOOT_DELAY_MS = "0"
 
   buildinfo:
     INHERIT += " rm_work"
