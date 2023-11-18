@@ -101,6 +101,7 @@ Working tested configuration and requirements:<br/>
 Host machine:<br/> 
 
 > Ubuntu 20.04.6 LTS (Focal Fossa)<br>
+> Debian 12 <br>
 
 Target:<br/>
 
