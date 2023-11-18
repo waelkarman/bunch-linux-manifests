@@ -36,4 +36,5 @@ wip-preview release pubblished
 ## Camel [0.0.3] -  ##-##-## 
 ideas for future releases
 ### Ideas
-- add a file manager 
+- add a file manager
+- add disk encryption
