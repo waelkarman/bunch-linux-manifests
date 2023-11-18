@@ -6,7 +6,7 @@ header:
 
 machine: raspberrypi4-64
 distro: bunch-linux-dist
-target: bunch-linux
+target: bunch-linux-bundle
 
 repos:
   poky:
