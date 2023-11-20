@@ -158,7 +158,7 @@ The compiled image will be located into the build folder at the following path:
 > /build/tmp/deploy/images/raspberrypi4-64
 
 Getting the image it should be flashed through linux dd, bmaptool command or using third party software like *BalenaEtcher*, *Raspberry* *Imager*.
-
+zcat
 > gunzip -c \<IMAGE\>.wic.gz | dd of=/dev/sda bs=1M iflag=fullblock oflag=direct conv=fsync  status=progress && sync
 
 > bmaptool copy \<IMAGE\>.wic.gz /dev/sda && sync
