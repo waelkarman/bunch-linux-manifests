@@ -162,6 +162,6 @@ The compiled image will be located into the build folder at the following path:
 
 Getting the image it should be flashed through linux dd, bmaptool command or using third party software like *BalenaEtcher*, *Raspberry* *Imager*.
 zcat
-> gunzip -c \<IMAGE\>.wic.gz | dd of=/dev/sda bs=1M iflag=fullblock oflag=direct conv=fsync  status=progress && sync
+> bunzip2 -c bunch-linux-bunch-raspberrypi4-64.wic.bz2 | sudo dd of=/dev/sda bs=1M  status=progress && sync
 
 > bmaptool copy \<IMAGE\>.wic.gz /dev/sda && sync
