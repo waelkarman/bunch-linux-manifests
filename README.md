@@ -68,7 +68,10 @@ Here are examples of services utilizing interprocess communication (IPC) written
 For going through the development process a fundamental step is to set-up a proper update process. Rauc looks a good choice for separing applications from system and be able to update both separately without any loss of data. <br/>
 ![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/update-mechanism.png?raw=true)
 
-STATUS: Configuration and Boot script IN PROGRESS
+The system is initialized with two valid root partitions. Upon an update occurs the system is installing the update into the inactive partition and switch the boot pointer to the updated one. This way an older version odf the system is always kept installed and used as fallback option in case the update process went wrong. 
+The update service is checking everyday whether an update is available and is keeping the system updated. All updates will be applied after reboot that will be performed by the user.  
+
+STATUS: Boot script IN DEVELOPMENT
 
 ## Wifi & Bluetooth 
 Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
