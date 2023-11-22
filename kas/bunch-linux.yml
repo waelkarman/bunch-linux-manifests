@@ -4,7 +4,7 @@ header:
     - kas/common-settings.yml
 
 
-machine: raspberrypi4-64
+machine: bunch-raspberrypi4-64
 distro: bunch-linux-dist
 target: bunch-linux-bundle
 
