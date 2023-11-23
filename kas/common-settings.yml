@@ -5,8 +5,28 @@ bblayers_conf_header:
   standard: |
     POKY_BBLAYERS_CONF_VERSION = "2"
     BBPATH = "${TOPDIR}"
-    BBFILES ?= ""
     YOCTOROOT = "${@os.path.abspath(os.path.join("${TOPDIR}", os.pardir))}"
+    BBFILES ?= ""
+    BBLAYERS = " \
+    ${YOCTOROOT}/poky/meta \
+    ${YOCTOROOT}/poky/meta-poky \
+    ${YOCTOROOT}/poky/meta-yocto-bsp \
+    ${YOCTOROOT}/meta-qt5 \
+    ${YOCTOROOT}/meta-rauc \ 
+    ${YOCTOROOT}/meta-raspberrypi \
+    ${YOCTOROOT}/meta-bunch-linux \
+    ${YOCTOROOT}/meta-openembedded/meta-filesystems \
+    ${YOCTOROOT}/meta-openembedded/meta-gnome \
+    ${YOCTOROOT}/meta-openembedded/meta-initramfs \
+    ${YOCTOROOT}/meta-openembedded/meta-multimedia \
+    ${YOCTOROOT}/meta-openembedded/meta-networking \
+    ${YOCTOROOT}/meta-openembedded/meta-oe \
+    ${YOCTOROOT}/meta-openembedded/meta-perl \
+    ${YOCTOROOT}/meta-openembedded/meta-python \
+    ${YOCTOROOT}/meta-openembedded/meta-webserver \
+    ${YOCTOROOT}/meta-openembedded/meta-xfce \
+    "
+    
 
 local_conf_header:
   standard: |
@@ -14,6 +34,17 @@ local_conf_header:
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
 
-  buildinfo:
+  buildinfo: |
     INHERIT += " rm_work"
-   
+    USER_CLASSES ?= "buildstats"
+    PATCHRESOLVE = "noop"
+    BB_DISKMON_DIRS ??= "\
+    STOPTASKS,${TMPDIR},1G,100K \
+    STOPTASKS,${DL_DIR},1G,100K \
+    STOPTASKS,${SSTATE_DIR},1G,100K \
+    STOPTASKS,/tmp,100M,100K \
+    HALT,${TMPDIR},100M,1K \
+    HALT,${DL_DIR},100M,1K \
+    HALT,${SSTATE_DIR},100M,1K \
+    HALT,/tmp,10M,1K \
+    "
