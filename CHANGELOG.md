@@ -19,10 +19,9 @@ wip-preview release pubblished
 ### Scheduled
 - ssh service.
 - wifi driver.
-- wifi setting app.
-- Bluetooth driver.
-- Bluetooth setting app.
-- ota update through RAUC.
+- bluetooth driver.
+- set up ota update through RAUC.
+- add update service
 - sdk includes cross compilation tool-chain for qt app development.
 
 ### Fixed
@@ -36,5 +35,7 @@ wip-preview release pubblished
 ## Camel [0.0.3] -  ##-##-## 
 ideas for future releases
 ### Ideas
+- wifi setting app.
+- bluetooth setting app.
 - add a file manager
 - add disk encryption
