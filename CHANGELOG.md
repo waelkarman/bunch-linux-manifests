@@ -28,7 +28,7 @@ wip-preview release pubblished
 - grid alignment in sensors-app.
 
 ### Known bug
-- delay in communications response time.
+- delay in IPC communications.
 - vc4-drm gpu: swiotlb buffer is full reported in kernel buffer dmesg
 - CUPS Scheduler failure 
 
