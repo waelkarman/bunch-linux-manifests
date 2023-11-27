@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.
 
 ## Lama [0.0.2] -  ##-##-## -> WORK IN PROGRESS
 wip-preview release pubblished
-### Scheduled
+### Added
 - ssh service.
 - wifi driver.
 - bluetooth driver.
