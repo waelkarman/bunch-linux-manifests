@@ -20,7 +20,7 @@ wip-preview release pubblished
 - ssh service.
 - wifi driver.
 - bluetooth driver.
-- set up ota update through RAUC.
+- setup ota update through RAUC.
 - add update service
 
 ### Fixed
