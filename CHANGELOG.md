@@ -22,7 +22,6 @@ wip-preview release pubblished
 - bluetooth driver.
 - set up ota update through RAUC.
 - add update service
-- sdk includes cross compilation tool-chain for qt app development.
 
 ### Fixed
 - grid alignment in sensors-app.
@@ -30,11 +29,11 @@ wip-preview release pubblished
 ### Known bug
 - delay in IPC communications.
 - vc4-drm gpu: swiotlb buffer is full reported in kernel buffer dmesg
-- CUPS Scheduler failure 
 
 ## Camel [0.0.3] -  ##-##-## 
 ideas for future releases
 ### Ideas
+- sdk includes cross compilation tool-chain for qt app development. (CUPS Scheduler failure )
 - wifi setting app.
 - bluetooth setting app.
 - add a file manager
