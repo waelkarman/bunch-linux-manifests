@@ -26,6 +26,13 @@ As highlighted, the primary goal is to grasp the essential principles of applica
 - networkchecker-service (Python)
 - automounter-service \[beta\] (Shell Script)
 
+## LOCAL & OTA System UPDATE 
+For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/update-mechanism.png?raw=true)
+
+The system is initialized with two valid root partitions. Upon an update occurs the system is installing the update into the inactive partition and switch the boot pointer to the updated one. This way an older version odf the system is always kept installed and used as fallback option in case the update process went wrong. 
+The update service is checking everyday whether an update is available and is keeping the system updated. All updates will be applied after reboot that will be performed by the user.
+
 ## HMI
 ##### Weston
 Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
@@ -63,13 +70,6 @@ Here are examples of services utilizing interprocess communication (IPC) written
 * zmq-subscriber<br/>
 * zmq-requester<br/>
 * zmq-replier<br/>
-
-## LOCAL & OTA System UPDATE 
-For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/update-mechanism.png?raw=true)
-
-The system is initialized with two valid root partitions. Upon an update occurs the system is installing the update into the inactive partition and switch the boot pointer to the updated one. This way an older version odf the system is always kept installed and used as fallback option in case the update process went wrong. 
-The update service is checking everyday whether an update is available and is keeping the system updated. All updates will be applied after reboot that will be performed by the user.
 
 ## Wifi & Bluetooth 
 Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
@@ -144,22 +144,3 @@ Start the to build the system: <br/>
 > kas build kas/bunch-linux.yml<br/>
 
 It could take a while depending on the machine that are you using for compiling. <br/>
-
-### Using Repo-Tool (deprecated)
-*Google* *repo* *tool* is needed to collect the sources and start the build process. To setup the environment and start building the system should be sourced the *setup-environment* shell script that could be found in the source folder.  To build from sources you can init the repo to the *manifest* and synchronize the sources easily. Repo tool will download the sources and configure the environment for you.<br/> 
-> repo init -u https://\<TOKEN\>@github.com/waelkarman/bunch-linux-manifests.git -m v6.3.0.xml -b master<br/>
-> repo sync<br/>
- 
-Once the environment is properly set you should source to the *setup-environment* script and then launch the compilation of the distro using *bitbake* yocto tool.
-> source setup-environment<br/>
-> bitbake bunch-linux<br/>
-
-### Deploy
-The compiled image will be located into the build folder at the following path:
-> /build/tmp/deploy/images/raspberrypi4-64
-
-Getting the image it should be flashed through linux dd, bmaptool command or using third party software like *BalenaEtcher*, *Raspberry* *Imager*.
-
-> bunzip2 -c bunch-linux-bunch-raspberrypi4-64.wic.bz2 | sudo dd of=/dev/sda bs=1M  status=progress && sync
-
-> bmaptool copy \<IMAGE\>.wic.gz /dev/sda && sync
