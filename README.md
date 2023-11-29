@@ -144,3 +144,13 @@ Start the to build the system: <br/>
 > kas build kas/bunch-linux.yml<br/>
 
 It could take a while depending on the machine that are you using for compiling. <br/>
+
+### Deploy
+The compiled image will be located into the build folder at the following path:
+> /build/tmp/deploy/images/raspberrypi4-64
+
+Getting the image it should be flashed through linux dd, bmaptool command or using third party software like *BalenaEtcher*, *Raspberry* *Imager*.
+
+> bunzip2 -c bunch-linux-bunch-raspberrypi4-64.wic.bz2 | sudo dd of=/dev/sda bs=1M  status=progress && sync
+
+> bmaptool copy \<IMAGE\>.wic.gz /dev/sda && sync
