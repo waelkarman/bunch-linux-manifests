@@ -7,12 +7,4 @@ Once the environment is properly set you should source to the *setup-environment
 > source setup-environment<br/>
 > bitbake bunch-linux<br/>
 
-### Deploy
-The compiled image will be located into the build folder at the following path:
-> /build/tmp/deploy/images/raspberrypi4-64
 
-Getting the image it should be flashed through linux dd, bmaptool command or using third party software like *BalenaEtcher*, *Raspberry* *Imager*.
-
-> bunzip2 -c bunch-linux-bunch-raspberrypi4-64.wic.bz2 | sudo dd of=/dev/sda bs=1M  status=progress && sync
-
-> bmaptool copy \<IMAGE\>.wic.gz /dev/sda && sync
