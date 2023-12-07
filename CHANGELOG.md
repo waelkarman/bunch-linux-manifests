@@ -25,6 +25,7 @@ wip-preview release pubblished
 - setup ota update.
 - setup update infrastructure
 - sdk includes cross compilation tool-chain for qt app development.
+- add a file manager
 
 ### Fixed
 - grid alignment in sensors-app.
@@ -39,7 +40,6 @@ ideas for future releases
 - background image automatic filling
 - wifi setting app.
 - bluetooth setting app.
-- add a file manager
 - add disk encryption
 
 ### Open points
