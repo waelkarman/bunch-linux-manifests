@@ -41,6 +41,7 @@ ideas for future releases
 - wifi setting app.
 - bluetooth setting app.
 - add disk encryption
-
+- add a screen mirroring service
+   
 ### Open points
 - disable timer after update
