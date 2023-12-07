@@ -41,3 +41,6 @@ ideas for future releases
 - bluetooth setting app.
 - add a file manager
 - add disk encryption
+
+### Open points
+- disable timer after update
