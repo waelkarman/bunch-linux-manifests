@@ -18,10 +18,11 @@ All notable changes to this project will be documented in this file.
 wip-preview release pubblished
 ### Added
 - ssh service.
-- wifi driver.
-- bluetooth driver.
-- setup ota update through A B partitions.
-- add update service
+- install wifi driver.
+- installbluetooth driver.
+- setup ota update.
+- setup update infrastructure
+- sdk includes cross compilation tool-chain for qt app development.
 
 ### Fixed
 - grid alignment in sensors-app.
@@ -33,7 +34,7 @@ wip-preview release pubblished
 ## Camel [0.0.3] -  ##-##-## 
 ideas for future releases
 ### Ideas
-- sdk includes cross compilation tool-chain for qt app development. (CUPS Scheduler failure )
+- background image automatic filling
 - wifi setting app.
 - bluetooth setting app.
 - add a file manager
