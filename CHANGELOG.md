@@ -2,7 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## Turtle [0.0.1] -  2023-9-11
-<img src="[percorso/della/tua/foto.jpg](miscellaneous/wayland-screenshot-turtle-v0.1.png?raw=true)" width="300" height="200">
+<img src="miscellaneous/wayland-screenshot-turtle-v0.1.png" width="350" height="200">
+
 ### Added
 - desktop environment configuration.
 - buzzer service.
