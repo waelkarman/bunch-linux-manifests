@@ -23,9 +23,10 @@ wip-preview release pubblished
 - install wifi driver.
 - installbluetooth driver.
 - setup ota update.
-- setup update infrastructure
+- setup update infrastructure.
 - sdk includes cross compilation tool-chain for qt app development.
-- add a file manager
+- add a file manager.
+- background image scaling.
 
 ### Fixed
 - grid alignment in sensors-app.
@@ -37,7 +38,6 @@ wip-preview release pubblished
 ## Camel [0.0.3] -  ##-##-## 
 ideas for future releases
 ### Ideas
-- background image automatic filling
 - wifi setting app.
 - bluetooth setting app.
 - add disk encryption
