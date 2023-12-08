@@ -21,7 +21,7 @@ wip-preview release pubblished
 ### Added
 - ssh service.
 - install wifi driver.
-- installbluetooth driver.
+- install bluetooth driver.
 - setup ota update.
 - setup update infrastructure.
 - sdk includes cross compilation tool-chain for qt app development.
