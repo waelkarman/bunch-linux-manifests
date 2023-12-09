@@ -22,8 +22,8 @@ wip-preview release pubblished
 - ssh service.
 - install wifi driver.
 - install bluetooth driver.
-- setup OTA update.
-- setup update infrastructure.
+- setup OTA system update.
+- setup system update infrastructure.
 - include sdk cross compilation tool-chain for Qt5 applications development.
 - add a file manager.
 - background image scaling.
