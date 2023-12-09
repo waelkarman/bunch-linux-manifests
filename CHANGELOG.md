@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 - add interprocess communication build with ZeroMQ.
 - add network checker service.
 - install Qt5 libraries.
-- basic hmi sensor-app.
+- create a basic hmi sensor-app.
 
 ### Note
 - first release !
