@@ -16,26 +16,28 @@ All notable changes to this project will be documented in this file.
 ### Note
 - first release !
 
-## Lama [0.0.2] -  ##-##-## -> WORK IN PROGRESS
+## Lama [0.0.2] -  2023-12-##
 wip-preview release pubblished
 ### Added
 - ssh service.
 - install wifi driver.
 - install bluetooth driver.
-- setup ota update.
+- setup OTA update.
 - setup update infrastructure.
-- sdk includes cross compilation tool-chain for qt app development.
+- include sdk cross compilation tool-chain for Qt applications development.
 - add a file manager.
 - background image scaling.
+- add NTP client.
+- remove weston screensaver.
 
 ### Fixed
 - grid alignment in sensors-app.
 
 ### Known bug
 - delay in IPC communications.
-- vc4-drm gpu: swiotlb buffer is full reported in kernel buffer dmesg
+- vc4-drm gpu: swiotlb buffer is full reported in kernel buffer.
 
-## Camel [0.0.3] -  ##-##-## 
+## Camel [0.0.3] -  2024-##-## 
 ideas for future releases
 ### Ideas
 - wifi setting app.
