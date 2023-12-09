@@ -6,11 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - desktop environment configuration.
-- buzzer service.
-- button service.
-- interprocess communication realized with ZeroMQ.
-- network checking service.
-- support to qt5 lib.
+- add service for buzzer management.
+- add service for button management.
+- add interprocess communication build with ZeroMQ.
+- add network checker service.
+- install Qt5 libraries.
 - basic hmi sensor-app.
 
 ### Note
@@ -24,7 +24,7 @@ wip-preview release pubblished
 - install bluetooth driver.
 - setup OTA update.
 - setup update infrastructure.
-- include sdk cross compilation tool-chain for Qt applications development.
+- include sdk cross compilation tool-chain for Qt5 applications development.
 - add a file manager.
 - background image scaling.
 - add NTP client.
@@ -40,10 +40,10 @@ wip-preview release pubblished
 ## Camel [0.0.3] -  2024-##-## 
 ideas for future releases
 ### Ideas
-- wifi setting app.
-- bluetooth setting app.
-- add disk encryption
-- add a screen mirroring service
+- add a wifi setting app.
+- add a bluetooth setting app.
+- introduce disk encryption.
+- add a screen mirroring service.
    
 ### Open points
-- disable timer after update
+- disable timer after system update.
