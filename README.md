@@ -34,7 +34,7 @@ The system is initialized with two valid root partitions. Upon an update occurs 
 The update service is checking everyday whether an update is available and is keeping the system updated. All updates will be applied after reboot that will be performed by the user.
 
 ## HMI
-##### Weston
+##### Wayland
 Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
 ![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/Gscheme.png?raw=true)
