@@ -17,6 +17,8 @@ All notable changes to this project will be documented in this file.
 - first release !
 
 ## Lama [0.0.2] -  2023-12-##
+<img src="miscellaneous/lama-desk.png" width="350" height="200">
+
 wip-preview release pubblished
 ### Added
 - ssh service.
