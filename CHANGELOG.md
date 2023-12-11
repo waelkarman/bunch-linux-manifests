@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 - add network checker service.
 - install Qt5 libraries.
 - create a basic HMI sensor-app.
+- move panel position to bottom
 
 ### Note
 - first release !
@@ -30,9 +31,10 @@ wip-preview release pubblished
 - setup system update infrastructure.
 - include sdk cross compilation tool-chain for Qt5 applications development.
 - add a file manager.
-- background image scaling.
+- add background image scaling.
 - add NTP client.
-- remove weston screensaver.
+- remove screensaver.
+- update weston to 12.0.3
 
 ### Fixed
 - grid alignment in sensors-app.
