@@ -37,7 +37,7 @@ The update service is checking everyday whether an update is available and is ke
 ##### Weston
 Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/qtappwaylandalpha.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/Gscheme.png?raw=true)
 
 To get *weston* manage the qt application should be set the variable *QT_QPA_PLATFORM* to wayland or just using the option *--platform wayland* launching the app.
 
