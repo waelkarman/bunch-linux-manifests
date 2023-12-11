@@ -28,7 +28,7 @@ wip-preview release pubblished
 - install bluetooth driver and test bt connection.
 - setup OTA system update.
 - replace wallpaper and bar icons.
-- setup system update infrastructure.
+- setup automatic system update infrastructure.
 - include sdk cross compilation tool-chain for Qt5 applications development.
 - add a file manager.
 - add background image scaling.
