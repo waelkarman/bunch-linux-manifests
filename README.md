@@ -1,6 +1,6 @@
 
 # Welcome to Embedded Bunch Linux OS
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/wayland-screenshot-turtle-v0.1.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/lama-desk.png?raw=true)
 Bunch Linux is a project created for learning purposes. The goal is to learn how to build your own custom version of Linux for Embedded Systems as well as the well-known goal of every developer, have fun!
 The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS.
 
