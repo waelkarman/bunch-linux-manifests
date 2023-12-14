@@ -32,6 +32,7 @@ wip-preview release pubblished
 - include sdk cross compilation tool-chain for Qt5 applications development.
 - add a file manager.
 - add background image scaling.
+- add backwards compatibility for x11 application 
 - add NTP client.
 - remove screensaver.
 - update weston to 12.0.3
