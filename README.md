@@ -54,7 +54,7 @@ Publish–Subscribe<br/>
 
 In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
 
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/sensorappcommunication.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/sensorappipc.png?raw=true)
 
 Similar to any advanced embedded device like an infotainment, a dashboard and so forth the *sensor-app* allows the users to check the status of the supported sensors and to control it directly from the GUI. 
 
