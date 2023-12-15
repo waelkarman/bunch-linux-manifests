@@ -71,6 +71,10 @@ Here are examples of services utilizing interprocess communication (IPC) written
 * zmq-requester<br/>
 * zmq-replier<br/>
 
+## Remote access
+
+<img src="miscellaneous/remote-access-lama.png" width="400" height="240">
+
 ## Wifi & Bluetooth 
 Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
 - list interfaces:<br>
