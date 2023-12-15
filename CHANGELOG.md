@@ -18,10 +18,9 @@ All notable changes to this project will be documented in this file.
 ### Note
 - first release !
 
-## Lama [0.0.2] -  2023-12-##
+## Lama [0.0.2] -  2023-12-16
 <img src="miscellaneous/lama-desk.png" width="350" height="200">
 
-wip-preview release pubblished
 ### Added
 - ssh service.
 - install wifi driver and test wireless connection.
