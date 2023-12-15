@@ -50,7 +50,6 @@ ideas for future releases
 - add a wifi setting app.
 - add a bluetooth setting app.
 - introduce disk encryption.
-- update weston version.
 - update kernel version.
 - add VPN support.
    
