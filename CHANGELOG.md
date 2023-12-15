@@ -34,7 +34,7 @@ All notable changes to this project will be documented in this file.
 - add backwards compatibility for x11 applications.
 - add NTP client.
 - remove screensaver.
-- upgraded several components.
+- upgrade sw components.
 - add remote access service (rdp,vnc).
 
 ### Fixed
