@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file.
 <img src="miscellaneous/lama-desk.png" width="350" height="200">
 
 ### Added
-- ssh service.
+- add ssh service.
 - install wifi driver and test wireless connection.
 - install bluetooth driver and test bt connection.
 - setup OTA system update.
