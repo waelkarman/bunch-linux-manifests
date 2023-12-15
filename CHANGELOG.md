@@ -35,7 +35,7 @@ wip-preview release pubblished
 - add backwards compatibility for x11 applications.
 - add NTP client.
 - remove screensaver.
-- update weston to 12.0.3.
+- upgraded several components.
 - add remote access service (rdp,vnc).
 
 ### Fixed
