@@ -35,7 +35,8 @@ wip-preview release pubblished
 - add backwards compatibility for x11 applications.
 - add NTP client.
 - remove screensaver.
-- update weston to 12.0.3
+- update weston to 12.0.3.
+- add remote access service (rdp,vnc).
 
 ### Fixed
 - grid alignment in sensors-app.
@@ -50,9 +51,9 @@ ideas for future releases
 - add a wifi setting app.
 - add a bluetooth setting app.
 - introduce disk encryption.
-- add a screen mirroring service.
-- update weston version
-- update kernel version
+- update weston version.
+- update kernel version.
+- add VPN support.
    
 ### Open points
 - disable timer after system update.
