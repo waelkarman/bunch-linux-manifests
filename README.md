@@ -34,12 +34,13 @@ The system is capable of self-updating via OTA (Over-The-Air). It is initialized
 The update service is checking constantly whether an update is available and is keeping the system updated. All updates will be applied after reboot.
 
 ## HMI
-##### Wayland
-Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
+##### Wayland & xWayland
+
+Xwayland is a component of Wayland that allows running X11 applications (designed to work with the X Window System like Nautilus) in a Wayland environment. Xwayland acts as an X11 server within a Wayland environment, enabling X11 applications to function on systems using Wayland as the display server. 
 
 ![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/Gscheme.png?raw=true)
 
-To get *weston* manage the qt application should be set the variable *QT_QPA_PLATFORM* to wayland or just using the option *--platform wayland* launching the app.
+Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
 ## Remote access
 
