@@ -49,7 +49,7 @@ Native weston interface had been customized with some patches to create a nice H
 Bunch-Linux installs a remote access feature through which it is possible to access the system from the development machine and control the system remotely. This functionality is useful when conducting tests without access to a monitor, and in conjunction with the system's Over-The-Air (OTA) update capability, it allows full remote control of the system for development purposes.
 ## Audio 
 ALSA + PipeWire, 
-aplay and arecord [WORK IN PROGRESS: NOT TESTED] 
+aplay and arecord [wip] 
 
 ## IPC
 ##### ZeroMQ
