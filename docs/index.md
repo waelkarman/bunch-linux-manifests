@@ -44,7 +44,7 @@ Native weston interface had been customized with some patches to create a nice H
 
 ## Remote access
 
-<img src="miscellaneous/remote-access-lama.png" width="400" height="240">
+<img src="../miscellaneous/remote-access-lama.png" width="400" height="240">
 
 Bunch-Linux installs a remote access feature through which it is possible to access the system from the development machine and control the system remotely. This functionality is useful when conducting tests without access to a monitor, and in conjunction with the system's Over-The-Air (OTA) update capability, it allows full remote control of the system for development purposes.
 ## Audio 
@@ -60,7 +60,7 @@ Publish–Subscribe<br/>
 
 In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
 
-<img src="miscellaneous/sensorappipc.png" width="400" height="300">
+<img src="../miscellaneous/sensorappipc.png" width="400" height="300">
 
 Similar to any advanced embedded device like an infotainment, a dashboard and so forth the *sensor-app* allows the users to check the status of the supported sensors and to control it directly from the GUI. 
 
