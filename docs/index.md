@@ -1,6 +1,7 @@
 
 # Welcome to Embedded Bunch Linux OS
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/lama-desk.png?raw=true)
+<img src="miscellaneous/lama-desk.png">
+
 Bunch Linux is a project created for learning purposes. The goal is to learn how to build your own custom version of Linux for Embedded Systems as well as the well-known goal of every developer, have fun!
 The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS.
 
@@ -28,7 +29,7 @@ As highlighted, the primary goal is to grasp the essential principles of applica
 
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/update-mechanism.png?raw=true)
+<img src="miscellaneous/update-mechanism.png">
 
 The system is capable of automatic self-updating via OTA (Over-The-Air). It is initialized with two valid root partitions. Upon an update occurs the system is automatically installing the update into the inactive partition and switch the boot pointer to the updated one. This way an older version of the system is always kept installed and used as fallback option in case the update process went wrong. 
 The update service is checking constantly whether an update is available and is keeping the system updated. All updates will be applied after reboot.
@@ -38,7 +39,7 @@ The update service is checking constantly whether an update is available and is 
 
 Xwayland is a component of Wayland that allows running X11 applications (designed to work with the X Window System like Nautilus) in a Wayland environment. Xwayland acts as an X11 server within a Wayland environment, enabling X11 applications to function on systems using Wayland as the display server. 
 
-![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/main/miscellaneous/Gscheme.png?raw=true)
+<img src="miscellaneous/Gscheme.png">
 
 Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
