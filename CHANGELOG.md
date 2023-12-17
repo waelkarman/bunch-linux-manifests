@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ## Turtle [0.0.1] -  2023-9-11
-<img src="miscellaneous/wayland-screenshot-turtle-v0.1.png" width="350" height="200">
+<img src="docs/miscellaneous/wayland-screenshot-turtle-v0.1.png" width="350" height="200">
 
 ### Added
 - customize linux boot logo.
@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 - first release !
 
 ## Lama [0.0.2] -  2023-12-16
-<img src="miscellaneous/lama-desk.png" width="350" height="200">
+<img src="docs/miscellaneous/lama-desk.png" width="350" height="200">
 
 ### Added
 - add ssh service.
