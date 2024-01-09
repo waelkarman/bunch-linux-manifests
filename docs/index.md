@@ -148,7 +148,7 @@ clone this manifest :<br/>
 replace \<token\> in the YAML file *kas/bunch-linux.yml* <br/>
 Start the to build the system: <br/>
 
-> kas build kas/bunch-linux.yml<br/>
+> kas build kas/bunch-linux.yml --update<br/>
 
 It could take a while depending on the machine that are you using for compiling. <br/>
 
