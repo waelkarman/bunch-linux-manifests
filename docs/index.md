@@ -25,7 +25,7 @@ As highlighted, the primary goal is to grasp the essential principles of applica
 - passivebuzzer-service (Python)
 - gpio-read-sysfs-service (C++)
 - networkchecker-service (Python)
-- auto-update-service (Shell)
+- auto-update-service (Bash Script)
 
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
