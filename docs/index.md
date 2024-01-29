@@ -1,5 +1,5 @@
 
-# Welcome to Embedded Bunch Linux OS ~ Lama
+# Welcome to Embedded Bunch Linux OS ~ Lama (v0.002)
 <img src="miscellaneous/lama-desk.png">
 
 Bunch Linux is a project created for learning purposes. The goal is to learn how to build your own custom version of Linux for Embedded Systems as well as the well-known goal of every developer, have fun!
