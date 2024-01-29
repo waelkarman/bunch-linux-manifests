@@ -52,7 +52,7 @@ Bunch-Linux installs a remote access feature through which it is possible to acc
 ALSA + PipeWire, 
 aplay and arecord [wip] 
 
-## IPC
+## Sensors App and interprocess communication
 ##### ZeroMQ
 services and applications exchanging messages through a flexible interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly information and work as a single application. The interesting aspect of ZMQ is that the message exchanging is based on network protocols that allow any node over the network to be reached even cloud applications for example. 
 For the specific case, the following are the available messaging exchange models:<br/>
