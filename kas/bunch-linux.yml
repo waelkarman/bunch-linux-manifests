@@ -50,6 +50,6 @@ repos:
     branch: kirkstone
 
   bunch-linux-metalayer:
-    url: https://<TOKEN>@github.com/waelkarman/bunch-linux-metalayer.git
+    url: https://github.com/waelkarman/bunch-linux-metalayer.git
     path: meta-bunch-linux
     branch: master
