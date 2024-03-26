@@ -142,7 +142,7 @@ Install kas :<br/>
 
 clone this manifest :<br/>
 
-> git clone \<URL to this repo\><br/>
+> git clone \<URL to manifest\><br/>
 > cd  bunch-linux-manifests<br/>
 
 Start the to build the system: <br/>
