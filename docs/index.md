@@ -1,6 +1,8 @@
 
-# Welcome to Embedded Bunch Linux OS ~ Lama (v0.002)
+# Welcome to Embedded Bunch Linux OS ~ Lama (v0.002) 
 <img src="miscellaneous/lama-desk.png">
+
+#### [metalayer](https://github.com/waelkarman/bunch-linux-metalayer)
 
 Bunch Linux is a project created for learning purposes. The goal is to learn how to build your own custom version of Linux for Embedded Systems as well as the well-known goal of every developer, have fun!
 The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS.
@@ -131,7 +133,6 @@ Software:<br/>
 > setuptools in /usr/lib/python3/dist-packages (from jsonschema<4,>=2.5.0->kas) (45.2.0)<br/>
 > attrs>=17.4.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (23.1.0)<br/>
 
-Bunch-Linux a day will become OpenSource but for now is just an experimental system build for learning purpose. Currently to build the system a TOKEN is required. Please ask to the administrator. <br/>
 The building process could arise some warning due to some features in development.
 ### Using KAS project
 KAS 4 provide an easy way to collect the sources, setup the environment and start the build process.
@@ -144,7 +145,6 @@ clone this manifest :<br/>
 > git clone \<URL to this repo\><br/>
 > cd  bunch-linux-manifests<br/>
 
-replace \<token\> in the YAML file *kas/bunch-linux.yml* <br/>
 Start the to build the system: <br/>
 
 > kas build kas/bunch-linux.yml --update<br/>
