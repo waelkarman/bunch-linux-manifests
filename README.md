@@ -16,4 +16,4 @@ Just for fun !
 
 
 # Build and run
-Istructions on the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/)
+Instruction on the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/)
