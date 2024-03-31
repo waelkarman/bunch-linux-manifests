@@ -1,4 +1,19 @@
-Bunch linux is a project created for learning purposes. The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS. <br>
+## Bunch linux OS [in development]
+it's a project created for just for fun! The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS. <br>
 <br>
-Please refer to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/) for more informations.
+Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/) for more informations.
 Link to [bunch-linux-metalayer](https://github.com/waelkarman/bunch-linux-metalayer).
+
+Just for fun !
+
+<img src="docs/miscellaneous/lama-desk.png">
+
+- Yocto ~ kirkstone
+- C++/11
+- Qt5/QML
+- Python
+- Cmake
+
+
+# Build and run
+Istructions on the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/)
