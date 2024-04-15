@@ -12,6 +12,7 @@ bblayers_conf_header:
     ${YOCTOROOT}/poky/meta-poky \
     ${YOCTOROOT}/poky/meta-yocto-bsp \
     ${YOCTOROOT}/meta-qt5 \
+    ${YOCTOROOT}/meta-qt6 \
     ${YOCTOROOT}/meta-rauc \ 
     ${YOCTOROOT}/meta-raspberrypi \
     ${YOCTOROOT}/meta-bunch-linux \
