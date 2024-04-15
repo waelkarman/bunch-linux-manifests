@@ -26,13 +26,15 @@ bblayers_conf_header:
     ${YOCTOROOT}/meta-openembedded/meta-webserver \
     ${YOCTOROOT}/meta-openembedded/meta-xfce \
     "
-    
 
 local_conf_header:
   standard: |
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
+  ffmpeg: |
+    LICENSE_FLAGS_ACCEPTED = "commercial"
+    
 
   buildinfo: |
     INHERIT += " rm_work"
