@@ -39,6 +39,10 @@ repos:
       meta-webserver:
       meta-xfce:
 
+  meta-qt6:
+    url: https://code.qt.io/yocto/meta-qt6.git
+    branch: "6.5"
+    
   meta-qt5:
     url: https://github.com/meta-qt5/meta-qt5.git
     path: meta-qt5
