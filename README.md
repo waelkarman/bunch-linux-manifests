@@ -10,7 +10,7 @@ Just for fun !
 
 - Yocto ~ kirkstone
 - C++/11
-- Qt5/QML
+- Qt6/QML
 - Python
 - Cmake
 
