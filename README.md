@@ -9,7 +9,7 @@ Just for fun !
 <img src="docs/miscellaneous/lama-desk.png">
 
 - Yocto ~ kirkstone
-- C++/11
+- C++/17
 - Qt6/QML
 - Python
 - Cmake
