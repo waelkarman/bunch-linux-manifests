@@ -45,13 +45,21 @@ All notable changes to this project will be documented in this file.
 - vc4-drm gpu: swiotlb buffer is full reported in kernel buffer.
 
 ## Camel [0.0.3] -  2024-##-## 
-ideas for future releases
+
+### Added 
+- porting sensor app from Qt5 to Qt6
+- install burger shop app
+- 
+
 ### Ideas
 - add a wifi setting app.
 - add a bluetooth setting app.
 - introduce disk encryption.
 - update kernel version.
 - add VPN support.
-   
+
+### Fixed
+- delay in IPC communications.
+  
 ### Open points
 - disable timer after system update.
