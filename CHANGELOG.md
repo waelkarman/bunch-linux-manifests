@@ -49,7 +49,7 @@ All notable changes to this project will be documented in this file.
 ### Added 
 - porting sensor app from Qt5 to Qt6
 - install burger shop app
-- 
+- open-pipe-media-player [preview]
 
 ### Ideas
 - add a wifi setting app.
