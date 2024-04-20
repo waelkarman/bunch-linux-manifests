@@ -15,7 +15,7 @@ The system runs the 6.1.x version of the linux kernel and U-Boot is used to hand
 To view the entire system services, please use the following command: <br/>
 > systemctl list-units --type=service --all <br/>
 
-## Integration 
+## Topics 
 As highlighted, the primary goal is to grasp the essential principles of applications, their domain and their interaction with the system. This involves a proactive effort to integration of various types of applications and to thoroughly understand their functioning within the system.<br>
 The distro comprises the following topic:
 
@@ -77,7 +77,7 @@ Bunch-Linux installs a remote access feature (based on VNC) through which it is 
 
 <img src="miscellaneous/remote-access-lama.png" width="400" height="240">
 
-### LOCAL & OTA System UPDATE 
+## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
 <img src="miscellaneous/update-mechanism.png">
 
@@ -86,11 +86,10 @@ The update service is checking constantly whether an update is available and is 
 
 
 
-## Audio 
+## Media
 ALSA + PipeWire, [WORK IN PROGRESS] 
 
-
-## Wifi & Bluetooth 
+## Connectivity
 Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
 - list interfaces:<br>
 > ip link show<br>
@@ -117,7 +116,7 @@ Activate connection:<br>
 
 
 ## How to build
-Working tested configuration and requirements:<br/>
+Tested host configuration:<br/>
 - Host machine:<br/> 
 > Ubuntu 20.04.6 LTS (Focal Fossa)<br>
 > Debian 12 <br>
@@ -125,8 +124,7 @@ Working tested configuration and requirements:<br/>
 - Target:<br/>
 > RaspberryPi 4 Model B<br/>
 
-The building process could arise some warning due to some features in development.
-### Using KAS project
+The building process could arise some warning due to some features in development.<br>
 KAS 4 provide an easy way to collect the sources, setup the environment and start the build process.<br>
 Install kas :<br/>
 
@@ -143,7 +141,7 @@ Start the to build the system: <br/>
 
 It could take a while depending on the machine that are you using for compiling. <br/>
 
-### Deploy
+##### Deploy
 The compiled image will be located into the build folder at the following path:
 > /build/tmp/deploy/images/raspberrypi4-64
 
