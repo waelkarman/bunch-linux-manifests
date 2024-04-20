@@ -69,7 +69,7 @@ The sensors-app is written in Qt6/QML. The services are implemented in Python3 a
 #### HMI ~ Wayland & xWayland
 The hmi is based on the native weston interface with some customization. To support app built for X Windows System, xwayland has been installed allowing X11 applications (like Nautilus) to work within the Wayland protocol. Xwayland acts like a wayland node and implements an X11 server that works as a proxy. Furthermore *QtWayland* is installed to allow Qt6 applications to be managed by the compositor.
 
-<img src="miscellaneous/Gscheme.png">
+<img src="miscellaneous/Gscheme.png" width="300" height="240">
 
 #### Remote access
 
