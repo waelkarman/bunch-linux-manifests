@@ -25,7 +25,7 @@ As highlighted, the primary goal is to grasp the essential principles of applica
 
 #### Integrated Services: 
 - passivebuzzer-service (Python)
-- gpio-read-sysfs-service (C++)
+- button-service (C++)
 - networkchecker-service (Python)
 - auto-update-service (Bash Script)
 
