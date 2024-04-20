@@ -4,16 +4,15 @@
 
 #### [metalayer](https://github.com/waelkarman/bunch-linux-metalayer)
 
-Bunch Linux is a project created for learning purposes. The goal is to learn how to build your own custom version of Linux for Embedded Systems as well as the well-known goal of every developer, have fun!
-The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS.
+Bunch Linux is a project created to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS. The goal is to learn as much as possible and of course, have fun!
 
 To get an overview about current and future state refer to the [CHANGELOG.md](https://github.com/waelkarman/bunch-linux-manifests/blob/main/CHANGELOG.md) .
 
-Bunch Linux is slowly getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *KAS* *project* that will download the sources and setup the directory ready to start building the system. 
+Bunch Linux is slowly getting way more customized by adding new features, install new apps and support more sensors. The project targets to be working out of the box. The sources had been defined in the bunch-linux.yml manifest and will be collected by *KAS* *tool* that will download what needes and start the building process. 
 
 ## System
-The system runs the version 6.1.x of the linux kernel and U-Boot is used to handling the boot sequence. *systemd* has been used as the init program and primary data reading and communication services have been added to startup depending on the main target *multi-user.target*.
-To view the entire system boot services, you can use the following command: <br/>
+The system runs the 6.1.x version of the linux kernel and U-Boot is used to handle the boot sequence. *Systemd* is raising the userspace up and all the startup services are depending on the *multi-user.target*.
+To view the entire system services, please use the following command: <br/>
 > systemctl list-units --type=service --all <br/>
 
 # Integration 
