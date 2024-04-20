@@ -18,7 +18,7 @@ Link to [bunch-linux-metalayer](https://github.com/waelkarman/bunch-linux-metala
 - GTK+3
 - ZeroMQ
 - POSIX thread
-- GNUTools
+- GNUtools
 - Kernel drivers
 - Rauc 
 
