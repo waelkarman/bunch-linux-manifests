@@ -52,15 +52,18 @@ All notable changes to this project will be documented in this file.
 - open-pipe-media-player [preview]
 - upgrade linux kernel from 5.15.x to 6.1.x
 
+### Fixed
+- delay in IPC communications.
+
+
+
+
+## - open points -
+- disable timer after system update.
+
 ### Ideas
 - add a wifi setting app.
 - add a bluetooth setting app.
 - introduce disk encryption.
 - update kernel version.
 - add VPN support.
-
-### Fixed
-- delay in IPC communications.
-  
-### Open points
-- disable timer after system update.
