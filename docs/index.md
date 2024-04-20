@@ -53,7 +53,7 @@ The following are messages exchanging models that had been tested into the syste
 - Request–Reply<br/>
 - Publish–Subscribe<br/>
 
-In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
+In the following diagram the summary of the communication layout implemented into the sensors-app is shown.
 
 <img src="miscellaneous/sensorappipc.png" width="400" height="300">
 
