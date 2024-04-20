@@ -121,35 +121,16 @@ Activate connection:<br>
 
 ## How to build
 Working tested configuration and requirements:<br/>
-Host machine:<br/> 
-
+- Host machine:<br/> 
 > Ubuntu 20.04.6 LTS (Focal Fossa)<br>
 > Debian 12 <br>
 
-Target:<br/>
-
+- Target:<br/>
 > RaspberryPi 4 Model B<br/>
-
-Connected GPIO:<br>
-> 17 for Passive Buzzer signal<br/>
-> 18 for Button Signal<br/>
-
-Software:<br/>
-
-> Python 3.8.10<br/>
-> kas in /usr/local/lib/python3.8/dist-packages (4.0)<br/>
-> distro<2,>=1.0.0 in /usr/lib/python3/dist-packages (from kas) (1.4.0)<br/>
-> kconfiglib<15,>=14.1.0 in /usr/local/lib/python3.8/dist-packages (from kas) (14.1.0)<br/>
-> jsonschema<4,>=2.5.0 in /usr/local/lib/python3.8/dist-packages (from kas) (3.2.0)<br/>
-> PyYAML<6,>=3.0 in /usr/lib/python3/dist-packages (from kas) (5.3.1)<br/>
-> six>=1.11.0 in /usr/lib/python3/dist-packages (from jsonschema<4,>=2.5.0->kas) (1.14.0)<br/>
-> pyrsistent>=0.14.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (0.19.3)<br/>
-> setuptools in /usr/lib/python3/dist-packages (from jsonschema<4,>=2.5.0->kas) (45.2.0)<br/>
-> attrs>=17.4.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema<4,>=2.5.0->kas) (23.1.0)<br/>
 
 The building process could arise some warning due to some features in development.
 ### Using KAS project
-KAS 4 provide an easy way to collect the sources, setup the environment and start the build process.
+KAS 4 provide an easy way to collect the sources, setup the environment and start the build process.<br>
 Install kas :<br/>
 
 > pip3 install kas<br/>
