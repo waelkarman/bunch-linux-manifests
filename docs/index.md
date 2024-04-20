@@ -66,6 +66,15 @@ The sensors-app is written in Qt6/QML. The services are implemented in Python3 a
 > echo out > /sys/class/gpio/gpio[numGPIO]/direction<br/>
 > echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
 
+#### HMI ~ Wayland & xWayland
+The hmi is based on weston with some customization. To support app built for X Windows System, xwayland has been installed allowing X11 applications (like Nautilus) to work within the Wayland protocol. Xwayland acts like a wayland node and implements an X11 server that works as a proxy. 
+
+<img src="miscellaneous/Gscheme.png">
+
+Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
+
+
+
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
 <img src="miscellaneous/update-mechanism.png">
@@ -73,14 +82,6 @@ For going through the development process a fundamental step is to set-up a prop
 The system is capable of automatic self-updating via OTA (Over-The-Air). It is initialized with two valid root partitions. Upon an update occurs the system is automatically installing the update into the inactive partition and switch the boot pointer to the updated one. This way an older version of the system is always kept installed and used as fallback option in case the update process went wrong. 
 The update service is checking constantly whether an update is available and is keeping the system updated. All updates will be applied after reboot.
 
-## HMI
-##### Wayland & xWayland
-
-Xwayland is a component of Wayland that allows running X11 applications (designed to work with the X Window System like Nautilus) in a Wayland environment. Xwayland acts as an X11 server within a Wayland environment, enabling X11 applications to function on systems using Wayland as the display server. 
-
-<img src="miscellaneous/Gscheme.png">
-
-Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
 ## Remote access
 
