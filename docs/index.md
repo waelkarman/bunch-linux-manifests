@@ -118,17 +118,16 @@ Activate connection:<br>
 
 ## How to build
 Tested host configuration:<br/>
-- Host machine:<br/> 
-> Ubuntu 20.04.6 LTS (Focal Fossa)<br>
-> Debian 12 <br>
+Host machine:<br/> 
+- Ubuntu 20.04.6 LTS (Focal Fossa)<br>
+- Debian 12 <br>
 
-- Target:<br/>
-> RaspberryPi 4 Model B<br/>
+Target:<br/>
+- RaspberryPi 4 Model B<br/>
 
 The building process could arise some warning due to some features in development.<br>
 KAS 4 provide an easy way to collect the sources, setup the environment and start the build process.<br>
 Install kas :<br/>
-
 > pip3 install kas<br/>
 
 clone this manifest :<br/>
