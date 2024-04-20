@@ -50,14 +50,14 @@ The system has out-of-the-box already installed apps and services like:
 Services and applications are exchanging messages through a flexible and low latency interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. The interesting aspect of ZMQ is that the message exchanging mechanism is based on network protocols and that allows to any node over the network to be reached even nodes not defined on the localhost itself like cloud applications for example. <br>
 
 The following are messages exchanging models that had been tested into the system:<br/>
-- Request–Reply<br/>
-- Publish–Subscribe<br/>
+- Request – Reply<br/>
+- Publish – Subscribe<br/>
 
 In the following diagram the summary of the communication layout implemented into the sensors-app is shown.
 
 <img src="miscellaneous/sensorappipc.png" width="400" height="300">
 
-Similar to any advanced embedded device like an infotainment, a dashboard and so forth the *sensor-app* allows the users to check the status of the supported sensors and to control it directly from the GUI. 
+The *sensor-app* allows the user to check the status of the supported sensors and control them directly from the UI. 
 
 The app is developed in Qt, while the services are implemented in Python and C++. The Python services rely on the pi-blaster and raspi-gpio libraries, while the C++ services utilize a custom library that directly writes to the SYS filesystem of the operating system, corresponding to the following operations:
 > echo [numGPIO] \> /sys/class/gpio/export<br/>
