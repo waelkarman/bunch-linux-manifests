@@ -11,8 +11,16 @@ Just for fun !
 - Yocto ~ kirkstone
 - C++/17
 - Qt6/QML
-- Python
+- Python3
 - Cmake
+- SQLite3
+- Bash scripts
+- GStreamer
+- GTK+3
+- ZeroMQ
+- POSIX thread
+- GNUTools
+- Kernel drivers
 
 
 # Build and run
