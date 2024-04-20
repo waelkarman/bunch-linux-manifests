@@ -9,6 +9,7 @@ Just for fun !
 <img src="docs/miscellaneous/lama-desk.png">
 
 - Yocto ~ kirkstone
+- C
 - C++/17
 - Qt6/QML
 - Python3
@@ -21,6 +22,7 @@ Just for fun !
 - POSIX thread
 - GNUTools
 - Kernel drivers
+- Rauc 
 
 
 # Build and run
