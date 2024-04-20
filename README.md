@@ -20,7 +20,7 @@ Link to [bunch-linux-metalayer](https://github.com/waelkarman/bunch-linux-metala
 - POSIX thread
 - GNUtools
 - Kernel drivers
-- Rauc 
+- Rauc Update
 
 
 # Build and run
