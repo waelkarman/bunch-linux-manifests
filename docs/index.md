@@ -81,9 +81,10 @@ Bunch-Linux installs a remote access feature (based on VNC) through which it is 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
 <img src="miscellaneous/update-mechanism.png">
 
-The system is capable of automatic self-updating via OTA (Over-The-Air). It is initialized with two valid root partitions. Upon an update occurs the system is automatically installing the update into the inactive partition and switch the boot pointer to the updated one. This way an older version of the system is always kept installed and used as fallback option in case the update process went wrong. 
+The system is capable of automatic self-updating via OTA (Over-The-Air). It is initialized with two valid root partitions. Upon an update occurs the system is automatically installing the update into the inactive partition and switch the boot pointer to the updated ones. This way an older version of the system is always kept installed and used as fallback option in case the update process went wrong. 
 The update service is checking constantly whether an update is available and is keeping the system updated. All updates will be applied after reboot.
 
+The update process is performed by RAUC and the entire update process is connected to the [bunch-linux-manifest](https://github.com/waelkarman/bunch-linux-manifests) repo. The [auto-update-service](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/recipes-core/bunch-update/bunch-update/bunch-update.sh) is regurarly checking the [bunch-update.json](https://github.com/waelkarman/bunch-linux-manifests/blob/main/docs/bunch-update.json) and reading it's attributes. Comparing the incoming attributes with the current ones, the service recognize whether a newer version of the system has been released. In that case, the *url* field of the downloaded json (that points to the release section of this repo) will be used to download the update bundle and subsequently update the system.
 
 
 ## Media
