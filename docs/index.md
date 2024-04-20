@@ -15,7 +15,7 @@ The system runs the 6.1.x version of the linux kernel and U-Boot is used to hand
 To view the entire system services, please use the following command: <br/>
 > systemctl list-units --type=service --all <br/>
 
-# Integration 
+## Integration 
 As highlighted, the primary goal is to grasp the essential principles of applications, their domain and their interaction with the system. This involves a proactive effort to integration of various types of applications and to thoroughly understand their functioning within the system.<br>
 The distro comprises the following topic:
 
@@ -34,7 +34,7 @@ The distro comprises the following topic:
 - Kernel drivers
 - Rauc Update
 
-## The desktop environment
+## Desktop environment
 The system has out-of-the-box already installed apps and services like:
 
 - [burger-app](https://github.com/waelkarman/burger-shop) (C++\17, Qt6/QML, SQLite3)
@@ -46,8 +46,8 @@ The system has out-of-the-box already installed apps and services like:
 - [auto-update-service](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/recipes-core/bunch-update/bunch-update/bunch-update.sh) (Bash Script)
 
 
-##### ZeroMQ
-Services and applications exchanging messages through a flexible and low latency interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly information and work as a single application. The interesting aspect of ZMQ is that the message exchanging is based on network protocols that allow any node over the network to be reached even cloud applications for example. 
+##### Interprocess comunication
+Services and applications are exchanging messages through a flexible and low latency interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. The interesting aspect of ZMQ is that the message exchanging mechanism is based on network protocols and that allows to any node over the network to be reached even nodes not defined on the localhost itself like cloud applications for example. <br>
 For the specific case, the following are the available messaging exchange models:<br/>
 Request–Reply<br/>
 Publish–Subscribe<br/>
