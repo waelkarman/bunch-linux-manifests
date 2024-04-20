@@ -61,9 +61,9 @@ Wiring:<br>
 > GPIO[17] for Passive Buzzer signal<br/>
 > GPIO[18] for Button Signal<br/>
 
-The *sensor-app* is build like a grid and each supported sensor have a spot in the grid. The sensor-app allows the user to check the status of the supported sensors and control them directly from the UI. For example connecting a button as aforementioned, and pressing it, is possible to read on the sensors-app the state of the button as Pressed/Released furthermore touching on the sensor-app the spot reserved to the passive buzzer the buzzer will ring.
+The *sensor-app* has a grid and each supported sensor have a spot in the grid. The sensor-app allows the user to check the status of the supported sensors and control them directly from the UI. For example connecting a button as aforementioned, and pressing it, is possible to read on the sensors-app the state of the button as Pressed/Released furthermore touching on the sensor-app the spot reserved to the passive buzzer the buzzer will ring.
 
-The app is developed in Qt, while the services are implemented in Python and C++. The Python services rely on the pi-blaster and raspi-gpio libraries, while the C++ services utilize a custom library that directly writes to the SYS filesystem of the operating system, corresponding to the following operations:
+The sensors-app is written in Qt6/QML. The services are implemented in Python3 and C++. The services written in python3 rely on the pi-blaster and raspi-gpio libraries to interact with the sensors while the services written in C++ utilize a custom library that directly interact with the sys-fs to control the GPIOs and mainly performs the following operations:
 > echo [numGPIO] \> /sys/class/gpio/export<br/>
 > echo out > /sys/class/gpio/gpio[numGPIO]/direction<br/>
 > echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
