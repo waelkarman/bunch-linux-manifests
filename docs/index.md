@@ -48,9 +48,10 @@ The system has out-of-the-box already installed apps and services like:
 
 ##### Interprocess comunication
 Services and applications are exchanging messages through a flexible and low latency interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. The interesting aspect of ZMQ is that the message exchanging mechanism is based on network protocols and that allows to any node over the network to be reached even nodes not defined on the localhost itself like cloud applications for example. <br>
-For the specific case, the following are the available messaging exchange models:<br/>
-Request–Reply<br/>
-Publish–Subscribe<br/>
+
+The following are messages exchanging models that had been tested into the system:<br/>
+- Request–Reply<br/>
+- Publish–Subscribe<br/>
 
 In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
 
