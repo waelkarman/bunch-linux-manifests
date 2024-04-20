@@ -2,7 +2,7 @@
 # Welcome to Embedded Bunch Linux OS ~ Lama (v0.002) 
 <img src="miscellaneous/lama-desk.png">
 
-#### [metalayer](https://github.com/waelkarman/bunch-linux-metalayer)
+#### [bunch-linux metalayer](https://github.com/waelkarman/bunch-linux-metalayer)
 
 Bunch Linux is a project created to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS. The goal is to learn as much as possible and of course, have fun!
 
@@ -16,17 +16,63 @@ To view the entire system services, please use the following command: <br/>
 > systemctl list-units --type=service --all <br/>
 
 # Integration 
-As highlighted, the primary goal is to grasp the essential principles of applications and their interactions with the system. This involves a proactive effort to integrate various types of applications and to thoroughly understand their functioning within the system. So far, the following applications have been successfully integrated:<br/>
-1. C/C++ applications<br/>
-2. Python applications<br/>
-3. Qt/QML applications<br/>
-4. Kernel Modules<br/>
+As highlighted, the primary goal is to grasp the essential principles of applications, their domain and their interaction with the system. This involves a proactive effort to integration of various types of applications and to thoroughly understand their functioning within the system.<br>
+The distro comprises the following topic:
+
+- Yocto ~ kirkstone
+- C
+- C++/17
+- Qt6/QML
+- Python3
+- Cmake
+- SQLite3
+- Bash scripts
+- GStreamer
+- GTK+3
+- ZeroMQ
+- POSIX thread
+- Kernel drivers
+- Rauc Update
+
+## The desktop environment
+The system has out-of-the-box already installed apps and services like:
+
+- [burger-app](https://github.com/waelkarman/burger-shop) (C++\17, Qt6/QML, SQLite3)
+- [sensors-app](https://github.com/waelkarman/sensors-app) (C++\17, Qt6/QML)
+- [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) (C) 
+- [passivebuzzer-service](https://github.com/waelkarman/passivebuzzer-service) (Python3)
+- [button-service](https://github.com/waelkarman/button-service) (C++/17)
+- [networkchecker-service](https://github.com/waelkarman/networkchecker-service) (Python3)
+- [auto-update-service](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/recipes-core/bunch-update/bunch-update/bunch-update.sh) (Bash Script)
+
+
+##### ZeroMQ
+Services and applications exchanging messages through a flexible and low latency interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly information and work as a single application. The interesting aspect of ZMQ is that the message exchanging is based on network protocols that allow any node over the network to be reached even cloud applications for example. 
+For the specific case, the following are the available messaging exchange models:<br/>
+Request–Reply<br/>
+Publish–Subscribe<br/>
+
+In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
+
+<img src="miscellaneous/sensorappipc.png" width="400" height="300">
+
+Similar to any advanced embedded device like an infotainment, a dashboard and so forth the *sensor-app* allows the users to check the status of the supported sensors and to control it directly from the GUI. 
+
+The app is developed in Qt, while the services are implemented in Python and C++. The Python services rely on the pi-blaster and raspi-gpio libraries, while the C++ services utilize a custom library that directly writes to the SYS filesystem of the operating system, corresponding to the following operations:
+> echo [numGPIO] \> /sys/class/gpio/export<br/>
+> echo out > /sys/class/gpio/gpio[numGPIO]/direction<br/>
+> echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
+
+The sysfs interface for PWM was enabled but has been deprecated since Linux kernel version 4.19.
+
 
 #### Integrated Services: 
 - passivebuzzer-service (Python)
-- button-service (C++)
+- button-service (C++/17)
 - networkchecker-service (Python)
 - auto-update-service (Bash Script)
+
+
 
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
@@ -52,31 +98,6 @@ Bunch-Linux installs a remote access feature through which it is possible to acc
 ## Audio 
 ALSA + PipeWire, [WORK IN PROGRESS] 
 
-## Sensors App and interprocess communication
-##### ZeroMQ
-services and applications exchanging messages through a flexible and low latency interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly information and work as a single application. The interesting aspect of ZMQ is that the message exchanging is based on network protocols that allow any node over the network to be reached even cloud applications for example. 
-For the specific case, the following are the available messaging exchange models:<br/>
-Request–Reply<br/>
-Publish–Subscribe<br/>
-
-In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
-
-<img src="miscellaneous/sensorappipc.png" width="400" height="300">
-
-Similar to any advanced embedded device like an infotainment, a dashboard and so forth the *sensor-app* allows the users to check the status of the supported sensors and to control it directly from the GUI. 
-
-The app is developed in Qt, while the services are implemented in Python and C++. The Python services rely on the pi-blaster and raspi-gpio libraries, while the C++ services utilize a custom library that directly writes to the SYS filesystem of the operating system, corresponding to the following operations:
-> echo [numGPIO] \> /sys/class/gpio/export<br/>
-> echo out > /sys/class/gpio/gpio[numGPIO]/direction<br/>
-> echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
-
-The sysfs interface for PWM was enabled but has been deprecated since Linux kernel version 4.19.
-
-Here are examples of services utilizing interprocess communication (IPC) written in both Python and C++ that are included in the apps:<br/>
-* zmq-pubblisher<br/>
-* zmq-subscriber<br/>
-* zmq-requester<br/>
-* zmq-replier<br/>
 
 ## Wifi & Bluetooth 
 Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
