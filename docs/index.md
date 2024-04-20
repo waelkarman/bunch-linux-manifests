@@ -67,13 +67,9 @@ The sensors-app is written in Qt6/QML. The services are implemented in Python3 a
 > echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
 
 #### HMI ~ Wayland & xWayland
-The hmi is based on weston with some customization. To support app built for X Windows System, xwayland has been installed allowing X11 applications (like Nautilus) to work within the Wayland protocol. Xwayland acts like a wayland node and implements an X11 server that works as a proxy. 
+The hmi is based on the native weston interface with some customization. To support app built for X Windows System, xwayland has been installed allowing X11 applications (like Nautilus) to work within the Wayland protocol. Xwayland acts like a wayland node and implements an X11 server that works as a proxy. Furthermore *QtWayland* is installed to allow Qt6 applications to be managed by the compositor.
 
 <img src="miscellaneous/Gscheme.png">
-
-Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
-
-
 
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
