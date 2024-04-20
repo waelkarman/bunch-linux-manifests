@@ -57,7 +57,11 @@ In the following diagram the summary of the communication layout implemented int
 
 <img src="miscellaneous/sensorappipc.png" width="400" height="300">
 
-The *sensor-app* allows the user to check the status of the supported sensors and control them directly from the UI. 
+Wiring:<br>
+> GPIO[17] for Passive Buzzer signal<br/>
+> GPIO[18] for Button Signal<br/>
+
+The *sensor-app* is build like a grid and each supported sensor have a spot in the grid. The sensor-app allows the user to check the status of the supported sensors and control them directly from the UI. For example connecting a button as aforementioned, and pressing it, is possible to read on the sensors-app the state of the button as Pressed/Released furthermore touching on the sensor-app the spot reserved to the passive buzzer the buzzer will ring.
 
 The app is developed in Qt, while the services are implemented in Python and C++. The Python services rely on the pi-blaster and raspi-gpio libraries, while the C++ services utilize a custom library that directly writes to the SYS filesystem of the operating system, corresponding to the following operations:
 > echo [numGPIO] \> /sys/class/gpio/export<br/>
@@ -65,15 +69,6 @@ The app is developed in Qt, while the services are implemented in Python and C++
 > echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
 
 The sysfs interface for PWM was enabled but has been deprecated since Linux kernel version 4.19.
-
-
-#### Integrated Services: 
-- passivebuzzer-service (Python)
-- button-service (C++/17)
-- networkchecker-service (Python)
-- auto-update-service (Bash Script)
-
-
 
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
