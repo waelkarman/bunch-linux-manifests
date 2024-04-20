@@ -1,4 +1,4 @@
-## Welcome to Open Bunch linux OS [in development]
+## Welcome to Bunch linux OS [in development]
 The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS and have fun! <br>
 <br>
 Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/) for more informations.
