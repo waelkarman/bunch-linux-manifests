@@ -12,7 +12,7 @@ To get an overview about current and future state refer to the [CHANGELOG.md](ht
 Bunch Linux is slowly getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *KAS* *project* that will download the sources and setup the directory ready to start building the system. 
 
 ## System
-The system runs the version 5.15 of the linux kernel and U-Boot is used to handling the boot sequence. *systemd* has been used as the init program and primary data reading and communication services have been added to startup depending on the main target *multi-user.target*.
+The system runs the version 6.1.x of the linux kernel and U-Boot is used to handling the boot sequence. *systemd* has been used as the init program and primary data reading and communication services have been added to startup depending on the main target *multi-user.target*.
 To view the entire system boot services, you can use the following command: <br/>
 > systemctl list-units --type=service --all <br/>
 
