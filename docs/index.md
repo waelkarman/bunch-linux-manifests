@@ -71,6 +71,13 @@ The hmi is based on the native weston interface with some customization. To supp
 
 <img src="miscellaneous/Gscheme.png">
 
+#### Remote access
+
+<img src="miscellaneous/remote-access-lama.png" width="400" height="240">
+
+Bunch-Linux installs a remote access feature through which it is possible to access the system from the development machine and control the system remotely. This functionality is useful when conducting tests without access to a monitor, and in conjunction with the system's Over-The-Air (OTA) update capability, it allows full remote control of the system for development purposes.
+
+
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
 <img src="miscellaneous/update-mechanism.png">
@@ -79,11 +86,7 @@ The system is capable of automatic self-updating via OTA (Over-The-Air). It is i
 The update service is checking constantly whether an update is available and is keeping the system updated. All updates will be applied after reboot.
 
 
-## Remote access
 
-<img src="miscellaneous/remote-access-lama.png" width="400" height="240">
-
-Bunch-Linux installs a remote access feature through which it is possible to access the system from the development machine and control the system remotely. This functionality is useful when conducting tests without access to a monitor, and in conjunction with the system's Over-The-Air (OTA) update capability, it allows full remote control of the system for development purposes.
 ## Audio 
 ALSA + PipeWire, [WORK IN PROGRESS] 
 
