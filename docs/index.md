@@ -68,8 +68,6 @@ The sensors-app is written in Qt6/QML. The services are implemented in Python3 a
 > echo out > /sys/class/gpio/gpio[numGPIO]/direction<br/>
 > echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
 
-The sysfs interface for PWM was enabled but has been deprecated since Linux kernel version 4.19.
-
 ## LOCAL & OTA System UPDATE 
 For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
 <img src="miscellaneous/update-mechanism.png">
