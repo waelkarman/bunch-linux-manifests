@@ -4,8 +4,6 @@ it's a project created for just for fun! The aim is to fully understand the foun
 Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/) for more informations.
 Link to [bunch-linux-metalayer](https://github.com/waelkarman/bunch-linux-metalayer).
 
-Just for fun !
-
 <img src="docs/miscellaneous/lama-desk.png">
 
 - Yocto ~ kirkstone
