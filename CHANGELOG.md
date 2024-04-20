@@ -50,6 +50,7 @@ All notable changes to this project will be documented in this file.
 - porting sensor app from Qt5 to Qt6
 - install burger shop app
 - open-pipe-media-player [preview]
+- upgrade linux kernel from 5.15.x to 6.1.x
 
 ### Ideas
 - add a wifi setting app.
