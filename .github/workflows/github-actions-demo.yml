@@ -13,9 +13,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Setup Python 
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10' 
-          run: pip install kas
+        run: pip3 install kas
       - name: build 
         run: kas build kas/bunch-linux.yml
