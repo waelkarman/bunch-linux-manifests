@@ -116,8 +116,6 @@ Activate connection:<br>
 > wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf<br>
 > udhcpc -i wlan0<br>
 
-## Build within the pipeline
-  Take a look to the latest [pipeline](https://github.com/waelkarman/bunch-linux-manifests/actions/workflows/github-actions-demo.yml).<br>
 ## Build on your host machine
 Tested host configuration:<br/>
 Host machine:<br/> 
