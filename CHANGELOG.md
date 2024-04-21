@@ -51,6 +51,7 @@ All notable changes to this project will be documented in this file.
 - install burger shop app
 - open-pipe-media-player [preview]
 - upgrade linux kernel from 5.15.x to 6.1.x
+- set up a pipeline for CI/CD
 
 ### Fixed
 - delay in IPC communications.
