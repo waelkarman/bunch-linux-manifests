@@ -63,7 +63,6 @@ All notable changes to this project will be documented in this file.
 - disable timer after system update.
 
 ### Ideas
-- add a wifi setting app.
-- add a bluetooth setting app.
+- add a setting app.
 - introduce disk encryption.
 - add VPN support.
