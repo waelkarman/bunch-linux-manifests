@@ -14,5 +14,7 @@ jobs:
           ls ${{ github.workspace }}
       - name: Setup Python 
         run: pip3 install kas
+      - name: Install required deps
+        run: sudo apt install chrpath diffstat
       - name: build 
         run: kas build kas/bunch-linux.yml
