@@ -66,5 +66,4 @@ All notable changes to this project will be documented in this file.
 - add a wifi setting app.
 - add a bluetooth setting app.
 - introduce disk encryption.
-- update kernel version.
 - add VPN support.
