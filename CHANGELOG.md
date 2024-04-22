@@ -52,6 +52,7 @@ All notable changes to this project will be documented in this file.
 - open-pipe-media-player [preview]
 - upgrade linux kernel from 5.15.x to 6.6.y [latest]
 - set up a pipeline for CI/CD
+- merge manifest and metalayer to simplify contributions and discussions
 
 ### Fixed
 - delay in IPC communications.
