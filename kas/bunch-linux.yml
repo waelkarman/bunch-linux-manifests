@@ -47,8 +47,3 @@ repos:
     url: https://github.com/rauc/meta-rauc.git
     path: meta-rauc
     branch: kirkstone
-
-  bunch-linux-metalayer:
-    url: https://github.com/waelkarman/bunch-linux-metalayer.git
-    path: meta-bunch-linux
-    branch: master
