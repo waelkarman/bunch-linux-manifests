@@ -1,0 +1,11 @@
+[Unit]
+Description=Networkchecker service
+After=weston.service
+Wants=weston.service
+
+[Service]
+User=root
+ExecStart=python3 /usr/bin/networkchecker.py
+
+[Install]
+WantedBy=multi-user.target

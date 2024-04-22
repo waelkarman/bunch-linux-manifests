@@ -1,0 +1,14 @@
+# create a CA
+openssl genpkey -algorithm RSA -out ca.key.pem -text 
+openssl req -x509 -new -key ca.key.pem -out ca.cert.pem -days 365 -text 
+# check the CA
+openssl x509 -text -noout -in ca.cert.pem -text 
+
+# CA
+Country Name (2 letter code) [AU]:IT
+State or Province Name (full name) [Some-State]:Italy
+Locality Name (eg, city) []:Salerno
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:bunch-linux-auth
+Organizational Unit Name (eg, section) []:Bunch Linux Auth
+Common Name (e.g. server FQDN or YOUR name) []:Bunch Linux          
+Email Address []:wael.karman@gmail.com
