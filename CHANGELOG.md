@@ -56,6 +56,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - delay in IPC communications.
+### Known bug
+- vc4-drm gpu: swiotlb buffer is full reported in kernel buffer.
 
 <br><br><br><br><br>
 
