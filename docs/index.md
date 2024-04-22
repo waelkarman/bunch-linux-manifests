@@ -2,8 +2,6 @@
 # Welcome to Embedded Bunch Linux OS ~ Lama (v0.002) 
 <img src="miscellaneous/lama-desk.png">
 
-#### [bunch-linux metalayer](https://github.com/waelkarman/bunch-linux-metalayer)
-
 Bunch Linux is a project created to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS. The goal is to learn as much as possible and of course, have fun!
 
 To get an overview about current and future state refer to the [CHANGELOG.md](https://github.com/waelkarman/bunch-linux-manifests/blob/main/CHANGELOG.md) .
