@@ -1,0 +1,2 @@
+XDG_RUNTIME_DIR=/tmp/user
+QT_QPA_PLATFORM=directfb

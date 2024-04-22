@@ -1,0 +1,10 @@
+[Unit]
+Description=Update timer
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+AccuracySec=10
+
+[Install]
+WantedBy=timers.target
