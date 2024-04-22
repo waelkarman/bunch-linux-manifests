@@ -60,10 +60,7 @@ All notable changes to this project will be documented in this file.
 <br><br><br><br><br>
 
 
-## - open points -
-- disable timer after system update.
-
-### Ideas
+## - open points & ideas -
 - add a setting app.
 - introduce disk encryption.
 - add VPN support.
