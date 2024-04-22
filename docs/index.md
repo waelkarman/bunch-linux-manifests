@@ -9,7 +9,7 @@ To get an overview about current and future state refer to the [CHANGELOG.md](ht
 Bunch Linux is slowly getting way more customized by adding new features, install new apps and support more sensors. The project targets to be working out of the box. The sources had been defined in the bunch-linux.yml manifest and will be collected by *KAS* *tool* that will download what needes and start the building process. 
 
 ## System
-The system runs the 6.1.x version of the linux kernel and U-Boot is used to handle the boot sequence. *Systemd* is raising the userspace up and all the startup services are depending on the *multi-user.target*.
+The system runs the 6.6.y version of the linux kernel and U-Boot is used to handle the boot sequence. *Systemd* is raising the userspace up and all the startup services are depending on the *multi-user.target*.
 To view the entire system services, please use the following command: <br/>
 > systemctl list-units --type=service --all <br/>
 
