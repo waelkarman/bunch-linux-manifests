@@ -1,0 +1,9 @@
+[Unit]
+Description=Bunch-Linux update service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bunch-update.sh
+
+[Install]
+WantedBy=multi-user.target

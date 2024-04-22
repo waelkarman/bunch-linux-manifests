@@ -1,0 +1,11 @@
+[Unit]
+Description=Bunch-Linux wlan enabler service
+After=weston.service
+Wants=weston.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/wlan-enabler.sh
+
+[Install]
+WantedBy=multi-user.target

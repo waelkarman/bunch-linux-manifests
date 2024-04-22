@@ -1,0 +1,63 @@
+Certificate Request:
+    Data:
+        Version: 1 (0x0)
+        Subject: C = IT, ST = Italy, L = Salerno, O = bunch-linux, OU = Bunch Linux, CN = Wael Karman, emailAddress = wael.karman@gmail.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b0:17:89:04:66:f4:7c:27:92:cd:08:6c:6b:45:
+                    47:cb:3f:0f:4a:35:ef:40:7b:b7:75:6a:e2:9f:fa:
+                    57:24:13:d0:c4:14:6e:63:d1:9e:6b:29:ec:6d:8d:
+                    ec:9e:5a:34:f9:a2:37:e0:d1:6c:06:cb:1a:c5:70:
+                    8e:20:c9:63:6c:06:78:99:ae:c7:e7:e5:db:8a:ae:
+                    c2:16:82:ae:c0:b0:1f:1c:d4:d3:ef:55:7a:f4:3a:
+                    fc:af:69:22:7d:d2:8e:f4:65:b0:ac:3d:23:7d:14:
+                    52:21:b4:bc:5b:dc:b3:c7:b1:31:bf:af:69:59:da:
+                    79:f8:be:c0:70:7a:d4:cd:be:15:fb:a7:ec:ba:3b:
+                    45:12:30:be:d8:3a:79:fd:51:9e:28:0a:00:a1:c8:
+                    c5:6c:fd:19:3c:8a:68:38:ed:93:62:fb:31:27:33:
+                    a9:a8:5b:99:bd:1b:f0:34:9f:ae:7e:11:66:fe:33:
+                    14:ac:dc:a2:72:57:c6:06:ef:ba:a6:1d:9b:a6:cf:
+                    48:1d:06:c4:37:dd:c3:13:ba:22:bf:ed:e6:1f:ee:
+                    dd:34:3b:ce:26:cb:c1:f9:c9:5c:2d:a6:d3:54:bc:
+                    6b:8f:ea:dc:33:d6:32:1b:ee:3c:ab:f7:2f:48:49:
+                    bb:5a:87:47:4b:f1:76:cc:ff:85:d7:75:3b:3d:aa:
+                    f6:cb
+                Exponent: 65537 (0x10001)
+        Attributes:
+            a0:00
+    Signature Algorithm: sha256WithRSAEncryption
+         12:d5:05:4a:35:7b:39:6b:e6:84:f2:7f:5b:19:1a:fb:11:67:
+         29:ba:31:27:4c:ab:ad:fc:4a:ab:2e:89:5e:55:13:88:65:da:
+         5c:b8:ac:c4:64:d1:d8:88:77:d8:a7:6c:90:f3:cb:ac:7f:95:
+         ff:c3:ef:ab:57:73:6e:c4:a5:31:3c:02:21:93:76:37:2e:dd:
+         d7:93:13:0e:79:a5:f4:ac:dc:c8:d7:d3:d7:2e:ff:81:34:e2:
+         3b:87:66:f0:4a:c0:a8:25:99:91:bc:b9:07:60:5e:02:96:15:
+         12:8b:fe:d7:b0:61:95:78:99:39:c0:3a:8f:e0:94:e4:19:2c:
+         ee:ee:7b:17:15:58:50:2c:57:8d:aa:32:18:d3:5e:5a:0b:d9:
+         74:35:a7:75:b0:2c:1a:fa:fc:6d:3d:ea:2f:14:c8:f0:56:2b:
+         96:47:75:e1:3c:15:2b:0b:a0:f0:61:8b:a9:07:ca:74:ba:b4:
+         52:85:93:18:5d:17:f2:74:63:b2:db:b7:53:a0:73:c8:f6:ec:
+         a8:a1:44:47:d1:5d:9a:84:96:0e:46:aa:3b:14:5e:d1:0b:bc:
+         c0:fb:ed:61:3b:cf:40:a8:b9:ae:27:33:40:74:4e:81:fc:16:
+         0c:84:7d:ee:ac:a5:e1:bf:d8:51:c5:bb:4f:7a:5d:18:64:56:
+         6c:e6:16:f7
+-----BEGIN CERTIFICATE REQUEST-----
+MIIC3TCCAcUCAQAwgZcxCzAJBgNVBAYTAklUMQ4wDAYDVQQIDAVJdGFseTEQMA4G
+A1UEBwwHU2FsZXJubzEUMBIGA1UECgwLYnVuY2gtbGludXgxFDASBgNVBAsMC0J1
+bmNoIExpbnV4MRQwEgYDVQQDDAtXYWVsIEthcm1hbjEkMCIGCSqGSIb3DQEJARYV
+d2FlbC5rYXJtYW5AZ21haWwuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB
+CgKCAQEAsBeJBGb0fCeSzQhsa0VHyz8PSjXvQHu3dWrin/pXJBPQxBRuY9Geayns
+bY3snlo0+aI34NFsBssaxXCOIMljbAZ4ma7H5+Xbiq7CFoKuwLAfHNTT71V69Dr8
+r2kifdKO9GWwrD0jfRRSIbS8W9yzx7Exv69pWdp5+L7AcHrUzb4V+6fsujtFEjC+
+2Dp5/VGeKAoAocjFbP0ZPIpoOO2TYvsxJzOpqFuZvRvwNJ+ufhFm/jMUrNyiclfG
+Bu+6ph2bps9IHQbEN93DE7oiv+3mH+7dNDvOJsvB+clcLabTVLxrj+rcM9YyG+48
+q/cvSEm7WodHS/F2zP+F13U7Par2ywIDAQABoAAwDQYJKoZIhvcNAQELBQADggEB
+ABLVBUo1ezlr5oTyf1sZGvsRZym6MSdMq638SqsuiV5VE4hl2ly4rMRk0diId9in
+bJDzy6x/lf/D76tXc27EpTE8AiGTdjcu3deTEw55pfSs3MjX09cu/4E04juHZvBK
+wKglmZG8uQdgXgKWFRKL/tewYZV4mTnAOo/glOQZLO7uexcVWFAsV42qMhjTXloL
+2XQ1p3WwLBr6/G096i8UyPBWK5ZHdeE8FSsLoPBhi6kHynS6tFKFkxhdF/J0Y7Lb
+t1Ogc8j27KihREfRXZqElg5GqjsUXtELvMD77WE7z0Coua4nM0B0ToH8FgyEfe6s
+peG/2FHFu096XRhkVmzmFvc=
+-----END CERTIFICATE REQUEST-----

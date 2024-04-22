@@ -1,0 +1,31 @@
+# create a CA
+openssl genpkey -algorithm RSA -out ca.key.pem -text 
+openssl req -x509 -new -key ca.key.pem -out ca.cert.pem -days 365 -text 
+# check the CA
+openssl x509 -text -noout -in ca.cert.pem -text 
+
+# CA
+Country Name (2 letter code) [AU]:IT
+State or Province Name (full name) [Some-State]:Italy
+Locality Name (eg, city) []:Salerno
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:bunch-linux-auth
+Organizational Unit Name (eg, section) []:Bunch Linux Auth
+Common Name (e.g. server FQDN or YOUR name) []:Bunch Linux          
+Email Address []:wael.karman@gmail.com
+
+--
+
+# create a key and a cert signed by the CA
+openssl genpkey -algorithm RSA -out bunch-auth-update.key.pem -text
+openssl req -new -key bunch-auth-update.key.pem -out bunch-auth-update_req.csr -text
+# sign the certificare with the CA 
+openssl x509 -req -in bunch-auth-update_req.csr -CA ca.cert.pem -CAkey ca.key.pem -CAcreateserial -out bunch-auth-update.cert.pem -days 365 -text
+
+# Bundle auth cert
+Country Name (2 letter code) [AU]:IT
+State or Province Name (full name) [Some-State]:Italy
+Locality Name (eg, city) []:Salerno
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:bunch-linux
+Organizational Unit Name (eg, section) []:Bunch Linux
+Common Name (e.g. server FQDN or YOUR name) []:Wael Karman          
+Email Address []:wael.karman@gmail.com
