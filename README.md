@@ -5,6 +5,7 @@ Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/
 
 <img src="docs/miscellaneous/lama-desk.png">
 
+- Linux kernel 6.6.y
 - Yocto ~ kirkstone
 - C
 - C++/17
