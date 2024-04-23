@@ -41,7 +41,7 @@ The system has out-of-the-box already installed apps and services like:
 - [passivebuzzer-service](https://github.com/waelkarman/passivebuzzer-service) (Python3)
 - [button-service](https://github.com/waelkarman/button-service) (C++/17)
 - [networkchecker-service](https://github.com/waelkarman/networkchecker-service) (Python3)
-- [auto-update-service](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/recipes-core/bunch-update/bunch-update/bunch-update.sh) (Bash Script)
+- [auto-update-service](https://github.com/waelkarman/bunch-linux-manifests/blob/main/meta-bunch-linux%2Frecipes-core%2Fbunch-update%2Fbunch-update%2Fbunch-update.sh) (Bash Script)
 - [test-char-driver](https://github.com/waelkarman/hello-module) (C)
 
 Services and applications are exchanging messages through a flexible and low latency interprocess communication mechanism based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. The interesting aspect of ZMQ is that the message exchanging mechanism is based on network protocols and that allows to any node over the network to be reached even nodes not defined on the localhost itself like cloud applications for example. <br>
