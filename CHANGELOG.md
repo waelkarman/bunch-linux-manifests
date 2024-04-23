@@ -37,12 +37,6 @@ All notable changes to this project will be documented in this file.
 - upgrade sw components.
 - add remote access service (rdp,vnc).
 
-### Fixed
-- grid alignment in sensors-app.
-
-### Known bug
-- delay in IPC communications.
-- vc4-drm gpu: swiotlb buffer is full reported in kernel buffer.
 
 ## Camel [0.0.3] -  2024-##-## 
 
@@ -54,10 +48,6 @@ All notable changes to this project will be documented in this file.
 - set up a pipeline for CI/CD
 - merge manifest and metalayer to simplify contributions and discussions
 
-### Fixed
-- delay in IPC communications.
-### Known bug
-- vc4-drm gpu: swiotlb buffer is full reported in kernel buffer.
 
 <br><br><br><br><br>
 
