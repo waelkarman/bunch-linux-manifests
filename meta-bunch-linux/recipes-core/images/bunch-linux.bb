@@ -25,8 +25,6 @@ IMAGE_INSTALL += " pipewire pipewire-modules-rt pipewire-alsa pipewire-v4l2 pipe
 IMAGE_INSTALL += " packagegroup-qt6-essentials packagegroup-qt6-addons sensors-app burger-app open-pipe-media-player gtk+3 "
 IMAGE_INSTALL += " gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad "
 
-PACKAGECONFIG += "eglfs kms gui gl gles2 widgets xcb xkbcommon"
-
 do_deploy_to_rasp() {
     # Codice personalizzato da eseguire alla fine della creazione del pacchetto
     # L'output è visibile al path: build/tmp/work/bunch_raspberrypi4_64-poky-linux/bunch-linux/1.0-r0/temp/log.do_deploy_to_rasp
