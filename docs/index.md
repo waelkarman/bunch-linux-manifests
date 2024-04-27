@@ -120,8 +120,8 @@ Host machine:<br/>
 - Ubuntu 20.04.6 LTS (Focal Fossa)<br>
 - Debian 12 <br>
 
-Target:<br/>
-- RaspberryPi 4 Model B<br/>
+Hardware name:<br/>
+- Raspberry Pi 4 Model B Rev 1.4 (DT)<br/>
 
 The building process could arise some warning due to some features in development.<br>
 KAS 4 provide an easy way to collect the sources, setup the environment and start the build process.<br>
