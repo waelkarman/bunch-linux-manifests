@@ -33,7 +33,7 @@ local_conf_header:
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
   ffmpeg: |
-    LICENSE_FLAGS_ACCEPTED = "commercial"
+    LICENSE_FLAGS_ACCEPTED = "gpl"
     
 
   buildinfo: |

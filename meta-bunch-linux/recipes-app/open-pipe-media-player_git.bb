@@ -10,7 +10,7 @@ SRCREV = "366e32d535c6e73fb7c51dfd098b455687c89684"
 S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
-DEPENDS = " gtk+3 glibc gstreamer1.0 weston-init qtwayland gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav"
+DEPENDS = " gtk+3 glibc gstreamer1.0 weston-init qtwayland gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad"
 
 #do_install:append() {
 #	install -Dm644 ${S}/open-pipe-media-player ${D}/${bindir}/open-pipe-media-player

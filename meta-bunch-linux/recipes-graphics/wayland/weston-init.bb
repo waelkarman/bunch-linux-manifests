@@ -12,8 +12,8 @@ SRC_URI = "file://init \
            file://weston-socket.sh \
            file://weston-autologin \
            file://weston-start \
-		    file://server.key \
-	   		file://server.crt \
+		   file://server.key \
+		   file://server.crt \
 		   "
 
 S = "${WORKDIR}"
@@ -56,12 +56,6 @@ do_install() {
 
 	install -D -p -m0644 ${WORKDIR}/weston.ini ${D}${sysconfdir}/xdg/weston/weston.ini
 	install -Dm644 ${WORKDIR}/weston.env ${D}${sysconfdir}/default/weston
-
-	# Install weston-cetificates
-	install -Dm600 ${WORKDIR}/server.crt ${D}${sysconfdir}/xdg/weston/
-	install -Dm600 ${WORKDIR}/server.key ${D}${sysconfdir}/xdg/weston/
-	chown -R weston:weston ${D}${sysconfdir}/xdg/weston/server.crt
-	chown -R weston:weston ${D}${sysconfdir}/xdg/weston/server.key
 
 	if [ -n "${DEFAULTBACKEND}" ]; then
 		sed -i -e "/^\[core\]/a backend=${DEFAULTBACKEND}-backend.so" ${D}${sysconfdir}/xdg/weston/weston.ini
