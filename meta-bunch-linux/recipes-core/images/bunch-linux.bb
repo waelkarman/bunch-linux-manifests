@@ -1,5 +1,4 @@
 SUMMARY = "BunchLinux is an embedded OS image where to integrate any possible software"
-LICENSE = "CLOSED"
 
 inherit core-image
 inherit populate_sdk_qt6
