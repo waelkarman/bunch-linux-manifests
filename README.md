@@ -3,7 +3,7 @@ The aim is to fully understand the foundations of systems and applications start
 <br>
 Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/) for more informations.
 
-<img src="docs/miscellaneous/lama-desk.png">
+<img src="docs/miscellaneous/camel-desk.png">
 
 - Linux kernel 6.6.y
 - Yocto ~ kirkstone
