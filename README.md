@@ -28,7 +28,7 @@ Bunch Linux combines more repositories such as:<br>
 
 - [burger-app](https://github.com/waelkarman/burger-shop) (C++\17, Qt6/QML, SQLite3)
 - [sensors-app](https://github.com/waelkarman/sensors-app) (C++\17, Qt6/QML)
-- [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) (C, GStreamer) 
+- [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) (C, GStreamer, gtk+3) 
 - [passivebuzzer-service](https://github.com/waelkarman/passivebuzzer-service) (Python3)
 - [button-service](https://github.com/waelkarman/button-service) (C++/17)
 - [networkchecker-service](https://github.com/waelkarman/networkchecker-service) (Python3)
