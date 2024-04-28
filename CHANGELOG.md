@@ -43,14 +43,15 @@ All notable changes to this project will be documented in this file.
 
 ### Added 
 - porting apps from Qt5 to Qt6
-- install burger shop app
-- open-pipe-media-player [preview]
+- add [burger-app](https://github.com/waelkarman/burger-shop) 
+- add [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) [preview]
 - upgrade linux kernel from 5.15.x to 6.6.y [latest]
 - upgrade weston to 13.0.1 [latest]
 - set up a pipeline for CI/CD
 - merge manifest and metalayer to simplify contributions and discussions
 - fixed swiotlb buffer error
 - fixed core clock frequencies issue
+- first release of the SDK
 
 <br><br><br><br><br>
 
