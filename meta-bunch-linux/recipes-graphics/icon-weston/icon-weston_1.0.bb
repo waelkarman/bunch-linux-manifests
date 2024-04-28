@@ -8,6 +8,7 @@ SRC_URI += "file://gear.png \
             file://folder.png \
             file://background.jpg \
             file://burger.png \
+            file://player.png \
             "
 
 FILES:${PN} = "/usr \
@@ -23,4 +24,5 @@ do_install:append() {
     install -Dm 644 ${WORKDIR}/folder.png ${D}/usr/share/weston/folder.png
     install -Dm 644 ${WORKDIR}/background.jpg ${D}/usr/share/backgrounds/background.jpg
     install -Dm 644 ${WORKDIR}/burger.png ${D}/usr/share/weston/burger.png
+    install -Dm 644 ${WORKDIR}/player.png ${D}/usr/share/weston/player.png
 }
