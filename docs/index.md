@@ -17,6 +17,7 @@ To view the entire system services, please use the following command: <br/>
 As highlighted, the primary goal is to grasp the essential principles of applications, their domain and their interaction with the system. This involves a proactive effort to integration of various types of applications and to thoroughly understand their functioning within the system.<br>
 The distro comprises the following topic:
 
+- Linux kernel 6.6.y
 - Yocto ~ kirkstone
 - C
 - C++/17
