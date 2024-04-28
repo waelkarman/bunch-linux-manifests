@@ -48,6 +48,8 @@ All notable changes to this project will be documented in this file.
 - upgrade weston to 13.0.1 [latest]
 - set up a pipeline for CI/CD
 - merge manifest and metalayer to simplify contributions and discussions
+- fixed swiotlb buffer error
+- fixed core clock frequencies issue
 
 <br><br><br><br><br>
 
