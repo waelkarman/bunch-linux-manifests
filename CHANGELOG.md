@@ -40,6 +40,7 @@ All notable changes to this project will be documented in this file.
 
 ## Camel [0.0.3] -  2024-##-## 
 <img src="docs/miscellaneous/camel-desk.png" width="350" height="200">
+
 ### Added 
 - porting apps from Qt5 to Qt6
 - install burger shop app
