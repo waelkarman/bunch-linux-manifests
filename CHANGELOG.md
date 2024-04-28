@@ -60,3 +60,4 @@ All notable changes to this project will be documented in this file.
 - add a setting app.
 - introduce disk encryption.
 - add VPN support.
+- replace the desktop environment with a custom ones
