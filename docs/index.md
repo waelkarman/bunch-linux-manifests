@@ -139,7 +139,7 @@ Start the to build the system: <br/>
 > git pull <br>
 > kas build kas/bunch-linux.yml --update --force-checkout<br/>
 
-It could take a while depending on the machine that are you using for compiling. <br/>
+It could take a while depending on the power of the machine used to compile. <br/>
 
 ##### Deploy
 The compiled image will be located into the build folder at the following path:
