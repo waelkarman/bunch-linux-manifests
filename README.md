@@ -22,6 +22,7 @@ Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/
 - Kernel drivers
 - Rauc Update
 
+To test the latest prewiew please build from sources.
 
 # Build and run
 Instruction on the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/)

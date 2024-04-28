@@ -41,13 +41,15 @@ All notable changes to this project will be documented in this file.
 ## Camel [0.0.3] -  2024-##-## 
 
 ### Added 
-- porting sensor app from Qt5 to Qt6
+- porting apps from Qt5 to Qt6
 - install burger shop app
 - open-pipe-media-player [preview]
 - upgrade linux kernel from 5.15.x to 6.6.y [latest]
+- upgrade weston to 13.0.1 [latest]
 - set up a pipeline for CI/CD
 - merge manifest and metalayer to simplify contributions and discussions
-- upgrade weston to 13.0.1
+- fixed swiotlb buffer error
+- fixed core clock frequencies issue
 
 <br><br><br><br><br>
 
