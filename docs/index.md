@@ -150,3 +150,12 @@ Getting the image it should be flashed through linux dd, bmaptool command or usi
 > bunzip2 -c bunch-linux-bunch-raspberrypi4-64.wic.bz2 \| sudo dd of=/dev/sda bs=1M  status=progress && sync
 
 > bmaptool copy \<IMAGE\>.wic.gz /dev/sda && sync
+
+##### Development
+To get the SDK run :
+
+> kas shell kas/bunch-linux.yml --update --force-checkout<br>
+> bitbake -c populate_sdk bunch-linux <br>
+
+at the end of the build the sdk will be placed in :
+> /build/tmp/deploy/sdk/raspberrypi4-64 <br>
