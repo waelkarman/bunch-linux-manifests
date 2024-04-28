@@ -136,6 +136,7 @@ clone this manifest :<br/>
 
 Start the to build the system: <br/>
 
+> git pull
 > kas build kas/bunch-linux.yml --update --force-checkout<br/>
 
 It could take a while depending on the machine that are you using for compiling. <br/>
