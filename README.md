@@ -24,7 +24,18 @@ Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/
 - Kernel drivers
 - Rauc Update
 
-To test the latest prewiew please build from sources.
+Bunch Linux combines more repositories such as:<br>
+
+- [burger-app](https://github.com/waelkarman/burger-shop) (C++\17, Qt6/QML, SQLite3)
+- [sensors-app](https://github.com/waelkarman/sensors-app) (C++\17, Qt6/QML)
+- [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) (C, GStreamer) 
+- [passivebuzzer-service](https://github.com/waelkarman/passivebuzzer-service) (Python3)
+- [button-service](https://github.com/waelkarman/button-service) (C++/17)
+- [networkchecker-service](https://github.com/waelkarman/networkchecker-service) (Python3)
+- [auto-update-service](https://github.com/waelkarman/bunch-linux-manifests/blob/main/meta-bunch-linux%2Frecipes-core%2Fbunch-update%2Fbunch-update%2Fbunch-update.sh) (Bash Script)
+- [test-char-driver](https://github.com/waelkarman/hello-module) (C)
+
+To test the latest prewiew please build from sources.<br>
 
 # Build and run
 Instruction on the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/)
