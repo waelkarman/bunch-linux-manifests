@@ -53,7 +53,7 @@ All notable changes to this project will be documented in this file.
 - fixed core clock frequencies issue
 - first release of the SDK
 
-<br><br><br><br><br>
+<br><br><br>
 
 
 ## - open points & ideas -
