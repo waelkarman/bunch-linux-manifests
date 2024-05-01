@@ -17,4 +17,6 @@ jobs:
       - name: Install required deps
         run: sudo apt install chrpath diffstat
       - name: build 
+        run: export BB_NUMBER_THREADS=2
+        run: export PARALLEL_MAKE=2
         run: kas build kas/bunch-linux.yml
