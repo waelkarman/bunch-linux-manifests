@@ -57,6 +57,8 @@ All notable changes to this project will be documented in this file.
 
 
 ## - open points & ideas -
+- install and configure PipeWire
+- implement audio/video routing
 - update build system to nanbield
 - add a setting app.
 - introduce disk encryption.
