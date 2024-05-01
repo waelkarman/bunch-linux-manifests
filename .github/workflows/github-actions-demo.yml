@@ -15,6 +15,6 @@ jobs:
       - name: Setup Python 
         run: pip3 install kas
       - name: Install required deps
-        run: sudo apt install chrpath diffstat
+        run: sudo apt install chrpath diffstat zstd
       - name: build 
         run: export BB_NUMBER_THREADS=2; export PARALLEL_MAKE=2; kas build kas/bunch-linux.yml --update --force-checkout
