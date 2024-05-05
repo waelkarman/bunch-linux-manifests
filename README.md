@@ -20,7 +20,6 @@ Go to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/
 - GTK+3
 - ZeroMQ
 - POSIX thread
-- GNUtools
 - Kernel drivers
 - Rauc Update
 
