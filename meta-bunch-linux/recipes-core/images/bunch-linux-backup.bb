@@ -1,6 +1,9 @@
 SUMMARY = "BunchLinux is an embedded OS image where to integrate any possible software"
 
 inherit core-image
+require bunch-linux-core.inc
+
+inherit core-image
 inherit populate_sdk_qt6
 inherit extrausers
 
