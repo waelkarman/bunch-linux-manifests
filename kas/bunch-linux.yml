@@ -10,11 +10,11 @@ target: bunch-linux-bundle
 
 local_conf_header:
   standard: |
-    BUNCH_LINUX_IMAGE = "bunch-linux-backup"
+    BUNCH_LINUX_IMAGE = "bunch-linux-demo"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
-    LICENSE_FLAGS_ACCEPTED = "gpl"
+    LICENSE_FLAGS_ACCEPTED = "commercial"
     
 
   buildinfo: |
