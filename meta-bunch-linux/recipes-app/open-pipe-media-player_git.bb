@@ -5,7 +5,7 @@ SRC_URI = "git://git@github.com/waelkarman/open-pipe-media-player.git;protocol=h
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "366e32d535c6e73fb7c51dfd098b455687c89684"
+SRCREV = "60e906504a98ad60eae0720c015356c4cbf7d07c"
 
 S = "${WORKDIR}/git"
 
