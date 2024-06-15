@@ -10,7 +10,7 @@ target: bunch-linux-bundle
 
 local_conf_header:
   standard: |
-    BUNCH_LINUX_IMAGE = "bunch-linux-minimal"
+    BUNCH_LINUX_IMAGE = "bunch-linux-backup"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
