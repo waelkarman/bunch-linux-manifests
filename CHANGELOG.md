@@ -52,6 +52,7 @@ All notable changes to this project will be documented in this file.
 - fixed swiotlb buffer error
 - fixed core clock frequencies issue
 - first release of the SDK
+- add multi-image support (minimal,dev-qt5,dev-qt6,demo) 
 
 <br><br><br>
 
