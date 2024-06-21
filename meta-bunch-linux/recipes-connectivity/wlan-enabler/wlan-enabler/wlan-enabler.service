@@ -1,7 +1,7 @@
 [Unit]
 Description=Bunch-Linux wlan enabler service
-After=weston.service
-Wants=weston.service
+After=multi-user.target
+Wants=multi-user.target
 
 [Service]
 Type=oneshot
