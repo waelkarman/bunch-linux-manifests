@@ -1,0 +1,11 @@
+[Unit]
+Description=WPA supplicant for %i
+Wants=network.target
+Before=network.target
+
+[Service]
+ExecStart=wpa_supplicant -i %i -c /etc/wpa_supplicant.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
