@@ -1,3 +1,3 @@
-SUMMARY = "BunchLinux is an embedded OS image where to integrate any possible software"
+SUMMARY = "bunch-linux-qt5 is an image that supports Qt6 development"
 
 require bunch-linux-core.inc

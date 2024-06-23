@@ -1,4 +1,4 @@
-SUMMARY = "Bunch Linux is an embedded OS image where to integrate any possible software"
+SUMMARY = "Bunch Linux core packages and features"
 
 inherit core-image
 
