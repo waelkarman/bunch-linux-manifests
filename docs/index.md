@@ -1,4 +1,3 @@
-
 # Welcome to Open Bunch Linux OS ~ Camel (v0.003 - preview) 
 <img src="miscellaneous/camel-desk.png">
 
@@ -6,7 +5,7 @@ Bunch Linux is a project created to fully understand the foundations of systems 
 
 To get an overview about current and future state refer to the [CHANGELOG.md](https://github.com/waelkarman/bunch-linux-manifests/blob/main/CHANGELOG.md) .
 
-Bunch Linux is slowly getting way more customized by adding new features, install new apps and support more sensors. The project targets to be working out of the box. The sources had been defined in the bunch-linux.yml manifest and will be collected by *KAS* *tool* that will download what needes and start the building process. 
+Bunch Linux is slowly getting way more customized by adding new features, install new apps and support more sensors. The project targets to be working out of the box. The sources had been defined in the bunch-linux.yml manifest and will be collected by *KAS* *tool* that will download what is needed and start the building process. 
 
 ## System
 The system runs the 6.6.y version of the linux kernel and U-Boot is used to handle the boot sequence. *Systemd* is raising the userspace up and all the startup services are depending on the *multi-user.target*.
@@ -45,7 +44,7 @@ The system combines several other repos such as:
 - [auto-update-service](https://github.com/waelkarman/bunch-linux-manifests/blob/main/meta-bunch-linux%2Frecipes-core%2Fbunch-update%2Fbunch-update%2Fbunch-update.sh) (Bash Script)
 - [test-char-driver](https://github.com/waelkarman/hello-module) (C)
 
-Services and applications are exchanging messages through a flexible and low latency interprocess communication mechanism based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. The interesting aspect of ZMQ is that the message exchanging mechanism is based on network protocols and that allows to any node over the network to be reached even nodes not defined on the localhost itself like cloud applications for example. <br>
+Services and applications are exchanging messages through a flexible and low latency interprocess communication mechanism based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly information and work as a single application. The interesting aspect of ZMQ is that the message exchanging mechanism is based on network protocols and that allows to any node over the network to be reached even nodes not defined on the localhost itself like cloud applications for example. <br>
 
 The following are messages exchanging models that had been tested into the system:<br/>
 - Request – Reply<br/>
@@ -61,13 +60,13 @@ Wiring:<br>
 
 The *sensor-app* has a grid and each supported sensor have a spot in the grid. The sensor-app allows the user to check the status of the supported sensors and control them directly from the UI. For example connecting a button as aforementioned, and pressing it, is possible to read on the sensors-app the state of the button as Pressed/Released furthermore touching on the sensor-app the spot reserved to the passive buzzer the buzzer will ring.
 
-The sensors-app is written in Qt6/QML. The services are implemented in Python3 and C++. The services written in python3 rely on the pi-blaster and raspi-gpio libraries to interact with the sensors while the services written in C++ utilize a custom library that directly interact with the sys-fs to control the GPIOs and mainly performs the following operations:
+The sensors-app is written in Qt6/QML. The services are implemented in Python3 and C++. The services written in Python3 rely on the pi-blaster and raspi-gpio libraries to interact with the sensors while the services written in C++ utilize a custom library that directly interact with the sys-fs to control the GPIOs and mainly performs the following operations:
 > echo [numGPIO] \> /sys/class/gpio/export<br/>
 > echo out > /sys/class/gpio/gpio[numGPIO]/direction<br/>
 > echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
 
 #### HMI ~ Wayland & xWayland
-The hmi is based on the native weston interface with some customization. To support app built for X Windows System, xwayland has been installed allowing X11 applications (like Nautilus) to work within the Wayland protocol. Xwayland acts like a wayland node and implements an X11 server that works as a proxy. Furthermore *QtWayland* is installed to allow Qt6 applications to be managed by the compositor.
+The HMI is based on the native weston interface with some customization. To support app built for X Windows System, xwayland has been installed allowing X11 applications (like Nautilus) to work within the Wayland protocol. Xwayland acts like a wayland node and implements an X11 server that works as a proxy. Furthermore *QtWayland* is installed to allow Qt6 applications to be managed by the compositor.
 
 <img src="miscellaneous/Gscheme.png" width="300" height="240">
 
@@ -78,7 +77,7 @@ Bunch-Linux installs a remote access feature (based on VNC) through which it is 
 <img src="miscellaneous/remote-access-lama.png" width="400" height="240">
 
 ## LOCAL & OTA System UPDATE 
-For going through the development process a fundamental step is to set-up a proper update process. A B partitions looks a good choice for separing rootfs and be able to update the system without any loss of data. <br/>
+For going through the development process a fundamental step is to set-up a proper update process. A/B partitions look like a good choice for separating rootfs and be able to update the system without any loss of data. <br/>
 <img src="miscellaneous/update-mechanism.png">
 
 The system is capable of automatic self-updating via OTA (Over-The-Air). It is initialized with two valid root partitions. Upon an update occurs the system is automatically installing the update into the inactive partition and switch the boot pointer to the updated ones. This way an older version of the system is always kept installed and used as fallback option in case the update process went wrong. 
@@ -157,5 +156,5 @@ To get the SDK run :
 > kas shell kas/bunch-linux.yml --update --force-checkout<br>
 > bitbake -c populate_sdk bunch-linux <br>
 
-at the end of the build the sdk will be placed in :
+at the end of the build the SDK will be placed in :
 > /build/tmp/deploy/sdk/raspberrypi4-64 <br>
