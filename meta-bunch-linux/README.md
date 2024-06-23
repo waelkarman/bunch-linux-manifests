@@ -4,6 +4,13 @@ Bunch linux is a project created to fully understand the foundations of systems 
 Please refer to the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/) for building.
 
 # bunch-linux-metalayer
+## Buildable images
+
+- bunch-linux-demo
+- bunch-linux-minimal
+- bunch-linux-qt5
+- bunch-linux-qt6
+
 ## System Update OTA
 set the right date to be able to sign the bundle.
 > date -s 'yyy/mm/gg'
@@ -33,9 +40,3 @@ populate /etc/wpa_supplicant.conf like:
 > udhcpc -i wlan0<br>
 
 
-## Supported images
-
-- bunch-linux-demo
-- bunch-linux-minimal
-- bunch-linux-qt5
-- bunch-linux-qt6
