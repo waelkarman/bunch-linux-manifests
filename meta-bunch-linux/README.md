@@ -33,14 +33,9 @@ populate /etc/wpa_supplicant.conf like:
 > udhcpc -i wlan0<br>
 
 
-For cross compiling add to image feature: tools-sdk <br>
-For compiling on the embedded dev: dev-pkgs
+## Supported images
 
-
-
-
->printf "%q" $(mkpasswd -m sha256crypt temppw)<br>
->PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"<br>
->EXTRA_USERS_PARAMS = " \\<br>
->    usermod -p '${PASSWD}' weston; \\<br>
->"
+- bunch-linux-demo
+- bunch-linux-minimal
+- bunch-linux-qt5
+- bunch-linux-qt6
