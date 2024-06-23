@@ -1,3 +1,3 @@
-SUMMARY = "BunchLinux is an embedded OS image where to integrate any possible software"
+SUMMARY = "bunch-linux-minimal is a basic image to experiment new feature quickly"
 
 require bunch-linux-core.inc
