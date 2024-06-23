@@ -9,5 +9,5 @@ IMAGE_INSTALL += " parted util-linux screen lsof wget net-tools ntp u-boot-fw-ut
 IMAGE_INSTALL += " systemd tree i2c-tools nano rauc jq v4l-utils curl" 
 IMAGE_INSTALL += " raspi-gpio pi-blaster libgpiod-dev rpi-gpio rpio"
 IMAGE_INSTALL += " python3-pyzmq python3 python3-pip"
-
+IMAGE_INSTALL += " supplicant-service wpa-supplicant"
 
