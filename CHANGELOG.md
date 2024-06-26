@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 <img src="docs/miscellaneous/lama-desk.png" width="350" height="200">
 
 ### Added
+- switch from repo-tool to kas
 - add ssh service.
 - install wifi driver and test wireless connection.
 - install bluetooth driver and test bt connection.
