@@ -3,7 +3,7 @@ header:
   includes:
     - kas/repo-settings.yml
 
-machine: bunch-raspberrypi4-64
+machine: rpi
 distro: bunch-linux-dist
 target: bunch-linux-bundle
 

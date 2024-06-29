@@ -16,7 +16,6 @@ local_conf_header:
     BOOT_DELAY_MS = "0"
     LICENSE_FLAGS_ACCEPTED = "commercial"
     
-
   buildinfo: |
     INHERIT += " rm_work"
     USER_CLASSES ?= "buildstats"

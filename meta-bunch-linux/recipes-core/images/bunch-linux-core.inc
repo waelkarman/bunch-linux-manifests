@@ -11,3 +11,4 @@ IMAGE_INSTALL += " raspi-gpio pi-blaster libgpiod-dev rpi-gpio rpio"
 IMAGE_INSTALL += " python3-pyzmq python3 python3-pip"
 IMAGE_INSTALL += " supplicant-service wpa-supplicant"
 
+

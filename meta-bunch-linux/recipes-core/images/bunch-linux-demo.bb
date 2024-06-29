@@ -20,7 +20,7 @@ IMAGE_INSTALL += " weston-xwayland xwayland opengl-es-cts"
 IMAGE_INSTALL += " hello-module"
 IMAGE_INSTALL += " systemdservices passivebuzzer-service button-service networkchecker-service nautilus icon-weston"
 IMAGE_INSTALL += " bunch-update neatvnc"
-IMAGE_INSTALL += " packagegroup-qt6-essentials packagegroup-qt6-addons sensors-app burger-app open-pipe-media-player gtk+3 mesa"
+IMAGE_INSTALL += " packagegroup-qt6-essentials packagegroup-qt6-addons sensors-app burger-app open-pipe-media-player gtk+3"
 IMAGE_INSTALL += " gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly ffmpeg"
 
 do_deploy_to_rasp() {
@@ -28,8 +28,8 @@ do_deploy_to_rasp() {
     # L'output è visibile al path: build/tmp/work/bunch_raspberrypi4_64-poky-linux/bunch-linux/1.0-r0/temp/log.do_deploy_to_rasp
     echo "Custom deploy task."
     echo "- current path: $(pwd)"
-    #scp $(pwd)/tmp/deploy/images/bunch-raspberrypi4-64/bunch-linux-bundle-bunch-raspberrypi4-64.raucb root@192.168.1.28:~/
-    #dd if=$(pwd)/tmp/deploy/images/bunch-raspberrypi4-64/bunch-linux-bundle-bunch-raspberrypi4-64.raucb of=/dev/sda bs=4M
+    #scp $(pwd)/tmp/deploy/images/rpi/bunch-linux-bundle-rpi.raucb root@192.168.1.28:~/
+    #dd if=$(pwd)/tmp/deploy/images/rpi/bunch-linux-bundle-rpi.raucb of=/dev/sda bs=4M
 }
 
 addtask deploy_to_rasp after do_image_complete
