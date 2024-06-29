@@ -87,9 +87,9 @@ The update process is performed by RAUC and the entire update process is connect
 
 
 ## Media
-ALSA + PipeWire, [WORK IN PROGRESS] 
+[WORK IN PROGRESS] 
 
-## Connectivity
+## Connectivity [deprecated]
 Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
 - list interfaces:<br>
 > ip link show<br>
