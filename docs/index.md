@@ -12,6 +12,10 @@ The system runs the 6.6.y version of the linux kernel and U-Boot is used to hand
 To view the entire system services, please use the following command: <br/>
 > systemctl list-units --type=service --all <br/>
 
+System configuration and boot sequence deeply documented at:<br>
+
+- [bunch-linux-boot-sequence](https://github.com/waelkarman/bunch-linux-boot-sequence) (dts, Kconfig)
+
 ## Topics 
 As highlighted, the primary goal is to grasp the essential principles of applications, their domain and their interaction with the system. This involves a proactive effort to integration of various types of applications and to thoroughly understand their functioning within the system.<br>
 The distro comprises the following topic:
