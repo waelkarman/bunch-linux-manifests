@@ -36,7 +36,7 @@ Bunch Linux combines more repositories such as:<br>
 
 System configuration and boot sequence deeply documented at:<br>
 
-- [bunch-linux-boot-sequence](https://github.com/waelkarman/bunch-linux-boot-sequence) (dts, .config)
+- [bunch-linux-boot-sequence](https://github.com/waelkarman/bunch-linux-boot-sequence) (dts, Kconfig)
 
 
 To test the latest prewiew please build from sources.<br>
