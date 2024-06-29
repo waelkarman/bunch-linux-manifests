@@ -34,6 +34,11 @@ Bunch Linux combines more repositories such as:<br>
 - [auto-update-service](https://github.com/waelkarman/bunch-linux-manifests/blob/main/meta-bunch-linux%2Frecipes-core%2Fbunch-update%2Fbunch-update%2Fbunch-update.sh) (Bash Script)
 - [test-char-driver](https://github.com/waelkarman/hello-module) (C)
 
+System configuration and boot sequence deeply documented at:<br>
+
+- [bunch-linux-boot-sequence](https://github.com/waelkarman/bunch-linux-boot-sequence) (dts, .config)
+
+
 To test the latest prewiew please build from sources.<br>
 
 # Build and run
