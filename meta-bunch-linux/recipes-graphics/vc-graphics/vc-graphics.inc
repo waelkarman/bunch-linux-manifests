@@ -4,7 +4,7 @@ LICENSE = "Broadcom-RPi"
 LIC_FILES_CHKSUM = "file://LICENCE;md5=86e53f5f5909ee66900418028de11780"
 
 PROVIDES = "virtual/libgles2 virtual/egl"
-COMPATIBLE_MACHINE = "rpi"
+COMPATIBLE_MACHINE = "bunch-raspberrypi4-64"
 
 INHIBIT_DEFAULT_DEPS = "1"
 

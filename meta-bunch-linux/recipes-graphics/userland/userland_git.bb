@@ -9,7 +9,7 @@ PROVIDES += "${@bb.utils.contains("MACHINE_FEATURES", "vc4graphics", "", "virtua
 PROVIDES += "virtual/libomxil"
 
 RPROVIDES:${PN} += "${@bb.utils.contains("MACHINE_FEATURES", "vc4graphics", "", "libgles2 egl libegl libegl1 libglesv2-2", d)}"
-COMPATIBLE_MACHINE = "^rpi$"
+COMPATIBLE_MACHINE = "bunch-raspberrypi4-64"
 
 SRCBRANCH = "master"
 SRCFORK = "raspberrypi"
