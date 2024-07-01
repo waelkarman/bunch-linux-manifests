@@ -93,14 +93,10 @@ The update process is performed by RAUC and the entire update process is connect
 ## Media
 [WORK IN PROGRESS] 
 
-## Connectivity [deprecated]
+## Connectivity
 Wifi and Bluetooth setting-app still not available but wifi connection is working setting it up manually:<br>
-- list interfaces:<br>
-> ip link show<br>
-- enable wlan0 interface:<br>
-> ip link set wlan0 up<br>
 
-add configuration to /etc/wpa_supplicant.conf :
+modify the network credentials in /etc/wpa_supplicant.conf :
 
 > ctrl_interface=/var/run/wpa_supplicant<br>
 > ctrl_interface_group=0<br>
@@ -113,10 +109,9 @@ add configuration to /etc/wpa_supplicant.conf :
 >         psk="insert here your password"<br>
 > }<br>
 
-Activate connection:<br>
+Restart wpa_supplicant@wlan0 service <br>
 
-> wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf<br>
-> udhcpc -i wlan0<br>
+> systemctl restart wpa_supplicant@wlan0
 
 ## Build on your host machine
 Tested host configuration:<br/>
