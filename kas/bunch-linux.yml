@@ -15,6 +15,7 @@ local_conf_header:
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
     LICENSE_FLAGS_ACCEPTED = "commercial"
+    IMAGE_FSTYPES = "wic"
     
 
   buildinfo: |
