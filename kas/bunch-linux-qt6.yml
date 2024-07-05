@@ -16,6 +16,9 @@ local_conf_header:
     BOOT_DELAY_MS = "0"
     LICENSE_FLAGS_ACCEPTED = "commercial"
     IMAGE_FSTYPES = "wic"
+    BBMASK += " \
+    meta-bunch-linux/recipes-dynamic/recipes-core/bunch-linux-qt5.bbappend \
+    "
     
 
   buildinfo: |
