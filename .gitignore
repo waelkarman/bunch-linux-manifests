@@ -2,6 +2,7 @@ build
 .vscode
 boot-doc
 meta-qt6
+meta-qt5
 meta-openembedded
 meta-raspberrypi
 meta-rauc
