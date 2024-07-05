@@ -32,15 +32,6 @@ repos:
       meta-webserver:
       meta-xfce:
 
-  meta-rauc:
-    url: https://github.com/rauc/meta-rauc.git
-    path: meta-rauc
-    branch: kirkstone
-
-  meta-qt6:
-    url: https://code.qt.io/yocto/meta-qt6.git
-    branch: "6.5"
-    
   boot-doc:
     url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
     branch: "main"

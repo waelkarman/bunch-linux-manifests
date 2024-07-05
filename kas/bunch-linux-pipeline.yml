@@ -1,7 +1,7 @@
 header:
   version: 11
   includes:
-    - kas/repo-settings.yml
+    - kas/repo-settings-demo.yml
 
 machine: bunch-raspberrypi4-64
 distro: bunch-linux-dist
