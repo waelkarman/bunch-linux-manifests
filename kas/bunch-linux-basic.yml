@@ -3,8 +3,8 @@ header:
   includes:
     - kas/repo-settings-basic.yml
 
-machine: bunch-raspberrypi4-64
-distro: bunch-linux-dist
+machine: qemux86-64
+distro: poky
 target: bunch-linux-basic
 
 
@@ -23,6 +23,7 @@ local_conf_header:
     meta-bunch-linux/recipes-dynamic/recipes-core/bunch-linux-demo.bbappend \
     meta-bunch-linux/recipes-app/sensors-app_git.bb \
     recipes-core/rauc/rauc/rauc_%.bbappend \
+    meta-bunch-linux/recipes-graphics/mesa/mesa_24.0.3.bb \
     recipes-dynamic/recipes-qt6/qtdeviceutilities_git.bbappend \
     "
     

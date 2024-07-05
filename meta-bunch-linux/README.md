@@ -39,4 +39,22 @@ populate /etc/wpa_supplicant.conf like:
 > wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf<br>
 > udhcpc -i wlan0<br>
 
+# Kernel Modules
 
+To test kernel modules quickly build the basic image
+
+> kas build ./kas/bunch-linux-basic.yml --update --force-checkout
+
+Install QEMU :
+
+> sudo apt install qemu-system-x86
+
+and run tha compiled image within qemu :
+
+> qemu-system-x86_64 -drive file=tmp/deploy/images/qemux86-64/bunch-linux-basic-qemux86-64.wic,format=raw -enable-kvm -cpu host -m 4096
+
+The installed module will be located at:
+
+> /lib/modules/kernel-version/extra/
+
+then use insmod to load the desired module.
