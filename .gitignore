@@ -1,8 +1,9 @@
-build/**
-.vscode/**
-meta-qt6/**
-meta-openembedded/**
-meta-raspberrypi/**
-meta-rauc/**
-poky/**
-venv/**
+build
+.vscode
+boot-doc
+meta-qt6
+meta-openembedded
+meta-raspberrypi
+meta-rauc
+poky
+venv
