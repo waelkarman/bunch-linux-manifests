@@ -41,6 +41,11 @@ repos:
     url: https://code.qt.io/yocto/meta-qt6.git
     branch: "6.5"
 
+  meta-qt5:
+    url: https://github.com/meta-qt5/meta-qt5.git
+    path: meta-qt5
+    branch: kirkstone
+
   boot-doc:
     url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
     branch: "main"
