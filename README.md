@@ -32,7 +32,7 @@ Bunch Linux combines more repositories such as:<br>
 - [button-service](https://github.com/waelkarman/button-service) (C++/17)
 - [networkchecker-service](https://github.com/waelkarman/networkchecker-service) (Python3)
 - [auto-update-service](https://github.com/waelkarman/bunch-linux-manifests/blob/main/meta-bunch-linux%2Frecipes-core%2Fbunch-update%2Fbunch-update%2Fbunch-update.sh) (Bash Script)
-- [test-char-driver](https://github.com/waelkarman/hello-module) (C)
+- [custom-kernel-modules](https://github.com/waelkarman/kernel-modules) (C)
 
 System configuration and boot sequence deeply documented at:<br>
 
