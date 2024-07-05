@@ -1,7 +1,5 @@
 SUMMARY = "BunchLinuxDemo is a demo to demonstrate the possible use cases of the system"
 
-require bunch-linux-core.inc
-
 inherit populate_sdk_qt6
 inherit extrausers
 
