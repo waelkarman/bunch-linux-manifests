@@ -1,7 +1,7 @@
 header:
   version: 11
   includes:
-    - kas/repo-settings.yml
+    - kas/repo-settings-qt6.yml
 
 machine: bunch-raspberrypi4-64
 distro: bunch-linux-dist
@@ -10,7 +10,7 @@ target: bunch-linux-bundle
 
 local_conf_header:
   standard: |
-    BUNCH_LINUX_IMAGE = "bunch-linux-demo"
+    BUNCH_LINUX_IMAGE = "bunch-linux-qt6"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
