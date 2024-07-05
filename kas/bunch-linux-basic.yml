@@ -1,16 +1,15 @@
 header:
   version: 11
   includes:
-    - kas/repo-settings-qt5.yml
+    - kas/repo-settings-basic.yml
 
 machine: bunch-raspberrypi4-64
 distro: bunch-linux-dist
-target: bunch-linux-bundle
+target: bunch-linux-basic
 
 
 local_conf_header:
   standard: |
-    BUNCH_LINUX_IMAGE = "bunch-linux-qt5"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
@@ -44,8 +43,6 @@ bblayers_conf_header:
     ${YOCTOROOT}/poky/meta \
     ${YOCTOROOT}/poky/meta-poky \
     ${YOCTOROOT}/poky/meta-yocto-bsp \
-    ${YOCTOROOT}/meta-qt5 \
-    ${YOCTOROOT}/meta-rauc \ 
     ${YOCTOROOT}/meta-raspberrypi \
     ${YOCTOROOT}/meta-bunch-linux \
     ${YOCTOROOT}/meta-openembedded/meta-filesystems \
