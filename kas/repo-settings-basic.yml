@@ -5,7 +5,7 @@ repos:
   poky:
     url: https://git.yoctoproject.org/poky
     path: poky
-    branch: kirkstone
+    branch: scarthgap
     layers:
       meta:
       meta-poky:
@@ -14,12 +14,12 @@ repos:
   meta-raspberrypi:
     url: https://git.yoctoproject.org/meta-raspberrypi
     path: meta-raspberrypi
-    branch: kirkstone
+    branch: scarthgap
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
     path: meta-openembedded
-    branch: kirkstone
+    branch: scarthgap
     layers:
       meta-filesystems:
       meta-gnome:

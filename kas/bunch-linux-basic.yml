@@ -25,6 +25,10 @@ local_conf_header:
     recipes-core/rauc/rauc/rauc_%.bbappend \
     meta-bunch-linux/recipes-graphics/mesa/mesa_24.0.3.bb \
     recipes-dynamic/recipes-qt6/qtdeviceutilities_git.bbappend \
+    meta-bunch-linux/recipes-multimedia/gstreamer/gstreamer1.0-plugins-good_1.20.7.bbappend \
+    meta-bunch-linux/recipes-patch/nghttp2_1.47.0.bbappend \
+    meta-bunch-linux/recipes-graphics/meson/meson_0.63.3.bb \
+    meta-bunch-linux/recipes-graphics/env-config/* \
     "
     
 
@@ -54,8 +58,8 @@ bblayers_conf_header:
     ${YOCTOROOT}/poky/meta \
     ${YOCTOROOT}/poky/meta-poky \
     ${YOCTOROOT}/poky/meta-yocto-bsp \
-    ${YOCTOROOT}/meta-raspberrypi \
     ${YOCTOROOT}/meta-bunch-linux \
+    ${YOCTOROOT}/meta-raspberrypi \
     ${YOCTOROOT}/meta-openembedded/meta-filesystems \
     ${YOCTOROOT}/meta-openembedded/meta-gnome \
     ${YOCTOROOT}/meta-openembedded/meta-initramfs \
