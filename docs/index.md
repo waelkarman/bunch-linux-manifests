@@ -135,7 +135,7 @@ clone this manifest :<br/>
 Start the to build the system: <br/>
 
 > git pull <br>
-> kas build kas/bunch-linux.yml --update --force-checkout<br/>
+> kas build kas/bunch-linux-demo.yml --update --force-checkout<br/>
 
 It could take a while depending on the power of the machine used to compile. <br/>
 
@@ -145,7 +145,7 @@ The compiled image will be located into the build folder at the following path:
 
 Getting the image it should be flashed through linux dd, bmaptool command or using third party software like *BalenaEtcher*, *Raspberry* *Imager*.
 
-> bunzip2 -c bunch-linux-bunch-raspberrypi4-64.wic.bz2 \| sudo dd of=/dev/sda bs=1M  status=progress && sync
+> bunzip2 -c bunch-linux-demo-bunch-raspberrypi4-64.wic.bz2 \| sudo dd of=/dev/sda bs=1M  status=progress && sync
 
 > bmaptool copy \<IMAGE\>.wic.gz /dev/sda && sync
 
@@ -153,7 +153,7 @@ Getting the image it should be flashed through linux dd, bmaptool command or usi
 To get the SDK run :
 
 > kas shell kas/bunch-linux.yml --update --force-checkout<br>
-> bitbake -c populate_sdk bunch-linux <br>
+> bitbake -c populate_sdk bunch-linux-demo <br>
 
 at the end of the build the SDK will be placed in :
 > /build/tmp/deploy/sdk/raspberrypi4-64 <br>

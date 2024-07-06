@@ -38,11 +38,10 @@ System configuration and boot sequence deeply documented at:<br>
 
 - [bunch-linux-boot-sequence](https://github.com/waelkarman/bunch-linux-boot-sequence) (dts, Kconfig)
 
-
-To test the latest prewiew please build from sources.<br>
-
 # Build and run
 Instruction on the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/)
+
+To test the latest prewiew please build from sources.<br>
 
 # Join and contribute
 Contributing to a project like this can enhance your skills and elevate your awareness to a higher level. This project is rooted in the desire to thoroughly learn about systems and applications and more. Integrating applications into a customized and lightweight version of Linux provides a deeper understanding of the domain in which the applications are employed.<br>
