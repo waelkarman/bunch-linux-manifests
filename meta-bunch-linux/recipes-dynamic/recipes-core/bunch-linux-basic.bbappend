@@ -2,5 +2,5 @@ SUMMARY = "bunch-linux-basic is a basic image to dive into the kernel developmen
 
 IMAGE_FEATURES += " debug-tweaks tools-debug"
 
-IMAGE_INSTALL += " custom-kernel-modules"
+IMAGE_INSTALL += " custom-kernel-modules kernel-drivers-tests"
 
