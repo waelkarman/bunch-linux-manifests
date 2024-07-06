@@ -51,10 +51,10 @@ Install QEMU :
 
 and run tha compiled image within qemu :
 
-> qemu-system-x86_64 -drive file=tmp/deploy/images/qemux86-64/bunch-linux-basic-qemux86-64.wic,format=raw -enable-kvm -cpu host -m 4096
+> qemu-system-x86_64 -drive file=build/tmp/deploy/images/qemux86-64/bunch-linux-basic-qemux86-64.rootfs.wic,format=raw -enable-kvm -cpu host -m 4096
 
 The installed module will be located at:
 
-> /lib/modules/kernel-version/extra/
+> /lib/modules/kernel-version/updates/
 
 then use insmod to load the desired module.
