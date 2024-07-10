@@ -1,5 +1,7 @@
 ## Welcome to Open Bunch Linux OS [in development]
 [Project started on 28-Aug-2022]<br><br>
+The current version will be soon replaced with a clean and refactored based on Scarthgap follow the discussion [HERE](https://github.com/waelkarman/bunch-linux-manifests/issues/36)
+<br><br>
 The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS and have fun! <br>
 To get an overview about current and future state refer to the [CHANGELOG.md](https://github.com/waelkarman/bunch-linux-manifests/blob/main/CHANGELOG.md) .
 <br>
