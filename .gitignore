@@ -6,5 +6,6 @@ meta-qt5
 meta-openembedded
 meta-raspberrypi
 meta-rauc
+meta-clang
 poky
 venv
