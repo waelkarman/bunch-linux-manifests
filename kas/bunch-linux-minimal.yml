@@ -14,7 +14,7 @@ local_conf_header:
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
-    LICENSE_FLAGS_ACCEPTED = "commercial"
+    LICENSE_FLAGS_ACCEPTED = "commercial synaptics-killswitch gpl"
     IMAGE_FSTYPES = "wic"
     BBMASK += " \
     meta-bunch-linux/recipes-app/burger-app_git.bb \
@@ -23,6 +23,9 @@ local_conf_header:
     meta-bunch-linux/recipes-dynamic/recipes-core/bunch-linux-qt5.bbappend \
     meta-bunch-linux/recipes-dynamic/recipes-core/bunch-linux-demo.bbappend \
     recipes-dynamic/recipes-qt6/qtdeviceutilities_git.bbappend \
+    meta-bunch-linux/recipes-graphics/env-config \
+    meta-bunch-linux/recipes-patch \
+    meta-bunch-linux/recipes-multimedia \
     "
     
 

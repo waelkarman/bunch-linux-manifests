@@ -1,7 +1,6 @@
 SUMMARY = "configure weston env"
 LICENSE = "CLOSED"
 
-#FILESEXTRAPATHS:prepend := "${THISDIR}:"
 DEPENDS += "weston weston-init"
 SRC_URI += "file://gear.png \
             file://terminal1.png \
