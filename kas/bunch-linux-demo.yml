@@ -14,8 +14,10 @@ local_conf_header:
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
-    LICENSE_FLAGS_ACCEPTED = "commercial"
+    LICENSE_FLAGS_ACCEPTED = "commercial synaptics-killswitch gpl"
     IMAGE_FSTYPES = "wic"
+    BB_NUMBER_THREADS = "10"
+    PARALLEL_MAKE="-j 9" 
     BBMASK += " \
     meta-bunch-linux/recipes-dynamic/recipes-core/bunch-linux-qt5.bbappend \
     "
@@ -24,6 +26,7 @@ local_conf_header:
     INHERIT += " rm_work"
     USER_CLASSES ?= "buildstats"
     PATCHRESOLVE = "noop"
+    PACKAGE_EXCLUDE = "connman connman-client connman-gnome"
     BB_DISKMON_DIRS ??= "\
     STOPTASKS,${TMPDIR},1G,100K \
     STOPTASKS,${DL_DIR},1G,100K \
@@ -46,8 +49,11 @@ bblayers_conf_header:
     ${YOCTOROOT}/poky/meta \
     ${YOCTOROOT}/poky/meta-poky \
     ${YOCTOROOT}/poky/meta-yocto-bsp \
+    ${YOCTOROOT}/poky/meta-selftest \
+    ${YOCTOROOT}/poky/meta-skeleton \
     ${YOCTOROOT}/meta-qt6 \
     ${YOCTOROOT}/meta-rauc \ 
+    ${YOCTOROOT}/meta-clang \ 
     ${YOCTOROOT}/meta-raspberrypi \
     ${YOCTOROOT}/meta-bunch-linux \
     ${YOCTOROOT}/meta-openembedded/meta-filesystems \
