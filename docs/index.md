@@ -23,7 +23,7 @@ As highlighted, the primary goal is to grasp the essential principles of applica
 The distro comprises the following topic:
 
 - Linux kernel 6.6.y
-- Yocto ~ kirkstone
+- Yocto ~ Scarthgap
 - C
 - C++/17
 - Qt6/QML
