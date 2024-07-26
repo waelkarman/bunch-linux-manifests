@@ -1,4 +1,4 @@
-# Welcome to Open Bunch Linux OS ~ Camel (v0.003 - preview) 
+# Welcome to Open Bunch Linux OS ~ Camel (v0.003 - not released) 
 <img src="miscellaneous/camel-desk.png">
 
 Bunch Linux is a project created to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS. The goal is to learn as much as possible and of course, have fun!
