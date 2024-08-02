@@ -1,12 +1,11 @@
 name: Build on Ubuntu Latest
 
-on: [pull_request]
+on: workflow_dispatch
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: List files in the repository
