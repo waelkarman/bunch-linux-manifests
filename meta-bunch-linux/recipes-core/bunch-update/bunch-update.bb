@@ -8,6 +8,8 @@ SRC_URI += "file://update.service \
 
 inherit systemd
 
+RAUC_BUNDLE_FORMAT="plain"
+
 do_install:append() {
     install -Dm755 ${WORKDIR}/bunch-update.sh ${D}/${bindir}/bunch-update.sh
     install -Dm 644 ${WORKDIR}/update.service ${D}${systemd_system_unitdir}/update.service
