@@ -5,8 +5,6 @@ header:
 
 machine: raspberrypi4-64
 distro: bunch-linux-dist
-target: bunch-linux-bundle
-
 
 local_conf_header:
   standard: |
@@ -20,8 +18,8 @@ local_conf_header:
     LICENSE_FLAGS_ACCEPTED = "commercial synaptics-killswitch gpl"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     IMAGE_FSTYPES = "wic"
-    BB_NUMBER_THREADS = "10"
-    PARALLEL_MAKE="-j 9" 
+    BB_NUMBER_THREADS = "5"
+    PARALLEL_MAKE="-j 5" 
     CMDLINE_ROOTFS = ""
     RPI_USE_U_BOOT="1"
     HDMI_ENABLE_4KP60="1"
