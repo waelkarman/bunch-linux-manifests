@@ -15,5 +15,7 @@ jobs:
         run: pip3 install kas
       - name: Install required deps
         run: sudo apt install chrpath diffstat zstd
-      - name: build 
-        run: kas build kas/bunch-linux-demo.yml --update --force-checkout
+      - name: Setup build folder
+        run: kas checkout kas/bunch-linux-demo.yml
+      - name: Build
+        run: bitbake bunch-linux-demo
