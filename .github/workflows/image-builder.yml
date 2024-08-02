@@ -17,7 +17,5 @@ jobs:
         run: sudo apt install chrpath diffstat zstd
       - name: Setup build folder
         run: kas checkout kas/bunch-linux-demo.yml
-      - name: Setup environment
-        run: source poky/oe-init-build-env
-      - name: Build
-        run: bitbake bunch-linux-demo
+      - name: Setup environment and build
+        run: source poky/oe-init-build-env; bitbake bunch-linux-demo
