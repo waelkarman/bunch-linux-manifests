@@ -368,7 +368,8 @@ clone this manifest :<br/>
 Start the to build the system: <br/>
 
 > git pull <br>
-> kas build kas/bunch-linux-demo.yml --update --force-checkout<br/>
+> kas checkout kas/bunch-linux-demo.yml<br/>
+> bitbake bunch-linux-demo<br/>
 
 It could take a while depending on the power of the machine used to compile. <br/>
 
