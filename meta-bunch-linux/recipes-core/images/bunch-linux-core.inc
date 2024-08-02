@@ -10,7 +10,7 @@ IMAGE_INSTALL += " weston-xwayland"
 # CONFIGURED
 IMAGE_INSTALL += " u-boot u-boot-fw-utils systemd rauc"
 IMAGE_INSTALL += " alsa-utils alsa-utils-alsatplg alsa-utils-aplay alsa-utils-amixer alsa-utils-alsamixer alsa-utils-speakertest alsa-utils-midi alsa-utils-aconnect alsa-utils-aseqnet alsa-utils-iecset alsa-utils-alsactl alsa-utils-aseqdump alsa-utils-alsaloop alsa-utils-alsaucm alsa-utils-scripts alsa-utils-nhltdmicinfo"
-IMAGE_INSTALL += " libosmesa mesa-dev mesa-tools libgles3-mesa-dev libgles2-mesa libegl-mesa libgbm libgl-mesa mesa opengl-es-cts"
+IMAGE_INSTALL += " mesa-megadriver libglapi libosmesa mesa-dev mesa-tools libgles3-mesa-dev libgles2-mesa libgles1-mesa libegl-mesa libgbm libgl-mesa mesa opengl-es-cts"
 IMAGE_INSTALL += " gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad-opencv gstreamer1.0-omx"
 IMAGE_INSTALL += " gstreamer1.0 gstreamer1.0-dev gstreamer1.0-bash-completion gstreamer1.0-dbg gstreamer1.0-libav ffmpeg gst-examples"
 IMAGE_INSTALL += " gtk+3 gtk4"
@@ -24,3 +24,7 @@ IMAGE_INSTALL += " xwayland"
 # TESTS
 # udev udev-extraconf v4l-utils base-files packagegroup-rpi-test
 
+# libegl1-mesa libgl1-mesa-dri
+# mesa-dri mesa-egl mesa-gles
+
+IMAGE_INSTALL += ""

@@ -3,7 +3,7 @@ header:
   includes:
     - kas/repo-settings-demo.yml
 
-machine: bunch-raspberrypi4-64
+machine: raspberrypi4-64
 distro: bunch-linux-dist
 target: bunch-linux-bundle
 
@@ -14,10 +14,18 @@ local_conf_header:
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
+    GPU_MEM_256 = "256"
+    VC4GRAPHICS = "1"
+    DISABLE_SPLASH = "1"
     LICENSE_FLAGS_ACCEPTED = "commercial synaptics-killswitch gpl"
+    PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     IMAGE_FSTYPES = "wic"
     BB_NUMBER_THREADS = "10"
     PARALLEL_MAKE="-j 9" 
+    CMDLINE_ROOTFS = ""
+    RPI_USE_U_BOOT="1"
+    HDMI_ENABLE_4KP60="1"
+    WKS_FILE = "rauc-sdimage-raspberrypi.wks"
     BBMASK += " \
     meta-bunch-linux/recipes-dynamic/recipes-core/bunch-linux-qt5.bbappend \
     "
