@@ -16,4 +16,4 @@ jobs:
       - name: Install required deps
         run: sudo apt install chrpath diffstat zstd
       - name: build 
-        run: kas build kas/bunch-linux-pipeline.yml --update --force-checkout
+        run: kas build kas/bunch-linux-demo.yml --update --force-checkout
