@@ -53,7 +53,8 @@ All notable changes to this project will be documented in this file.
 - merge manifest and metalayer to simplify contributions and discussions
 - fixed core clock frequencies issue
 - first release of the SDK
-- add multi-image support (minimal,dev-qt5,dev-qt6,demo) 
+- add multi-image support (minimal,dev-qt5,dev-qt6,demo)
+- use HW acceleration when possible 
 
 <br><br><br>
 
