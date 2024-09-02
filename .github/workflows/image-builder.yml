@@ -16,4 +16,4 @@ jobs:
       - name: Install required deps
         run: sudo apt install chrpath diffstat zstd
       - name: Checkout and build
-        run: source poky/oe-init-build-env; bitbake bunch-linux-demo
+        run: cd $GITHUB_WORKSPACE/bunch-linux-manifests; source poky/oe-init-build-env; bitbake bunch-linux-demo
