@@ -1,11 +1,11 @@
-name: Build on Ubuntu Latest
+name: Build on Local Host
 
 on: [workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "This job is now running on local host!"
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: List files in the repository
@@ -16,4 +16,4 @@ jobs:
       - name: Install required deps
         run: sudo apt install chrpath diffstat zstd
       - name: Checkout and build
-        run: kas checkout kas/bunch-linux-demo.yml; bitbake bunch-linux-demo
+        run: source poky/oe-init-build-env; bitbake bunch-linux-demo
