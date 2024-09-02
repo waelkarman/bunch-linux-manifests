@@ -20,11 +20,3 @@ IMAGE_INSTALL += " python3 python3-pip python3-pyzmq"
 IMAGE_INSTALL += " util-linux i2c-tools nano picocom rsync tree curl jq screen wget net-tools ntp parted htop cpufrequtils strace gdb"
 IMAGE_INSTALL += " pi-blaster raspi-gpio rpi-gpio rpio libgpiod"
 IMAGE_INSTALL += " xwayland"
-
-# TESTS
-# udev udev-extraconf v4l-utils base-files packagegroup-rpi-test
-
-# libegl1-mesa libgl1-mesa-dri
-# mesa-dri mesa-egl mesa-gles
-
-IMAGE_INSTALL += ""
