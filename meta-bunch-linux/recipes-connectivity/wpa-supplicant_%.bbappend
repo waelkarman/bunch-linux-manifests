@@ -4,6 +4,8 @@ do_install:prepend() {
 touch 10-dhcp.network
 echo "[Match]
 Name=wlan0
+country=IT
+
 
 [Network]
 DHCP=yes
