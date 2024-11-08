@@ -3,9 +3,9 @@ header:
   includes:
     - kas/repo-settings-minimal.yml
 
-machine: bunch-raspberrypi4-64
+machine: raspberrypi4-64
 distro: bunch-linux-dist
-target: bunch-linux-bundle
+target: bunch-linux-minimal
 
 
 local_conf_header:
@@ -26,6 +26,7 @@ local_conf_header:
     meta-bunch-linux/recipes-graphics/env-config \
     meta-bunch-linux/recipes-patch \
     meta-bunch-linux/recipes-multimedia \
+    meta-bunch-linux/recipes-dynamic/recipes-qt6/qtpdf_git.bbappend \
     "
     
 

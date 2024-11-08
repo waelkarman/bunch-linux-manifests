@@ -29,6 +29,8 @@ local_conf_header:
     meta-bunch-linux/recipes-patch/nghttp2_1.47.0.bbappend \
     meta-bunch-linux/recipes-graphics/meson/meson_0.63.3.bb \
     meta-bunch-linux/recipes-graphics/env-config/* \
+    meta-bunch-linux/recipes-core/rauc/rauc/rauc_git.bbappend \
+    meta-bunch-linux/recipes-dynamic/recipes-qt6/qtpdf_git.bbappend \
     "
     
 
