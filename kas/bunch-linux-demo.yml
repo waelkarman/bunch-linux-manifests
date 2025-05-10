@@ -15,7 +15,6 @@ local_conf_header:
     GPU_MEM_256 = "256"
     VC4GRAPHICS = "1"
     DISABLE_SPLASH = "1"
-    LICENSE_FLAGS_ACCEPTED = "commercial synaptics-killswitch gpl"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     IMAGE_FSTYPES = "wic"
     BB_NUMBER_THREADS = "5"
@@ -24,9 +23,6 @@ local_conf_header:
     RPI_USE_U_BOOT="1"
     HDMI_ENABLE_4KP60="1"
     WKS_FILE = "rauc-sdimage-raspberrypi.wks"
-    BBMASK += " \
-    meta-bunch-linux/recipes-dynamic/recipes-core/bunch-linux-qt5.bbappend \
-    "
 
   buildinfo: |
     INHERIT += " rm_work"
