@@ -4,6 +4,8 @@ inherit core-image
 inherit populate_sdk_qt6
 inherit extrausers
 
+IMAGE_INSTALL += "packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
+
 # To generate a valid pass: printf "%q" $(mkpasswd -m sha256crypt admin-nosexinthechurch)
 PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"
 
