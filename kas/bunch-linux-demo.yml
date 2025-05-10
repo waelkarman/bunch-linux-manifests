@@ -3,7 +3,7 @@ header:
 
 machine: raspberrypi4-64
 distro: bunch-linux-dist
-target: bunch-linux-demo
+target: bunch-linux-bundle
 
 local_conf_header:
   standard: |
