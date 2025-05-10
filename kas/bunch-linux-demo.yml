@@ -1,10 +1,9 @@
 header:
   version: 11
-  includes:
-    - kas/repo-settings-demo.yml
 
 machine: raspberrypi4-64
 distro: bunch-linux-dist
+target: bunch-linux-demo
 
 local_conf_header:
   standard: |
@@ -41,13 +40,10 @@ local_conf_header:
     HALT,/tmp,10M,1K \
     "
 
-
 bblayers_conf_header:
   standard: |
     POKY_BBLAYERS_CONF_VERSION = "2"
-    BBPATH = "${TOPDIR}"
     YOCTOROOT = "${@os.path.abspath(os.path.join("${TOPDIR}", os.pardir))}"
-    BBFILES ?= ""
     BBLAYERS = " \
     ${YOCTOROOT}/poky/meta \
     ${YOCTOROOT}/poky/meta-poky \
@@ -70,3 +66,52 @@ bblayers_conf_header:
     ${YOCTOROOT}/meta-openembedded/meta-webserver \
     ${YOCTOROOT}/meta-openembedded/meta-xfce \
     "
+
+
+repos:
+  poky:
+    url: https://git.yoctoproject.org/poky
+    path: poky
+    branch: scarthgap
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-raspberrypi:
+    url: https://git.yoctoproject.org/meta-raspberrypi
+    path: meta-raspberrypi
+    branch: scarthgap
+
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    path: meta-openembedded
+    branch: scarthgap
+    layers:
+      meta-filesystems:
+      meta-gnome:
+      meta-initramfs:
+      meta-multimedia:
+      meta-networking:
+      meta-oe:
+      meta-perl:
+      meta-python:
+      meta-webserver:
+      meta-xfce:
+
+  meta-rauc:
+    url: https://github.com/rauc/meta-rauc.git
+    path: meta-rauc
+    branch: scarthgap
+
+  meta-qt6:
+    url: https://code.qt.io/yocto/meta-qt6.git
+    branch: "6.7"
+    
+  boot-doc:
+    url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
+    branch: "main"
+
+  meta-clang:
+    url: https://github.com/kraj/meta-clang.git
+    branch: scarthgap
