@@ -15,6 +15,7 @@ local_conf_header:
     GPU_MEM_256 = "256"
     VC4GRAPHICS = "1"
     DISABLE_SPLASH = "1"
+    LICENSE_FLAGS_ACCEPTED = "commercial synaptics-killswitch gpl"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     IMAGE_FSTYPES = "wic"
     BB_NUMBER_THREADS = "5"
