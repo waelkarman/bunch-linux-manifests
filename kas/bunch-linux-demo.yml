@@ -15,11 +15,11 @@ local_conf_header:
     GPU_MEM_256 = "256"
     VC4GRAPHICS = "1"
     DISABLE_SPLASH = "1"
-    LICENSE_FLAGS_ACCEPTED = "commercial synaptics-killswitch gpl"
+    LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch gpl"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     IMAGE_FSTYPES = "wic"
-    BB_NUMBER_THREADS = "5"
-    PARALLEL_MAKE="-j 5" 
+    BB_NUMBER_THREADS = "8"
+    PARALLEL_MAKE="-j 8" 
     CMDLINE_ROOTFS = ""
     RPI_USE_U_BOOT="1"
     HDMI_ENABLE_4KP60="1"
@@ -43,7 +43,6 @@ local_conf_header:
 
 bblayers_conf_header:
   standard: |
-    POKY_BBLAYERS_CONF_VERSION = "2"
     YOCTOROOT = "${@os.path.abspath(os.path.join("${TOPDIR}", os.pardir))}"
     BBLAYERS = " \
     ${YOCTOROOT}/poky/meta \
