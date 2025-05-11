@@ -7,5 +7,5 @@ PACKAGECONFIG ??= " \
     bz2 closedcaption curl dash dtls hls openssl sbc smoothstreaming \
     sndfile ttml uvch264 webp \
     ${@bb.utils.contains('TUNE_FEATURES', 'mx32', '', 'rsvg', d)} \
-    curl dash directfb faac kms opencv openh264 rtmp tinyalsa v4l2codecs wayland webp x11 x265\
+    curl dash directfb kms opencv rtmp tinyalsa v4l2codecs wayland webp x11 \
 "
