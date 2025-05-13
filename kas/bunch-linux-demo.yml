@@ -30,6 +30,7 @@ local_conf_header:
     USER_CLASSES ?= "buildstats"
     PATCHRESOLVE = "noop"
     PACKAGE_EXCLUDE = "connman connman-client connman-gnome"
+    PACKAGECONFIG:append:pn-qtbase = " eglfs kms gbm gl"
     BB_DISKMON_DIRS ??= "\
     STOPTASKS,${TMPDIR},1G,100K \
     STOPTASKS,${DL_DIR},1G,100K \
