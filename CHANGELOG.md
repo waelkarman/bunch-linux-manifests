@@ -39,7 +39,7 @@ All notable changes to this project will be documented in this file.
 - add remote access service (rdp,vnc).
 
 
-## Camel [0.0.3] -  2024-##-## 
+## Camel [0.0.3] -  2025-##-## 
 <img src="docs/miscellaneous/camel-desk.png" width="350" height="200">
 
 ### Added 
@@ -49,12 +49,8 @@ All notable changes to this project will be documented in this file.
 - upgrade linux kernel from 5.15.x to 6.6.y
 - upgrade weston to 13.0.1
 - upgrade to Scarthgap
-- set up a pipeline for CI/CD
-- merge manifest and metalayer to simplify contributions and discussions
-- fixed core clock frequencies issue
 - first release of the SDK
 - add multi-image support (minimal,dev-qt5,dev-qt6,demo)
-- use HW acceleration when possible 
 
 <br><br><br>
 
