@@ -7,6 +7,8 @@ meta-openembedded
 meta-raspberrypi
 meta-rauc
 meta-clang
+meta-browser
+meta-lts-mixins
 poky
 venv
 .kas_shell_history

@@ -32,7 +32,7 @@ IMAGE_INSTALL += " xwayland weston-xwayland"
 IMAGE_INSTALL += " packagegroup-qt6-essentials packagegroup-qt6-addons"
 
 # CUSTOM
+IMAGE_INSTALL += " webkitgtk"
 IMAGE_INSTALL += " bunch-update neatvnc"
 IMAGE_INSTALL += " sensors-app burger-app open-pipe-media-player custom-kernel-modules nautilus"
 IMAGE_INSTALL += " systemdservices passivebuzzer-service button-service networkchecker-service icon-weston"
-
