@@ -73,6 +73,7 @@ repos:
     url: https://git.yoctoproject.org/poky
     path: poky
     branch: scarthgap
+    commit: 1f2eca0a8e6fffd26f4b4a78736035385b014acc
     layers:
       meta:
       meta-poky:
@@ -82,11 +83,13 @@ repos:
     url: https://git.yoctoproject.org/meta-raspberrypi
     path: meta-raspberrypi
     branch: scarthgap
+    commit: 3b27c95c163a042f8056066ec3d27edfcc42da7f
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
     path: meta-openembedded
     branch: scarthgap
+    commit: e92d0173a80ea7592c866618ef5293203c50544c
     layers:
       meta-filesystems:
       meta-gnome:
@@ -103,10 +106,12 @@ repos:
     url: https://github.com/rauc/meta-rauc.git
     path: meta-rauc
     branch: scarthgap
+    commit: a0f4a8b9986954239850b9d4256c003c91e6b931
 
   meta-qt6:
     url: https://code.qt.io/yocto/meta-qt6.git
     branch: "6.6"
+    commit: 92019beed22aed8847c585c568cfcf41ef4dc8b7
     
   boot-doc:
     url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
@@ -115,15 +120,14 @@ repos:
   meta-clang:
     url: https://github.com/kraj/meta-clang.git
     branch: scarthgap
+    commit: eaa08939eaec9f620b14742ff3ac568553683034
 
   meta-browser:
     url: https://github.com/OSSystems/meta-browser.git
     branch: scarthgap
+    commit: 2dabbb1bc1488f244bf66674fe7268a44dcc0d79
 
   meta-lts-mixins:
     url: https://git.yoctoproject.org/meta-lts-mixins
     branch: scarthgap/rust
-
-  meta-lts-mixins:
-    url: https://git.yoctoproject.org/meta-lts-mixins
-    branch: scarthgap/rust
+    commit: a8046d5ec53b1856169ac795aa87cb0d5db84c04
