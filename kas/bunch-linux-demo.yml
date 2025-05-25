@@ -8,7 +8,6 @@ target: bunch-linux-bundle
 local_conf_header:
   standard: |
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"
-    TMPDIR = "${TOPDIR}/build/tmp"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
@@ -18,8 +17,8 @@ local_conf_header:
     LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch gpl"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     IMAGE_FSTYPES = "wic"
-    BB_NUMBER_THREADS = "8"
-    PARALLEL_MAKE="-j 8" 
+    BB_NUMBER_THREADS = "15"
+    PARALLEL_MAKE="-j 15" 
     CMDLINE_ROOTFS = ""
     RPI_USE_U_BOOT="1"
     HDMI_ENABLE_4KP60="1"
@@ -54,10 +53,8 @@ bblayers_conf_header:
     ${YOCTOROOT}/meta-qt6 \
     ${YOCTOROOT}/meta-rauc \ 
     ${YOCTOROOT}/meta-clang \ 
-    ${YOCTOROOT}/meta-lts-mixins \
     ${YOCTOROOT}/meta-raspberrypi \
     ${YOCTOROOT}/meta-bunch-linux \
-    ${YOCTOROOT}/meta-browser/meta-chromium \
     ${YOCTOROOT}/meta-openembedded/meta-filesystems \
     ${YOCTOROOT}/meta-openembedded/meta-gnome \
     ${YOCTOROOT}/meta-openembedded/meta-initramfs \
@@ -109,7 +106,7 @@ repos:
 
   meta-qt6:
     url: https://code.qt.io/yocto/meta-qt6.git
-    branch: "6.7"
+    branch: "6.6"
     
   boot-doc:
     url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
