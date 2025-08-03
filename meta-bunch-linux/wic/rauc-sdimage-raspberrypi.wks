@@ -1,8 +1,16 @@
-# short-description: Create Bunch Linux Pi SD card image
+# short-description: Create Bunch Linux Pi SD card image with A/B update slots
 # long-description: Creates a partitioned SD card image for use with
-# Raspberry Pi including partition for systemupdate.
+# Raspberry Pi including A/B partitions for system updates.
 # Boot files are located in the first vfat partition.
 
-part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 20
-part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.0 --align 4096
-# part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.1 --align 4096
+# Boot partition - 256MB per firmware e kernel
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 256
+
+# Root filesystem A - primary slot (3GB)
+part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.0 --align 4096 --size 3072
+
+# Root filesystem B - secondary slot (3GB, same size as A)
+part --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.1 --align 4096 --size 3072
+
+# Use MBR partition table
+bootloader --ptable msdos

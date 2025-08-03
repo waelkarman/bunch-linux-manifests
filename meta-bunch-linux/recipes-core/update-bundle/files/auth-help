@@ -1,6 +1,6 @@
 # create a CA
 openssl genpkey -algorithm RSA -out ca.key.pem -text 
-openssl req -x509 -new -key ca.key.pem -out ca.cert.pem -days 365 -text 
+openssl req -x509 -new -key ca.key.pem -out ca.cert.pem -days 3650 -text 
 # check the CA
 openssl x509 -text -noout -in ca.cert.pem -text 
 
@@ -19,7 +19,7 @@ Email Address []:wael.karman@gmail.com
 openssl genpkey -algorithm RSA -out bunch-auth-update.key.pem -text
 openssl req -new -key bunch-auth-update.key.pem -out bunch-auth-update_req.csr -text
 # sign the certificare with the CA 
-openssl x509 -req -in bunch-auth-update_req.csr -CA ca.cert.pem -CAkey ca.key.pem -CAcreateserial -out bunch-auth-update.cert.pem -days 365 -text
+openssl x509 -req -in bunch-auth-update_req.csr -CA ca.cert.pem -CAkey ca.key.pem -CAcreateserial -out bunch-auth-update.cert.pem -days 3650 -text
 
 # Bundle auth cert
 Country Name (2 letter code) [AU]:IT

@@ -4,14 +4,9 @@ inherit core-image
 inherit populate_sdk_qt6
 inherit extrausers
 
-# To generate a valid pass: printf "%q" $(mkpasswd -m sha256crypt admin-nosexinthechurch)
-PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"
+EXTRA_USERS_PARAMS += "groupadd i2c; groupadd spi; groupadd gpio;"
 
-EXTRA_USERS_PARAMS = " \
-    usermod -p '${PASSWD}' weston; \
-"
-
-IMAGE_FEATURES += " weston ssh-server-openssh tools-sdk debug-tweaks package-management hwcodecs tools-debug"
+IMAGE_FEATURES += "${BUNCH_OPTIONAL_IMAGE_FEATURES}"
 
 # CORE
 IMAGE_INSTALL += " packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
@@ -25,14 +20,10 @@ IMAGE_INSTALL += " supplicant-service wpa-supplicant iw"
 IMAGE_INSTALL += " pi-bluetooth python3-pybluez packagegroup-base-bluetooth " 
 IMAGE_INSTALL += " python3 python3-pip python3-pyzmq"
 IMAGE_INSTALL += " util-linux i2c-tools nano picocom rsync tree curl jq screen wget net-tools ntp parted htop cpufrequtils strace gdb"
-IMAGE_INSTALL += " pi-blaster raspi-gpio rpi-gpio rpio libgpiod"
-IMAGE_INSTALL += " xwayland weston-xwayland"
+IMAGE_INSTALL += " pi-blaster raspi-gpio rpi-gpio rpio libgpiod userland"
 
 # QT LIBS
-IMAGE_INSTALL += " packagegroup-qt6-essentials packagegroup-qt6-addons"
+IMAGE_INSTALL += " packagegroup-qt6-essentials"
 
 # CUSTOM
-IMAGE_INSTALL += " webkitgtk"
-IMAGE_INSTALL += " bunch-update neatvnc"
-IMAGE_INSTALL += " sensors-app burger-app open-pipe-media-player custom-kernel-modules nautilus"
-IMAGE_INSTALL += " systemdservices passivebuzzer-service button-service networkchecker-service icon-weston"
+IMAGE_INSTALL += " bunch-update custom-kernel-modules "

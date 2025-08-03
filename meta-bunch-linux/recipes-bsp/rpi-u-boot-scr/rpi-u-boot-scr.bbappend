@@ -34,30 +34,7 @@ setenv BOOT_A_LEFT 3
 setenv BOOT_B_LEFT 3
 saveenv
 reset
-fi
-
-echo \"       ---WELCOME TO BUNCH_LINUX---\"
-echo \"            .-/+oossssoo+/-.               waelkarman@waelkarman  \"
-echo \"         :+ssssssssssssssssss+:            ---------------------  \"
-echo \"      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 20.04.6 LTS x86_64  \"
-echo \"    .ossssssssssssssssssdMMMNysssso.       Host: Precision 5570  \"
-echo \"   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 5.15.0-91-generic  \"
-echo \"  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 5 hours, 25 mins  \"
-echo \" /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 2339 (dpkg), 14 (snap)  \"
-echo \".ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.0.17  \"
-echo \"+sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 2560x1600, 2560x1440, 2560x1440  \"
-echo \"ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME  \"
-echo \"ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter  \"
-echo \"+sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita  \"
-echo \".ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru [GTK2/3]  \"
-echo \" /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3]  \"
-echo \"  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: x-terminal-emul  \"
-echo \"   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: 12th Gen Intel i9-12900H (20) @ 4.900GHz  \"
-echo \"    .ossssssssssssssssssdMMMNysssso.       GPU: NVIDIA 01:00.0 NVIDIA Corporation Device 25ba  \"
-echo \"      -+sssssssssssssssssyyyssss+-         GPU: Intel Device 46a6  \"
-echo \"         :+ssssssssssssssssss+:            Memory: 8571MiB / 31762MiB  \"
-echo \"            .-/+oossssoo+/-. \"
-                                                                   
+fi                 
 
 fdt addr \${fdt_addr} && fdt get value default_bootargs /chosen bootargs
 setenv bootargs \"\${default_bootargs} \${bootargs} rootfstype=ext4 rootwait\"

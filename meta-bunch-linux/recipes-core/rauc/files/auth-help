@@ -1,6 +1,6 @@
 # create a CA
 openssl genpkey -algorithm RSA -out ca.key.pem -text 
-openssl req -x509 -new -key ca.key.pem -out ca.cert.pem -days 365 -text 
+openssl req -x509 -new -key ca.key.pem -out ca.cert.pem -days 3650 -text 
 # check the CA
 openssl x509 -text -noout -in ca.cert.pem -text 
 

@@ -14,5 +14,3 @@ PACKAGECONFIG += " \
     egl \
     osmesa \
 "
-
-#    opencl 

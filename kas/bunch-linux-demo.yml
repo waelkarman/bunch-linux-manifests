@@ -6,22 +6,46 @@ distro: bunch-linux-dist
 target: bunch-linux-bundle
 
 local_conf_header:
+  remove_old_image: |
+    RM_OLD_IMAGE = "1"
   standard: |
+    # Bunch Linux Configuration (opzionale - già nei default)
+    BUNCH_USE_CASE = "general"
+    BUNCH_SECURITY_LEVEL = "standard"
+    BUNCH_DEBUG_MODE = "1"
+    BUNCH_PRODUCTION_MODE = "0"
+    BUNCH_REALTIME = "0"
+    BUNCH_ENABLE_GRAPHICS = "1"
+    BUNCH_ENABLE_ALL_FEATURES = "1"
+
+    # Forza HDMI sempre attivo
+    HDMI_FORCE_HOTPLUG = "1"
+    # HDMI_DRIVE = "2"
+    # HDMI_MODE = "16"
+    
+    # Disabilita overscan
+    # DISABLE_OVERSCAN = "1"
+    
+    # Configurazioni aggiuntive per stabilità HDMI
+    HDMI_GROUP = "1"
+    CONFIG_HDMI_BOOST = "4"
+    # HDMI_SAFE = "1"
+
+    # Hardware and Boot Configuration
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"
+    IMAGE_LINGUAS = "en-us"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
-    GPU_MEM_256 = "256"
+    GPU_MEM = "128"
     VC4GRAPHICS = "1"
-    DISABLE_SPLASH = "1"
+    # RPI_EXTRA_CONFIG += "dtoverlay=vc4-fkms-v3d"
     LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch gpl"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
-    IMAGE_FSTYPES = "wic"
-    BB_NUMBER_THREADS = "5"
-    PARALLEL_MAKE="-j 5" 
-    CMDLINE_ROOTFS = ""
-    RPI_USE_U_BOOT="1"
-    HDMI_ENABLE_4KP60="1"
+    IMAGE_FSTYPES = "wic tar.xz ext4"
+    BB_NUMBER_THREADS = "10"
+    PARALLEL_MAKE = "-j 10"
+    RPI_USE_U_BOOT = "1"
     WKS_FILE = "rauc-sdimage-raspberrypi.wks"
 
   buildinfo: |
@@ -29,7 +53,10 @@ local_conf_header:
     USER_CLASSES ?= "buildstats"
     PATCHRESOLVE = "noop"
     PACKAGE_EXCLUDE = "connman connman-client connman-gnome"
-    PACKAGECONFIG:append:pn-qtbase = " eglfs kms gbm gl"
+    PACKAGECONFIG:append:pn-qtbase = " gbm kms eglfs opengl sql-sqlite fontconfig libinput"
+    PACKAGECONFIG:append:pn-qtwayland = " xcomposite-egl"
+    PACKAGECONFIG:append:pn-qtmultimedia = " gstreamer alsa pulseaudio"
+    
     BB_DISKMON_DIRS ??= "\
     STOPTASKS,${TMPDIR},1G,100K \
     STOPTASKS,${DL_DIR},1G,100K \
@@ -51,8 +78,8 @@ bblayers_conf_header:
     ${YOCTOROOT}/poky/meta-selftest \
     ${YOCTOROOT}/poky/meta-skeleton \
     ${YOCTOROOT}/meta-qt6 \
-    ${YOCTOROOT}/meta-rauc \ 
-    ${YOCTOROOT}/meta-clang \ 
+    ${YOCTOROOT}/meta-rauc \
+    ${YOCTOROOT}/meta-clang \
     ${YOCTOROOT}/meta-raspberrypi \
     ${YOCTOROOT}/meta-bunch-linux \
     ${YOCTOROOT}/meta-openembedded/meta-filesystems \
@@ -66,7 +93,6 @@ bblayers_conf_header:
     ${YOCTOROOT}/meta-openembedded/meta-webserver \
     ${YOCTOROOT}/meta-openembedded/meta-xfce \
     "
-
 
 repos:
   poky:
@@ -110,24 +136,29 @@ repos:
 
   meta-qt6:
     url: https://code.qt.io/yocto/meta-qt6.git
+    path: meta-qt6
     branch: "6.6"
     commit: 92019beed22aed8847c585c568cfcf41ef4dc8b7
     
   boot-doc:
     url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
+    path: boot-doc
     branch: "main"
 
   meta-clang:
     url: https://github.com/kraj/meta-clang.git
+    path: meta-clang
     branch: scarthgap
     commit: eaa08939eaec9f620b14742ff3ac568553683034
 
   meta-browser:
     url: https://github.com/OSSystems/meta-browser.git
+    path: meta-browser
     branch: scarthgap
     commit: 2dabbb1bc1488f244bf66674fe7268a44dcc0d79
 
   meta-lts-mixins:
     url: https://git.yoctoproject.org/meta-lts-mixins
+    path: meta-lts-mixins
     branch: scarthgap/rust
     commit: a8046d5ec53b1856169ac795aa87cb0d5db84c04

@@ -12,3 +12,4 @@ meta-lts-mixins
 poky
 venv
 .kas_shell_history
+venv-kas
