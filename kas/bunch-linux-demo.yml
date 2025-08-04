@@ -20,16 +20,16 @@ local_conf_header:
 
     # Forza HDMI sempre attivo
     HDMI_FORCE_HOTPLUG = "1"
-    # HDMI_DRIVE = "2"
-    # HDMI_MODE = "16"
+    HDMI_DRIVE = "2"
+    HDMI_SAFE = "1"
+    HDMI_CVT = "1080 720 60"
     
     # Disabilita overscan
-    # DISABLE_OVERSCAN = "1"
+    DISABLE_OVERSCAN = "1"
     
     # Configurazioni aggiuntive per stabilità HDMI
     HDMI_GROUP = "1"
     CONFIG_HDMI_BOOST = "4"
-    # HDMI_SAFE = "1"
 
     # Hardware and Boot Configuration
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"
@@ -39,7 +39,6 @@ local_conf_header:
     BOOT_DELAY_MS = "0"
     GPU_MEM = "128"
     VC4GRAPHICS = "1"
-    # RPI_EXTRA_CONFIG += "dtoverlay=vc4-fkms-v3d"
     LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch gpl"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     IMAGE_FSTYPES = "wic tar.xz ext4"
