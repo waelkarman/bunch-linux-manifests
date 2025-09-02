@@ -4,7 +4,6 @@
 The aim is to fully understand the foundations of systems and applications starting from the lowest possible level. The idea is to create a fully working alternative to Raspbian OS and have fun! <br>
 To get an overview about current and future state refer to the [CHANGELOG.md](https://github.com/waelkarman/bunch-linux-manifests/blob/main/CHANGELOG.md) .
 <br>
-Go to the official webpagefor more informations.
 
 <img src="docs/miscellaneous/camel-desk.png">
 
