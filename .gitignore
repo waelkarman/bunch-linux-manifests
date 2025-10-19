@@ -13,3 +13,4 @@ poky
 venv
 .kas_shell_history
 venv-kas
+bunch-linux-env

@@ -6,6 +6,10 @@ distro: bunch-linux-dist
 target: bunch-linux-bundle
 
 local_conf_header:
+  grafics: |
+    DISTRO_FEATURES:remove = "x11"
+    DISTRO_FEATURES:append = " wayland egl drm gbm opengl"
+    GPU_MEM = "256"
   remove_old_image: |
     RM_OLD_IMAGE = "1"
   standard: |

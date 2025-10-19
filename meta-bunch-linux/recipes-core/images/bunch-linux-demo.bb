@@ -1,7 +1,6 @@
 SUMMARY = "Bunch Linux Demo is a demo to demonstrate the capabilities of the system"
 
 inherit core-image
-inherit populate_sdk_qt6
 inherit extrausers
 
 EXTRA_USERS_PARAMS += "groupadd i2c; groupadd spi; groupadd gpio;"
@@ -11,18 +10,20 @@ IMAGE_FEATURES += "${BUNCH_OPTIONAL_IMAGE_FEATURES}"
 # CORE
 IMAGE_INSTALL += " packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
 IMAGE_INSTALL += " u-boot u-boot-fw-utils systemd rauc"
-IMAGE_INSTALL += " alsa-utils alsa-utils-alsatplg alsa-utils-aplay alsa-utils-amixer alsa-utils-alsamixer alsa-utils-speakertest alsa-utils-midi alsa-utils-aconnect alsa-utils-aseqnet alsa-utils-iecset alsa-utils-alsactl alsa-utils-aseqdump alsa-utils-alsaloop alsa-utils-alsaucm alsa-utils-scripts alsa-utils-nhltdmicinfo"
-IMAGE_INSTALL += " gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-bad"
-IMAGE_INSTALL += " gstreamer1.0 gstreamer1.0-dev gstreamer1.0-dbg gst-examples"
-IMAGE_INSTALL += " gtk+3 gtk4"
+IMAGE_INSTALL += " alsa-utils"
+IMAGE_INSTALL += " gstreamer1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-bad gst-examples"
 IMAGE_INSTALL += " supplicant-service wpa-supplicant iw"
 IMAGE_INSTALL += " pi-bluetooth python3-pybluez packagegroup-base-bluetooth " 
 IMAGE_INSTALL += " python3 python3-pip python3-pyzmq"
 IMAGE_INSTALL += " util-linux i2c-tools nano picocom rsync tree curl jq screen wget net-tools ntp parted htop cpufrequtils strace gdb"
-IMAGE_INSTALL += " pi-blaster raspi-gpio rpi-gpio rpio libgpiod userland"
+IMAGE_INSTALL += " libgpiod raspi-gpio"
 
 # QT LIBS
-IMAGE_INSTALL += " packagegroup-qt6-essentials"
+#inherit populate_sdk_qt6
+#IMAGE_INSTALL += " packagegroup-qt6-essentials"
+
+# GTK LIBS
+#IMAGE_INSTALL += " gtk+3 gtk4"
 
 # CUSTOM
-IMAGE_INSTALL += " bunch-update custom-kernel-modules "
+#IMAGE_INSTALL += " bunch-update custom-kernel-modules "
