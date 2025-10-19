@@ -6,10 +6,17 @@ distro: bunch-linux-dist
 target: bunch-linux-bundle
 
 local_conf_header:
+  package_customization: |
+    PACKAGECONFIG:append:pn-qtbase = " gbm kms eglfs opengl sql-sqlite fontconfig libinput"
+    PACKAGECONFIG:append:pn-qtwayland = " xcomposite-egl"
+    PACKAGECONFIG:append:pn-qtmultimedia = " gstreamer alsa pulseaudio"
+    PACKAGECONFIG:pn-gstreamer1.0-plugins-good = "orc soup3 pulseaudio bz2 cairo flac gdk-pixbuf gudev jpeg lame libpng mpg123 speex taglib v4l2"
+    PACKAGECONFIG:pn-gstreamer1.0-plugins-base = "orc soup3 pulseaudio flac"
+    EXTRA_OEMESON:pn-gstreamer1.0-plugins-good = "-Dximagesrc=disabled"
   grafics: |
-    DISTRO_FEATURES:remove = "x11"
-    DISTRO_FEATURES:append = " wayland egl drm gbm opengl"
+    DISTRO_FEATURES:append = " x11 opengl"
     GPU_MEM = "256"
+    DISTRO_FEATURES:remove = "wayland egl drm gbm"
   remove_old_image: |
     RM_OLD_IMAGE = "1"
   standard: |
@@ -56,9 +63,6 @@ local_conf_header:
     USER_CLASSES ?= "buildstats"
     PATCHRESOLVE = "noop"
     PACKAGE_EXCLUDE = "connman connman-client connman-gnome"
-    PACKAGECONFIG:append:pn-qtbase = " gbm kms eglfs opengl sql-sqlite fontconfig libinput"
-    PACKAGECONFIG:append:pn-qtwayland = " xcomposite-egl"
-    PACKAGECONFIG:append:pn-qtmultimedia = " gstreamer alsa pulseaudio"
     
     BB_DISKMON_DIRS ??= "\
     STOPTASKS,${TMPDIR},1G,100K \
