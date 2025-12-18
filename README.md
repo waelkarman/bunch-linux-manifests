@@ -7,7 +7,7 @@ To get an overview about current and future state refer to the [CHANGELOG.md](ht
 
 <img src="docs/miscellaneous/camel-desk.png">
 
-- Linux kernel 6.6.y
+- Linux kernel 6.12.y
 - Yocto ~ Scarthgap
 - C
 - C++/17
@@ -16,15 +16,16 @@ To get an overview about current and future state refer to the [CHANGELOG.md](ht
 - Cmake
 - SQLite3
 - Bash scripts
-- GStreamer
 - GTK+3
-- ZeroMQ
 - POSIX thread
 - Kernel drivers
 - Rauc Update
+- GStreamer
+- ZeroMQ
 
 Bunch Linux combines more repositories such as:<br>
 
+- [linux-rpi-kernel](https://github.com/waelkarman/linux-rpi-kernel) (C)
 - [burger-app](https://github.com/waelkarman/burger-shop) (C++\17, Qt6/QML, SQLite3)
 - [sensors-app](https://github.com/waelkarman/sensors-app) (C++\17, Qt6/QML)
 - [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) (C, GStreamer, GTK+3) 
