@@ -59,7 +59,7 @@ local_conf_header:
     WKS_FILE = "rauc-sdimage-raspberrypi.wks"
 
   buildinfo: |
-    INHERIT += " rm_work"
+    INHERIT += " rm_work reproducible_build"
     USER_CLASSES ?= "buildstats"
     PATCHRESOLVE = "noop"
     PACKAGE_EXCLUDE = "connman connman-client connman-gnome"
@@ -106,7 +106,7 @@ repos:
     url: https://git.yoctoproject.org/poky
     path: poky
     branch: scarthgap
-    commit: 1f2eca0a8e6fffd26f4b4a78736035385b014acc
+    commit: 553530a8acce3b078473c0fa512246a3e84d46bf
     layers:
       meta:
       meta-poky:
@@ -116,13 +116,13 @@ repos:
     url: https://git.yoctoproject.org/meta-raspberrypi
     path: meta-raspberrypi
     branch: scarthgap
-    commit: 3b27c95c163a042f8056066ec3d27edfcc42da7f
+    commit: cd677051d18d4af2f043ac1ab58509ae5f594cf6
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
     path: meta-openembedded
     branch: scarthgap
-    commit: 91d5bfb3dcfd67d35e043b4a5ab1f1b2db5a6636
+    commit: b4812b18eec77e9f0286bd6b81a5c3032ac0d3be
     layers:
       meta-filesystems:
       meta-gnome:
@@ -156,16 +156,24 @@ repos:
     url: https://github.com/kraj/meta-clang.git
     path: meta-clang
     branch: scarthgap
-    commit: eaa08939eaec9f620b14742ff3ac568553683034
+    commit: 5c602337ea1a80fb7217eeda04e396cf90587dca
 
   meta-browser:
     url: https://github.com/OSSystems/meta-browser.git
     path: meta-browser
     branch: scarthgap
-    commit: 2dabbb1bc1488f244bf66674fe7268a44dcc0d79
+    commit: 168d284276730e7109426075a1c53ab2fc677639
 
   meta-lts-mixins:
     url: https://git.yoctoproject.org/meta-lts-mixins
     path: meta-lts-mixins
     branch: scarthgap/rust
-    commit: a8046d5ec53b1856169ac795aa87cb0d5db84c04
+    commit: 00c30d00f7377ee426b017bb46dd8c4c7eeea03b
+
+  linux-rpi-kernel:
+    url: https://github.com/waelkarman/linux.git
+    path: linux-rpi-kernel
+    branch: rpi-6.12.y
+    commit:
+
+    
