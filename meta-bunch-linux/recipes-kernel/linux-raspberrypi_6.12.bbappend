@@ -1,6 +1,8 @@
 # recipes-kernel/linux/linux-raspberrypi_6.12.bbappend
 
-SRCREV_machine = "cda9fefe5c2268e3ca3f58cdae2ccf1399ce8854"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+
+SRCREV_machine = "abc097cdb0cf6917e80692860b202a79b2e664b5"
 PV = "6.12.61+git${SRCPV}"
 
 SRC_URI = " \
