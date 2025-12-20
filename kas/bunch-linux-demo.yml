@@ -43,7 +43,8 @@ local_conf_header:
     CONFIG_HDMI_BOOST = "4"
 
     # Peripherals
-    RASPBERRYPI_BUZZER = "1"
+    RASPBERRYPI_ACTIVE_BUZZER = "1"
+    RASPBERRYPI_PASSIVE_BUZZER = "1"
 
     # Hardware and Boot Configuration
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"

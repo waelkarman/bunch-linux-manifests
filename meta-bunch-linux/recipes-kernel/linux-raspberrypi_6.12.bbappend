@@ -2,7 +2,7 @@
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRCREV_machine = "abc097cdb0cf6917e80692860b202a79b2e664b5"
+SRCREV_machine = "d861ec5b874418372ed349f00bc153b085dfb0d4"
 PV = "6.12.61+git${SRCPV}"
 
 SRC_URI = " \
