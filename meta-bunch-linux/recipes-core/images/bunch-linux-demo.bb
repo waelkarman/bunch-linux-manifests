@@ -25,8 +25,8 @@ IMAGE_INSTALL += " libgpiod raspi-gpio"
 # GTK LIBS
 #IMAGE_INSTALL += " gtk+3 gtk4"
 
-# NETWORK - wpa-supplicant
-IMAGE_INSTALL += " supplicant-service iw"
+# NETWORK - wpa-supplicant supplicant-service
+IMAGE_INSTALL += " iw"
 
 # VPN BRIDGE
 IMAGE_INSTALL += " wireguard-tools dnsmasq iptables hostapd iproute2"
