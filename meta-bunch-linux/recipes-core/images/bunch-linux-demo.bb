@@ -10,7 +10,6 @@ IMAGE_FEATURES += "${BUNCH_OPTIONAL_IMAGE_FEATURES}"
 # CORE
 IMAGE_INSTALL += " packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
 IMAGE_INSTALL += " u-boot u-boot-fw-utils systemd rauc"
-IMAGE_INSTALL += " supplicant-service wpa-supplicant iw"
 IMAGE_INSTALL += " pi-bluetooth python3-pybluez packagegroup-base-bluetooth " 
 IMAGE_INSTALL += " python3 python3-pip python3-pyzmq"
 IMAGE_INSTALL += " util-linux i2c-tools nano picocom rsync tree curl jq screen wget net-tools ntp parted htop cpufrequtils strace gdb"
@@ -25,6 +24,9 @@ IMAGE_INSTALL += " libgpiod raspi-gpio"
 
 # GTK LIBS
 #IMAGE_INSTALL += " gtk+3 gtk4"
+
+# NETWORK - wpa-supplicant
+IMAGE_INSTALL += " supplicant-service iw"
 
 # VPN BRIDGE
 IMAGE_INSTALL += " wireguard-tools dnsmasq iptables hostapd iproute2"
