@@ -26,5 +26,9 @@ IMAGE_INSTALL += " libgpiod raspi-gpio"
 # GTK LIBS
 #IMAGE_INSTALL += " gtk+3 gtk4"
 
+# VPN BRIDGE
+IMAGE_INSTALL += " wireguard-tools dnsmasq iptables hostapd iproute2"
+
 # CUSTOM
 #IMAGE_INSTALL += " bunch-update custom-kernel-modules "
+
