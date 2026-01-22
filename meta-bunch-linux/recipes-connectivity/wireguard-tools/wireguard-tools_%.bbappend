@@ -1,5 +1,6 @@
 inherit systemd
 
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 SRC_URI += "file://wg0.conf"
 
 do_install:append() {
