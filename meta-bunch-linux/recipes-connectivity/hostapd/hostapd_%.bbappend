@@ -26,4 +26,5 @@ do_install:append() {
 }
 
 
-FILES:${PN} += "${systemd_unitdir}/system/hostapd.service"
+FILES:${PN} += "${systemd_unitdir}/system/hostapd.service \
+                 /usr/local/bin/setup-hotspot.sh"
