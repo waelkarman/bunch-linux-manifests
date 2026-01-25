@@ -1,0 +1,15 @@
+[Unit]
+Description=Hotspot WLAN0 + VPN
+After=network.target wg-quick@wg0.service
+Wants=wg-quick@wg0.service dnsmasq.service
+
+[Service]
+Type=forking
+PIDFile=/run/hostapd.pid
+ExecStartPre=/usr/local/bin/setup-hotspot.sh
+ExecStartPre=/bin/systemctl start dnsmasq.service
+ExecStart=/usr/sbin/hostapd /etc/hostapd.conf -P /run/hostapd.pid -B
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
