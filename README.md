@@ -45,8 +45,6 @@ System configuration and boot sequence deeply documented at:<br>
 - [bunch-linux-boot-sequence](https://github.com/waelkarman/bunch-linux-boot-sequence) (dts, kconfig)
 
 # Build and run
-Instruction on the [official webpage](https://waelkarman.github.io/bunch-linux-manifests/)
-
 To test the latest prewiew please build from sources.<br>
 
 # Join and contribute
