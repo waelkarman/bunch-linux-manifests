@@ -36,7 +36,9 @@ Kernel ~
 - [linux-rpi-kernel](https://github.com/waelkarman/linux-rpi-kernel) (C)
 - [custom-kernel-modules](https://github.com/waelkarman/kernel-modules) (C)
 - [active-buzzer-kernel-driver](https://github.com/waelkarman/linux-rpi-kernel/tree/rpi-6.12.y/drivers/platform/bunch_linux/active_buzzer) (C)
+- [active-buzzer-devicetree](https://github.com/waelkarman/linux-rpi-kernel/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/bcm2711-rpi-4-b-active-buzzer-overlay.dts) (dts overlay)
 - [passive-buzzer-kernel-driver](https://github.com/waelkarman/linux-rpi-kernel/tree/rpi-6.12.y/drivers/platform/bunch_linux/passive_buzzer) (C)
+- [passive-buzzer-devicetree](https://github.com/waelkarman/linux-rpi-kernel/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/bcm2711-rpi-4-b-passive-buzzer-overlay.dts) (dts overlay)
 
 System configuration and boot sequence deeply documented at:<br>
 
