@@ -5,10 +5,10 @@
 part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 256
 
 # Root filesystem A - primary slot (10GB)
-part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.0 --align 4096 --size 10240
+part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.0 --align 4096 --size 15360
 
 # Root filesystem B - secondary slot (10GB, same size as A)
-part --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.1 --align 4096 --size 10240
+part --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.1 --align 4096 --size 15360
 
 # Use MBR partition table
 bootloader --ptable msdos
