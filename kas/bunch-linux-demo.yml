@@ -55,7 +55,7 @@ local_conf_header:
     WKS_FILE = "rauc-sdimage-raspberrypi.wks"
  
   buildinfo: |
-    BUNCH_PRODUCTION_MODE=1
+    BUNCH_PRODUCTION_MODE = "1"
     USER_CLASSES ?= "buildstats"
     PATCHRESOLVE = "noop"
     PACKAGE_EXCLUDE = "connman connman-client connman-gnome"
