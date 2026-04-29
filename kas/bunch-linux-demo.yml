@@ -169,6 +169,6 @@ repos:
   linux-rpi-kernel:
     url: https://github.com/waelkarman/linux.git
     path: linux-rpi-kernel
-    branch: rpi-6.12.y
+    branch: dev
 
     
