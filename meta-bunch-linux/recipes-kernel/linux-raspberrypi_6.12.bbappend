@@ -12,3 +12,7 @@ SRC_URI = " \
     file://android-drivers.cfg \
     file://bunch-linux.cfg \
 "
+
+do_deploy:append() {
+    install -m 0644 ${B}/.config ${DEPLOYDIR}/kernel.config
+}
