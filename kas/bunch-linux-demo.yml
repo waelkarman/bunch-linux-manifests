@@ -40,6 +40,7 @@ local_conf_header:
     RASPBERRYPI_PASSIVE_BUZZER = "1"
  
     # Hardware and Boot Configuration
+    CMDLINE:append = " audit=0"
     IMAGE_FSTYPES:append = " cpio.gz"
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"
     IMAGE_LINGUAS = "en-us"
