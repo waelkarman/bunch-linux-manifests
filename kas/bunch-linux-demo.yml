@@ -36,16 +36,19 @@ local_conf_header:
     DISABLE_OVERSCAN = "1"
  
     # Peripherals
-    RASPBERRYPI_ACTIVE_BUZZER = "1"
-    RASPBERRYPI_PASSIVE_BUZZER = "1"
+    RASPBERRYPI_ACTIVE_BUZZER = "0"
+    RASPBERRYPI_PASSIVE_BUZZER = "0"
+    RASPBERRYPI_PCA9685 = "1"
  
     # Hardware and Boot Configuration
+    KERNEL_MODULE_AUTOLOAD += " i2c-dev"
     CMDLINE:append = " audit=0"
     IMAGE_FSTYPES:append = " cpio.gz"
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"
     IMAGE_LINGUAS = "en-us"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
+    ENABLE_I2C = "1"
     BOOT_DELAY_MS = "0"
     VC4GRAPHICS = "1"
     LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch gpl"

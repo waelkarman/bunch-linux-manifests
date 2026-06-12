@@ -2,8 +2,9 @@
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRCREV_machine = "d861ec5b874418372ed349f00bc153b085dfb0d4"
+SRCREV_machine = "ad7dc82fc5b05210f6873fac32bf574768a74050"
 PV = "6.12.61+git${SRCPV}"
+LINUX_RPI_BRANCH = "dev"
 
 SRC_URI = " \
     git://github.com/waelkarman/linux.git;name=machine;branch=${LINUX_RPI_BRANCH};protocol=https \
