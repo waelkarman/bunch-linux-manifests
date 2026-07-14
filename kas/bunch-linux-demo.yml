@@ -41,7 +41,7 @@ local_conf_header:
     RASPBERRYPI_PCA9685 = "1"
  
     # Hardware and Boot Configuration
-    KERNEL_MODULE_AUTOLOAD += " i2c-dev"
+    KERNEL_MODULE_AUTOLOAD += "pwm-pca9685 i2c-dev"
     CMDLINE:append = " audit=0"
     IMAGE_FSTYPES:append = " cpio.gz"
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"
