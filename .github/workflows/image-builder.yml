@@ -1,19 +1,28 @@
 name: Build on Local Host
 
 on: [workflow_dispatch]
+
 jobs:
   build:
     runs-on: self-hosted
     steps:
-      - run: echo "This job is now running on local host!"
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: List files in the repository
+
+      # The runner must provide the secrets (RAUC keys, hotspot.psk, ...)
+      # in a directory outside the workspace, e.g. ~/bunch-linux-secrets.
+      - name: Check secrets
         run: |
-          ls ${{ github.workspace }}
-      - name: Setup Python 
-        run: pip3 install kas
-      - name: Install required deps
-        run: sudo apt install chrpath diffstat zstd
-      - name: Checkout and build
-        run: kas checkout kas/bunch-linux-demo.yml --update --force-checkout; source poky/oe-init-build-env; bitbake bunch-linux-demo
+          test -f "$HOME/bunch-linux-secrets/bunch-auth-update.key.pem" || {
+            echo "Missing secrets in ~/bunch-linux-secrets (see secrets/README.md)"; exit 1; }
+
+      - name: Install kas
+        run: |
+          python3 -m venv .kas-venv
+          .kas-venv/bin/pip install --quiet kas
+
+      - name: Link secrets
+        run: ln -sf "$HOME"/bunch-linux-secrets/* secrets/
+
+      - name: Build
+        run: .kas-venv/bin/kas build kas/bunch-linux-demo.yml

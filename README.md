@@ -8,7 +8,7 @@ To get an overview about current and future state refer to the [CHANGELOG.md](ht
 <img src="docs/miscellaneous/camel-desk.png">
 
 - Linux kernel 6.12.y
-- Yocto ~ Scarthgap
+- Yocto 6.0 ~ Wrynose (LTS)
 - C
 - C++/17
 - Qt6/QML
@@ -45,7 +45,22 @@ System configuration and boot sequence deeply documented at:<br>
 - [bunch-linux-boot-sequence](https://github.com/waelkarman/bunch-linux-boot-sequence) (dts, kconfig)
 
 # Build and run
-To test the latest prewiew please build from sources.<br>
+Requirements: a Linux host supported by Yocto 6.0 (e.g. Ubuntu 24.04/26.04, Debian 12/13) with ~150 GB free disk.
+
+```sh
+scripts/gen-secrets.sh      # once: RAUC CA + signing key, hotspot passphrase (secrets/, git-ignored)
+./build.sh                  # kas checkout + kas build of the RAUC bundle and the SD card image
+./build.sh shell            # bitbake shell in the build environment
+```
+
+Outputs are in `build/tmp/deploy/images/bunch-linux-machine/` (`*.wic` for the SD card, `*.raucb` for updates).
+
+Configuration lives in `kas/bunch-linux-demo.yml`. Notable switches:
+- `BUNCH_WLAN_MODE`: `"ap"` (hotspot routed through WireGuard, optional `secrets/wg0.conf`) or `"client"` (needs `secrets/wpa_supplicant-wlan0.conf`).
+- `BUNCH_DEBUG_MODE` / `BUNCH_PRODUCTION_MODE`: debug builds allow root login without password; production builds do not.
+
+Secrets (signing keys, Wi-Fi and VPN credentials) are never committed: see [secrets/README.md](secrets/README.md).
+Optional development checkouts (kernel fork, boot docs): `kas checkout kas/bunch-linux-demo.yml:kas/dev-repos.yml`.
 
 # Join and contribute
 Contributing to a project like this can enhance your skills and elevate your awareness to a higher level. This project is rooted in the desire to thoroughly learn about systems and applications and more. Integrating applications into a customized and lightweight version of Linux provides a deeper understanding of the domain in which the applications are employed.<br>

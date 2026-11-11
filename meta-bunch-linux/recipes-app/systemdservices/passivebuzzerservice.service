@@ -3,7 +3,7 @@ Description=Passive Buzzer service
 
 [Service]
 User=root
-ExecStart=python3 /usr/bin/passiveBuzzer.py
+ExecStart=/usr/bin/python3 /usr/bin/passiveBuzzer.py
 
 [Install]
 WantedBy=multi-user.target

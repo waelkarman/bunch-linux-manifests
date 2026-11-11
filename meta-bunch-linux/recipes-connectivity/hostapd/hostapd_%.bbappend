@@ -1,30 +1,31 @@
+# Hotspot on wlan0 (BUNCH_WLAN_MODE = "ap"). The passphrase comes from
+# secrets/hotspot.psk and is never committed.
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI += "file://hostapd.conf \
-            file://hostapd.service \
-            file://setup-hotspot.sh"
+inherit systemd bunch-secrets
 
-# Add this if not inherited elsewhere
-inherit systemd
+BUNCH_REQUIRED_SECRETS = "hotspot.psk"
 
-# Declare the service
+SRC_URI += " \
+    file://hostapd.conf \
+    file://hostapd.service \
+    file://setup-hotspot.sh \
+    file://hotspot.psk \
+"
+
 SYSTEMD_SERVICE:${PN} = "hostapd.service"
 SYSTEMD_AUTO_ENABLE:${PN} = "enable"
 
 do_install:append() {
-    # Config hostapd
-    install -d ${D}${sysconfdir}
-    install -m 0644 ${WORKDIR}/hostapd.conf ${D}${sysconfdir}/hostapd.conf
+    psk=$(head -n 1 ${UNPACKDIR}/hotspot.psk)
+    if [ ${#psk} -lt 8 ] || [ ${#psk} -gt 63 ]; then
+        bbfatal "hotspot.psk: the WPA2 passphrase must be 8-63 characters"
+    fi
+    install -Dm 0600 ${UNPACKDIR}/hostapd.conf ${D}${sysconfdir}/hostapd.conf
+    printf 'wpa_passphrase=%s\n' "$psk" >> ${D}${sysconfdir}/hostapd.conf
 
-    # Servizio systemd
-    install -d ${D}${systemd_unitdir}/system
-    install -m 0644 ${WORKDIR}/hostapd.service ${D}${systemd_unitdir}/system/
-
-    # Script di setup hotspot
-    install -d ${D}/usr/local/bin
-    install -m 0755 ${WORKDIR}/setup-hotspot.sh ${D}/usr/local/bin/setup-hotspot.sh
+    install -Dm 0644 ${UNPACKDIR}/hostapd.service ${D}${systemd_system_unitdir}/hostapd.service
+    install -Dm 0755 ${UNPACKDIR}/setup-hotspot.sh ${D}${sbindir}/bunch-setup-hotspot
 }
 
-
-FILES:${PN} += "${systemd_unitdir}/system/hostapd.service \
-                 /usr/local/bin/setup-hotspot.sh"
+RDEPENDS:${PN} += "iproute2 iptables dnsmasq"

@@ -5,7 +5,7 @@ Wants=weston.service
 
 [Service]
 User=root
-ExecStart=python3 /usr/bin/networkchecker.py
+ExecStart=/usr/bin/python3 /usr/bin/networkchecker.py
 
 [Install]
 WantedBy=multi-user.target

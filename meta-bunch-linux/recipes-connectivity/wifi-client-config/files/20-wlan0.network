@@ -1,0 +1,12 @@
+[Match]
+Name=wlan0
+
+[Network]
+DHCP=yes
+LinkLocalAddressing=yes
+IPv6AcceptRA=yes
+
+[DHCPv4]
+UseDNS=true
+UseNTP=true
+UseHostname=true

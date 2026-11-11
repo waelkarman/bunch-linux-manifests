@@ -1,0 +1,17 @@
+# Optional development checkouts, not needed to build the image
+# (the kernel recipe fetches its own sources).
+#
+#   kas checkout kas/bunch-linux-demo.yml:kas/dev-repos.yml
+header:
+  version: 14
+
+repos:
+  boot-doc:
+    url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
+    path: boot-doc
+    branch: main
+
+  linux-rpi-kernel:
+    url: https://github.com/waelkarman/linux.git
+    path: linux-rpi-kernel
+    branch: dev

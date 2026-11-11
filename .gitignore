@@ -10,8 +10,15 @@ meta-clang
 meta-browser
 meta-lts-mixins
 poky
+bitbake
+openembedded-core
+meta-yocto
 venv
 .kas_shell_history
 venv-kas
+.kas-venv
 bunch-linux-env
 linux-rpi-kernel
+# Local secrets (keys, passwords, VPN config): never commit
+secrets/*
+!secrets/README.md

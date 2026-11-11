@@ -1,9 +1,8 @@
 [Unit]
-Description=Bunch-Linux update service
+Description=Bunch Linux update check
+Wants=network-online.target
+After=network-online.target rauc.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/bunch-update.sh
-
-[Install]
-WantedBy=multi-user.target

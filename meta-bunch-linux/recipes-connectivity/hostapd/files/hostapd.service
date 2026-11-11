@@ -1,15 +1,14 @@
 [Unit]
-Description=Hotspot WLAN0 + VPN
+Description=Hotspot on wlan0 routed through WireGuard
+Wants=dnsmasq.service wg-quick@wg0.service
 After=network.target wg-quick@wg0.service
-Wants=wg-quick@wg0.service dnsmasq.service
+Before=dnsmasq.service
 
 [Service]
 Type=forking
 PIDFile=/run/hostapd.pid
-ExecStartPre=/usr/local/bin/setup-hotspot.sh
-ExecStartPre=/bin/systemctl start dnsmasq.service
-ExecStart=/usr/sbin/hostapd /etc/hostapd.conf -P /run/hostapd.pid -B
-RemainAfterExit=yes
+ExecStartPre=/usr/sbin/bunch-setup-hotspot
+ExecStart=/usr/sbin/hostapd -B -P /run/hostapd.pid /etc/hostapd.conf
 
 [Install]
 WantedBy=multi-user.target

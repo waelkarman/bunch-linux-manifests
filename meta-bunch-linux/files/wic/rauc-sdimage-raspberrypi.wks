@@ -1,13 +1,13 @@
 # short-description: Create Bunch Linux Pi SD card image with A/B update slots.
 # Boot files are located in the first vfat partition.
 
-# Boot partition - 256MB per firmware e kernel
+# Boot partition - 256MB: firmware, config.txt, device trees, U-Boot and its env
 part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 256
 
-# Root filesystem A - primary slot (10GB)
+# Root filesystem A - primary slot (4GB), kernel in /boot of the slot
 part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.0 --align 4096 --size 4096
 
-# Root filesystem B - secondary slot (10GB, same size as A)
+# Root filesystem B - secondary slot (4GB, same size as A)
 part --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs.1 --align 4096 --size 4096
 
 # Use MBR partition table

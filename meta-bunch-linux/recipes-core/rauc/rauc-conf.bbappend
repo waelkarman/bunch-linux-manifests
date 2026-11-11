@@ -1,13 +1,8 @@
+# system.conf comes from this layer, the keyring (CA certificate) from the
+# local secrets directory: see secrets/README.md.
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI:append = " \
-    file://system.conf \
-    file://ca.cert.pem \
-"
+inherit bunch-secrets
+BUNCH_REQUIRED_SECRETS = "${RAUC_KEYRING_FILE}"
 
 RDEPENDS:${PN} += "mmc-utils"
-
-do_install:append() {
-    install -D -m 0644 ${WORKDIR}/system.conf ${D}${sysconfdir}/rauc/system.conf
-    install -D -m 0644 ${WORKDIR}/ca.cert.pem ${D}${sysconfdir}/rauc/ca.cert.pem
-}

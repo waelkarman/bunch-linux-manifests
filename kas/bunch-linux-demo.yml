@@ -1,24 +1,19 @@
 header:
-  version: 11
- 
+  version: 14
+
 machine: bunch-linux-machine
 distro: bunch-linux-dist
 target: bunch-linux-bundle
- 
+
 local_conf_header:
   package_customization: |
     PACKAGECONFIG:append:pn-qtbase = " gbm kms eglfs opengl sql-sqlite fontconfig libinput"
     PACKAGECONFIG:append:pn-qtwayland = " compositor"
     PACKAGECONFIG:append:pn-qtmultimedia = " gstreamer alsa pulseaudio"
     PACKAGECONFIG:pn-gstreamer1.0-plugins-good = "orc soup3 pulseaudio bz2 cairo flac gdk-pixbuf gudev jpeg lame libpng mpg123 speex taglib v4l2"
-    PACKAGECONFIG:pn-gstreamer1.0-plugins-base = "orc soup3 pulseaudio flac"
-    EXTRA_OEMESON:pn-gstreamer1.0-plugins-good = "-Dximagesrc=disabled"
+    EXTRA_OEMESON:append:pn-gstreamer1.0-plugins-good = " -Dximagesrc=disabled"
   graphics: |
-    DISTRO_FEATURES:append = " wayland opengl egl drm gbm"
-    DISTRO_FEATURES:remove = "x11"
     GPU_MEM = "256"
-  remove_old_image: |
-    RM_OLD_IMAGE = "1"
   standard: |
     BUNCH_USE_CASE = "general"
     BUNCH_SECURITY_LEVEL = "standard"
@@ -28,43 +23,42 @@ local_conf_header:
     BUNCH_ENABLE_GRAPHICS = "1"
     BUNCH_ENABLE_ALL_FEATURES = "1"
 
+    # wlan0 as hotspot routed through WireGuard ("ap") or as Wi-Fi client ("client")
+    BUNCH_WLAN_MODE = "ap"
+
     HDMI_FORCE_HOTPLUG = "1"
     HDMI_DRIVE = "2"
     HDMI_GROUP = "1"
     HDMI_MODE = "16"
     CONFIG_HDMI_BOOST = "4"
     DISABLE_OVERSCAN = "1"
- 
+
     # Peripherals
     RASPBERRYPI_ACTIVE_BUZZER = "0"
     RASPBERRYPI_PASSIVE_BUZZER = "0"
     RASPBERRYPI_PCA9685 = "1"
- 
+
     # Hardware and Boot Configuration
     KERNEL_MODULE_AUTOLOAD += "pwm-pca9685 i2c-dev"
-    CMDLINE:append = " audit=0"
-    IMAGE_FSTYPES:append = " cpio.gz"
     BUNCH_LINUX_IMAGE = "bunch-linux-demo"
+    IMAGE_FSTYPES = "wic tar.xz ext4 cpio.gz"
     IMAGE_LINGUAS = "en-us"
     BB_GENERATE_MIRROR_TARBALLS = "1"
     BOOT_DELAY = "0"
-    ENABLE_I2C = "1"
     BOOT_DELAY_MS = "0"
+    ENABLE_I2C = "1"
     VC4GRAPHICS = "1"
-    LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch gpl"
+    LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
-    IMAGE_FSTYPES = "wic tar.xz ext4"
-    BB_NUMBER_THREADS = "10"
-    PARALLEL_MAKE = "-j 10"
     RPI_USE_U_BOOT = "1"
     WKS_FILE = "rauc-sdimage-raspberrypi.wks"
- 
+    BB_NUMBER_THREADS = "10"
+    PARALLEL_MAKE = "-j 10"
+
   buildinfo: |
-    BUNCH_PRODUCTION_MODE = "1"
     USER_CLASSES ?= "buildstats"
-    PATCHRESOLVE = "noop"
     PACKAGE_EXCLUDE = "connman connman-client connman-gnome"
- 
+
     BB_DISKMON_DIRS ??= "\
     STOPTASKS,${TMPDIR},1G,100K \
     STOPTASKS,${DL_DIR},1G,100K \
@@ -76,54 +70,49 @@ local_conf_header:
     HALT,/tmp,10M,1K \
     "
 
-bblayers_conf_header:
-  standard: |
-    YOCTOROOT = "${@os.path.abspath(os.path.join("${TOPDIR}", os.pardir))}"
-    BBLAYERS = " \
-    ${YOCTOROOT}/poky/meta \
-    ${YOCTOROOT}/poky/meta-poky \
-    ${YOCTOROOT}/poky/meta-yocto-bsp \
-    ${YOCTOROOT}/poky/meta-selftest \
-    ${YOCTOROOT}/poky/meta-skeleton \
-    ${YOCTOROOT}/meta-qt6 \
-    ${YOCTOROOT}/meta-rauc \
-    ${YOCTOROOT}/meta-clang \
-    ${YOCTOROOT}/meta-raspberrypi \
-    ${YOCTOROOT}/meta-bunch-linux \
-    ${YOCTOROOT}/meta-openembedded/meta-filesystems \
-    ${YOCTOROOT}/meta-openembedded/meta-gnome \
-    ${YOCTOROOT}/meta-openembedded/meta-initramfs \
-    ${YOCTOROOT}/meta-openembedded/meta-multimedia \
-    ${YOCTOROOT}/meta-openembedded/meta-networking \
-    ${YOCTOROOT}/meta-openembedded/meta-oe \
-    ${YOCTOROOT}/meta-openembedded/meta-perl \
-    ${YOCTOROOT}/meta-openembedded/meta-python \
-    ${YOCTOROOT}/meta-openembedded/meta-webserver \
-    ${YOCTOROOT}/meta-openembedded/meta-xfce \
-    "
-
+# Yocto Project 6.0 "wrynose" (LTS). Since 5.3 there is no combined poky
+# repository any more: bitbake, openembedded-core and meta-yocto are separate.
+# bitbake must sit next to openembedded-core (oe-init-build-env looks in ../bitbake).
 repos:
-  poky:
-    url: https://git.yoctoproject.org/poky
-    path: poky
-    branch: scarthgap
-    commit: 553530a8acce3b078473c0fa512246a3e84d46bf
+  bunch-linux-manifests:
+    layers:
+      meta-bunch-linux:
+
+  bitbake:
+    url: https://git.openembedded.org/bitbake
+    path: bitbake
+    branch: "2.18"
+    commit: 6e260eb6ab1631607ea414d9ff8ede1155faa5d9
+    layers:
+      .: disabled
+
+  openembedded-core:
+    url: https://git.openembedded.org/openembedded-core
+    path: openembedded-core
+    branch: wrynose
+    commit: 2285da08068a6d1b4a64c9a52d85a58be50e4679
     layers:
       meta:
+
+  meta-yocto:
+    url: https://git.yoctoproject.org/meta-yocto
+    path: meta-yocto
+    branch: wrynose
+    commit: 79b6d87030178bed0088ad3b00aa6dfbabac37c4
+    layers:
       meta-poky:
-      meta-yocto-bsp:
 
   meta-raspberrypi:
     url: https://git.yoctoproject.org/meta-raspberrypi
     path: meta-raspberrypi
-    branch: scarthgap
-    commit: cd677051d18d4af2f043ac1ab58509ae5f594cf6
+    branch: wrynose
+    commit: 919588393f41b48cb6c5d832aa35e58a19b6762d
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
     path: meta-openembedded
-    branch: scarthgap
-    commit: b4812b18eec77e9f0286bd6b81a5c3032ac0d3be
+    branch: wrynose
+    commit: c0fcd7cca3760ef24e087ac4a31b8f357cb204da
     layers:
       meta-filesystems:
       meta-gnome:
@@ -134,46 +123,21 @@ repos:
       meta-perl:
       meta-python:
       meta-webserver:
-      meta-xfce:
 
   meta-rauc:
     url: https://github.com/rauc/meta-rauc.git
     path: meta-rauc
-    branch: scarthgap
-    commit: a0f4a8b9986954239850b9d4256c003c91e6b931
+    branch: wrynose
+    commit: 38da0e5866a953e664001ba90b5edad68d68cd5d
 
   meta-qt6:
     url: https://code.qt.io/yocto/meta-qt6.git
     path: meta-qt6
-    branch: "6.6"
-    commit: 92019beed22aed8847c585c568cfcf41ef4dc8b7
-    
-  boot-doc:
-    url: https://github.com/waelkarman/bunch-linux-boot-sequence.git
-    path: boot-doc
-    branch: "main"
+    branch: "6.12"
+    commit: 10b449ae721b761a5e83b7134e1946f5d995a94f
 
   meta-clang:
     url: https://github.com/kraj/meta-clang.git
     path: meta-clang
-    branch: scarthgap
-    commit: 5c602337ea1a80fb7217eeda04e396cf90587dca
-
-  meta-browser:
-    url: https://github.com/OSSystems/meta-browser.git
-    path: meta-browser
-    branch: scarthgap
-    commit: 168d284276730e7109426075a1c53ab2fc677639
-
-  meta-lts-mixins:
-    url: https://git.yoctoproject.org/meta-lts-mixins
-    path: meta-lts-mixins
-    branch: scarthgap/rust
-    commit: 00c30d00f7377ee426b017bb46dd8c4c7eeea03b
-
-  linux-rpi-kernel:
-    url: https://github.com/waelkarman/linux.git
-    path: linux-rpi-kernel
-    branch: dev
-
-    
+    branch: wrynose
+    commit: ef0d22f21910a0c30c967eeb17d8f209806e2d81
