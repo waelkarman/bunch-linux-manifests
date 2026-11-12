@@ -7,7 +7,7 @@ target: bunch-linux-bundle
 
 local_conf_header:
   package_customization: |
-    PACKAGECONFIG:append:pn-qtbase = " gbm kms eglfs opengl sql-sqlite fontconfig libinput"
+    PACKAGECONFIG:append:pn-qtbase = " gbm kms eglfs gles2 sql-sqlite fontconfig libinput"
     PACKAGECONFIG:append:pn-qtwayland = " compositor"
     PACKAGECONFIG:append:pn-qtmultimedia = " gstreamer alsa pulseaudio"
     PACKAGECONFIG:pn-gstreamer1.0-plugins-good = "orc soup3 pulseaudio bz2 cairo flac gdk-pixbuf gudev jpeg lame libpng mpg123 speex taglib v4l2"
