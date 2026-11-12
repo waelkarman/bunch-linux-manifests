@@ -1,0 +1,31 @@
+# Bunch Linux demo image for QEMU (aarch64), to test the userspace without a Pi.
+#
+#   kas build kas/qemu.yml
+#   kas shell kas/qemu.yml -c "runqemu qemuarm64 nographic slirp"
+#
+# Not covered here: the RPi boot chain (firmware, U-Boot script, A/B slots),
+# RAUC updates, the buzzer/PCA9685 drivers and Wi-Fi/Bluetooth hardware.
+header:
+  version: 14
+  includes:
+    - kas/bunch-linux-demo.yml
+
+machine: qemuarm64
+target: bunch-linux-demo
+
+local_conf_header:
+  # kas writes the entries sorted by key: this one comes last and wins.
+  zz_qemu: |
+    # The distro selects linux-raspberrypi: use the oe-core kernel for QEMU.
+    PREFERRED_PROVIDER_virtual/kernel:qemuall = "linux-yocto"
+    PREFERRED_PROVIDER_virtual/bootloader:qemuall = "u-boot"
+    RPI_USE_U_BOOT = "0"
+    WKS_FILE = ""
+    IMAGE_FSTYPES = "ext4 tar.xz"
+    KERNEL_MODULE_AUTOLOAD:remove = "pwm-pca9685"
+    # Raspberry Pi only (COMPATIBLE_MACHINE = rpi)
+    IMAGE_INSTALL:remove:pn-bunch-linux-demo = "raspi-gpio pi-bluetooth"
+    # Enough room for Qt/GTK/GStreamer tests in the guest
+    IMAGE_ROOTFS_EXTRA_SPACE = "1048576"
+    QB_MEM = "-m 4096"
+    QB_SMP = "-smp 4"

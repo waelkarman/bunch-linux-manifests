@@ -48,12 +48,30 @@ System configuration and boot sequence deeply documented at:<br>
 Requirements: a Linux host supported by Yocto 6.0 (e.g. Ubuntu 24.04/26.04, Debian 12/13) with ~150 GB free disk.
 
 ```sh
-scripts/gen-secrets.sh      # once: RAUC CA + signing key, hotspot passphrase (secrets/, git-ignored)
-./build.sh                  # kas checkout + kas build of the RAUC bundle and the SD card image
-./build.sh shell            # bitbake shell in the build environment
+make help                   # list all targets
+make                        # host deps + kas venv + secrets + kas build of the RAUC bundle and SD card image
+make shell                  # bitbake shell in the build environment
 ```
 
+The first run installs the missing host packages, creates the kas venv (`bunch-linux-env/`) and,
+if no signing key exists, runs `scripts/gen-secrets.sh` (RAUC CA + signing key, hotspot passphrase in `secrets/`, git-ignored).
+
 Outputs are in `build/tmp/deploy/images/bunch-linux-machine/` (`*.wic` for the SD card, `*.raucb` for updates).
+
+## Simulation (QEMU)
+To test the userspace without a Raspberry Pi (`kas/qemu.yml`, machine `qemuarm64`):
+
+```sh
+make qemu                   # build the demo image for qemuarm64
+make qemu-run               # boot on the serial console (Ctrl-a x to quit)
+make qemu-run-gui           # boot in an SDL window (Qt/GTK apps)
+make qemu-ssh               # from another terminal: ssh root@localhost -p 2222
+make qemu-shell             # bitbake shell in the QEMU build environment
+make qemu-run QEMU_OPTS="nographic tap"         # custom runqemu options (tap needs sudo)
+```
+
+Not covered by the simulation: the RPi boot chain (firmware, U-Boot, A/B slots), RAUC updates,
+the buzzer/PCA9685 drivers and Wi-Fi/Bluetooth hardware.
 
 Configuration lives in `kas/bunch-linux-demo.yml`. Notable switches:
 - `BUNCH_WLAN_MODE`: `"ap"` (hotspot routed through WireGuard, optional `secrets/wg0.conf`) or `"client"` (needs `secrets/wpa_supplicant-wlan0.conf`).

@@ -10,6 +10,9 @@ EXTRA_USERS_PARAMS += "groupadd i2c; groupadd spi; groupadd gpio;"
 # (BUNCH_DEBUG_MODE / BUNCH_PRODUCTION_MODE / BUNCH_ENABLE_ALL_FEATURES).
 IMAGE_FEATURES += "${BUNCH_IMAGE_FEATURES}"
 
+# Wayland compositor (needs the wayland/opengl distro features) and HW codecs
+IMAGE_FEATURES += "weston hwcodecs"
+
 # CORE
 IMAGE_INSTALL += " packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
 # kernel-image: the A/B boot script loads the kernel from /boot of the slot.
@@ -21,18 +24,22 @@ IMAGE_INSTALL += " util-linux i2c-tools nano picocom rsync tree curl jq screen w
 IMAGE_INSTALL += " libgpiod raspi-gpio"
 
 # Alsa / Gstreamer
-#IMAGE_INSTALL += " alsa-utils gstreamer1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-bad gst-examples"
+IMAGE_INSTALL += " alsa-utils gstreamer1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-bad gst-examples"
 
 # QT LIBS
-#inherit populate_sdk_qt6
-#IMAGE_INSTALL += " packagegroup-qt6-essentials"
+inherit populate_sdk_qt6
+IMAGE_INSTALL += " packagegroup-qt6-essentials"
 
 # GTK LIBS
-#IMAGE_INSTALL += " gtk+3 gtk4"
+IMAGE_INSTALL += " gtk+3 gtk4"
 
 # NETWORK: role of wlan0 chosen by BUNCH_WLAN_MODE (see the distro conf)
 IMAGE_INSTALL += " iw iproute2"
 IMAGE_INSTALL += "${@' hostapd dnsmasq iptables wireguard-tools' if d.getVar('BUNCH_WLAN_MODE') == 'ap' else ' wifi-client-config'}"
 
 # CUSTOM
-#IMAGE_INSTALL += " bunch-update custom-kernel-modules "
+IMAGE_INSTALL += " bunch-update custom-kernel-modules "
+
+# APPS: Qt6/QML apps, GStreamer/GTK player, weston icons and the systemd
+# services (button-service, networkchecker-service, passivebuzzer-service)
+IMAGE_INSTALL += " sensors-app burger-app open-pipe-media-player weston-customization systemdservices"
