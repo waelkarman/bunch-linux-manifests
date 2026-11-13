@@ -20,3 +20,5 @@ RDEPENDS:${PN} += "curl jq rauc"
 # The timer starts update.service; the service itself is not enabled.
 SYSTEMD_SERVICE:${PN} = "update.timer"
 SYSTEMD_AUTO_ENABLE = "enable"
+# systemd.bbclass only packages the units listed in SYSTEMD_SERVICE.
+FILES:${PN} += "${systemd_system_unitdir}/update.service"

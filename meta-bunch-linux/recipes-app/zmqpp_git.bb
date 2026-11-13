@@ -21,6 +21,9 @@ DEPENDS = "boost zeromq"
 # NOTE: spec file indicates the license may be "LGPLv3"
 inherit cmake
 
+# Upstream CMakeLists.txt requires CMake < 3.5, unsupported by CMake 4.
+EXTRA_OECMAKE += "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+
 # The library is unversioned: ship the .so in the runtime package.
 FILES_SOLIBSDEV = ""
 FILES:${PN} += "${libdir}/libzmqpp.so"

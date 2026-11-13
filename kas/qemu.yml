@@ -22,10 +22,26 @@ local_conf_header:
     RPI_USE_U_BOOT = "0"
     WKS_FILE = ""
     IMAGE_FSTYPES = "ext4 tar.xz"
+    # runqemu otherwise picks ext4.zst, which only boots in snapshot mode
+    QB_DEFAULT_FSTYPE = "ext4"
     KERNEL_MODULE_AUTOLOAD:remove = "pwm-pca9685"
     # Raspberry Pi only (COMPATIBLE_MACHINE = rpi)
     IMAGE_INSTALL:remove:pn-bunch-linux-demo = "raspi-gpio pi-bluetooth"
+    # Software H.264 decoder (avdec_h264) for local testing only: the Pi
+    # decodes in hardware (v4l2h264dec). H.264 is patent-encumbered, hence
+    # LICENSE_FLAGS "commercial": do NOT redistribute QEMU images built with it.
+    LICENSE_FLAGS_ACCEPTED:append = " commercial_gstreamer1.0-libav commercial_ffmpeg"
+    IMAGE_INSTALL:append:pn-bunch-linux-demo = " gstreamer1.0-libav"
     # Enough room for Qt/GTK/GStreamer tests in the guest
     IMAGE_ROOTFS_EXTRA_SPACE = "1048576"
+    # virgl: GL-accelerated qemu-system-native (virglrenderer, epoxy) and
+    # the virgl Gallium driver in the guest mesa. Use with "runqemu ... sdl gl".
+    DISTRO_FEATURES_NATIVE:append = " opengl"
+    DISTRO_FEATURES_NATIVESDK:append = " opengl"
+    PACKAGECONFIG:append:pn-mesa = " virtio"
+    # No GPU in qemuboot.conf: the Makefile passes virtio-gpu-pci (serial
+    # console) or virtio-gpu-gl-pci (SDL + virgl, needs a gl=on display).
+    # Override: qemuarm64.conf is parsed after local.conf and sets it with "=".
+    QB_GRAPHICS:forcevariable = ""
     QB_MEM = "-m 4096"
     QB_SMP = "-smp 4"

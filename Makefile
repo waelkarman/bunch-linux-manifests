@@ -4,7 +4,7 @@
 #   make shell           RPi: bitbake shell in the build environment
 #   make qemu            QEMU (qemuarm64): build the demo image
 #   make qemu-run        QEMU: boot the image in the terminal (serial console)
-#   make qemu-run-gui    QEMU: boot the image in an SDL window (Qt/GTK apps)
+#   make qemu-run-gui    QEMU: boot the image in an SDL window with virgl GL (Qt/GTK apps)
 #   make qemu-ssh        QEMU: ssh into the running guest (root@localhost:2222)
 #   make qemu-shell      QEMU: bitbake shell in the build environment
 #   make help            list all targets
@@ -24,8 +24,16 @@ SECRET_KEY := secrets/bunch-auth-update.key.pem
 
 QEMU_MACHINE  := qemuarm64
 QEMU_OPTS     ?= nographic slirp
-QEMU_GUI_OPTS ?= sdl slirp
+QEMU_GUI_OPTS ?= sdl gl slirp
+QEMU_GPU      ?= -device virtio-gpu-pci
+QEMU_GUI_GPU  ?= -device virtio-gpu-gl-pci
+QEMU_IMAGE    := bunch-linux-demo
+# Pass runqemu the qemuboot.conf instead of the MACHINE: its MACHINE check
+# expects an image named *-image-* and logs a bogus DEPLOY_DIR_IMAGE error.
+QEMU_CONF     := $(abspath build/tmp/deploy/images/$(QEMU_MACHINE)/$(QEMU_IMAGE)-$(QEMU_MACHINE).rootfs.qemuboot.conf)
 SSH_PORT      ?= 2222
+# kas shell drops the user environment: hand the display back to QEMU/SDL
+QEMU_DISPLAY_ENV := $(foreach v,DISPLAY WAYLAND_DISPLAY XDG_RUNTIME_DIR XAUTHORITY XDG_SESSION_TYPE,$(if $($(v)),$(v)='$($(v))'))
 
 HOST_TOOLS := chrpath diffstat zstd lz4 file git
 
@@ -84,10 +92,10 @@ qemu: checkout-qemu $(SECRET_KEY) ## QEMU: build the demo image for qemuarm64
 	$(KAS) build $(QEMU_KAS)
 
 qemu-run: $(KAS) ## QEMU: boot the image on the serial console (Ctrl-a x to quit)
-	$(KAS) shell $(QEMU_KAS) -c "bitbake qemu-helper-native && runqemu $(QEMU_MACHINE) $(QEMU_OPTS)"
+	$(KAS) shell $(QEMU_KAS) -c "bitbake qemu-helper-native && runqemu $(QEMU_CONF) $(QEMU_OPTS) qemuparams='$(QEMU_GPU)'"
 
 qemu-run-gui: $(KAS) ## QEMU: boot the image in an SDL window
-	$(KAS) shell $(QEMU_KAS) -c "bitbake qemu-helper-native && runqemu $(QEMU_MACHINE) $(QEMU_GUI_OPTS)"
+	$(KAS) shell $(QEMU_KAS) -c "bitbake qemu-helper-native && env $(QEMU_DISPLAY_ENV) runqemu $(QEMU_CONF) $(QEMU_GUI_OPTS) qemuparams='$(QEMU_GUI_GPU)'"
 
 qemu-ssh: ## QEMU: ssh into the running guest
 	ssh -p $(SSH_PORT) -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@localhost

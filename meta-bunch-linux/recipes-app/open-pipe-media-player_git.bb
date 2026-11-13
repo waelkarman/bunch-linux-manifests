@@ -5,7 +5,7 @@ SRC_URI = "git://github.com/waelkarman/open-pipe-media-player.git;protocol=https
 
 # Modify these as desired
 PV = "1.0+git"
-SRCREV = "a6e5798b49c36d4cfc8e172bf91f7432ba3b33c8"
+SRCREV = "e46d8d91d6d4dbbbd42eca8805fc57a3d23770e3"
 
 inherit cmake pkgconfig
 DEPENDS = " gtk+3 glibc gstreamer1.0 weston-init qtwayland gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad"
