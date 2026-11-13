@@ -39,18 +39,18 @@ All notable changes to this project will be documented in this file.
 - add remote access service (rdp,vnc).
 
 
-## Camel [0.0.3] -  2025-##-## 
+## Camel [0.0.3] -  2026-11-13
 <img src="docs/miscellaneous/camel-desk.png" width="350" height="200">
 
 ### Added 
 - porting apps from Qt5 to Qt6
 - add [burger-app](https://github.com/waelkarman/burger-shop) 
 - add [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player)
-- upgrade linux kernel from 5.15.x to 6.6.y
-- upgrade weston to 13.0.1
-- upgrade to Scarthgap
-- first release of the SDK
-- add multi-image support (minimal,dev-qt5,dev-qt6,demo)
+- upgrade linux kernel from 5.15.x to 6.12.y
+- upgrade weston to 15.0.0
+- upgrade to Yocto 6.0 "Wrynose" (LTS)
+- first release of the SDK: Qt6 cross-compilation toolchain built with `make sdk`
+- QEMU (qemuarm64) target with virgl GPU acceleration (`make qemu`, `make qemu-run-gui`)
 
 <br><br><br>
 

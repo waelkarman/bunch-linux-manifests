@@ -6,10 +6,7 @@ Please refer to the [official webpage](https://waelkarman.github.io/bunch-linux-
 # bunch-linux-metalayer
 ## Buildable images
 
-- bunch-linux-demo
-- bunch-linux-minimal
-- bunch-linux-qt5
-- bunch-linux-qt6
+- bunch-linux-demo (Qt6 SDK: `make sdk`)
 
 ## System Update OTA
 set the right date to be able to sign the bundle.

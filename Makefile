@@ -2,6 +2,7 @@
 #
 #   make                 RPi: RAUC bundle + SD card image (same as `make build`)
 #   make shell           RPi: bitbake shell in the build environment
+#   make sdk             RPi: Qt6 cross-compilation SDK (build/tmp/deploy/sdk/*.sh)
 #   make qemu            QEMU (qemuarm64): build the demo image
 #   make qemu-run        QEMU: boot the image in the terminal (serial console)
 #   make qemu-run-gui    QEMU: boot the image in an SDL window with virgl GL (Qt/GTK apps)
@@ -21,6 +22,7 @@ RPI_KAS    := kas/bunch-linux-demo.yml
 QEMU_KAS   := kas/qemu.yml
 DEV_KAS    := kas/dev-repos.yml
 SECRET_KEY := secrets/bunch-auth-update.key.pem
+SDK_IMAGE  := bunch-linux-demo
 
 QEMU_MACHINE  := qemuarm64
 QEMU_OPTS     ?= nographic slirp
@@ -41,7 +43,7 @@ HOST_TOOLS := chrpath diffstat zstd lz4 file git
 export PATH := $(abspath $(VENV))/bin:$(PATH)
 
 .PHONY: help deps kas-update checkout checkout-qemu checkout-dev \
-        build shell qemu qemu-run qemu-run-gui qemu-ssh qemu-shell
+        build shell sdk qemu qemu-run qemu-run-gui qemu-ssh qemu-shell
 
 help: ## Show this help
 	@grep -hE '^[a-zA-Z_-]+:.*## ' $(MAKEFILE_LIST) | \
@@ -82,6 +84,9 @@ build: checkout $(SECRET_KEY) ## RPi: build the RAUC bundle and the SD card imag
 
 shell: checkout $(SECRET_KEY) ## RPi: bitbake shell in the build environment
 	$(KAS) shell $(RPI_KAS)
+
+sdk: checkout $(SECRET_KEY) ## RPi: build the Qt6 SDK installer (build/tmp/deploy/sdk)
+	$(KAS) build $(RPI_KAS) --target $(SDK_IMAGE) --task populate_sdk
 
 # --- QEMU simulation ------------------------------------------------------------
 
