@@ -18,6 +18,13 @@ local_conf_header:
   zz_qemu: |
     # The distro selects linux-raspberrypi: use the oe-core kernel for QEMU.
     PREFERRED_PROVIDER_virtual/kernel:qemuall = "linux-yocto"
+    # Explicit for QEMU, independent of the Pi settings in bunch-linux-demo.yml
+    # (RAUC reads this provider to pick its bootloader backend).
+    PREFERRED_PROVIDER_virtual/bootloader:qemuall = "u-boot"
+    # No Pi boot chain in QEMU: no U-Boot boot script, no SD-card wic image
+    # (the RAUC A/B layout in rauc-sdimage-raspberrypi.wks is Pi only).
+    RPI_USE_U_BOOT = "0"
+    WKS_FILE = ""
     IMAGE_FSTYPES = "ext4 tar.xz"
     # runqemu otherwise picks ext4.zst, which only boots in snapshot mode
     QB_DEFAULT_FSTYPE = "ext4"

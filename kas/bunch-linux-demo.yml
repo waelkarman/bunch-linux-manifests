@@ -47,6 +47,9 @@ local_conf_header:
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
     ENABLE_I2C = "1"
+    # VC4 KMS GPU (dtoverlay=vc4-kms-v3d, Mesa vc4/v3d): "1" disables it.
+    # Do not use VC4GRAPHICS: rpi-config recomputes it from MACHINE_FEATURES.
+    DISABLE_VC4GRAPHICS = "0"
     LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     RPI_USE_U_BOOT = "1"
