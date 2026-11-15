@@ -47,7 +47,6 @@ local_conf_header:
     BOOT_DELAY = "0"
     BOOT_DELAY_MS = "0"
     ENABLE_I2C = "1"
-    VC4GRAPHICS = "1"
     LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
     RPI_USE_U_BOOT = "1"

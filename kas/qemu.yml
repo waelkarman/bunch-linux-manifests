@@ -18,9 +18,6 @@ local_conf_header:
   zz_qemu: |
     # The distro selects linux-raspberrypi: use the oe-core kernel for QEMU.
     PREFERRED_PROVIDER_virtual/kernel:qemuall = "linux-yocto"
-    PREFERRED_PROVIDER_virtual/bootloader:qemuall = "u-boot"
-    RPI_USE_U_BOOT = "0"
-    WKS_FILE = ""
     IMAGE_FSTYPES = "ext4 tar.xz"
     # runqemu otherwise picks ext4.zst, which only boots in snapshot mode
     QB_DEFAULT_FSTYPE = "ext4"
