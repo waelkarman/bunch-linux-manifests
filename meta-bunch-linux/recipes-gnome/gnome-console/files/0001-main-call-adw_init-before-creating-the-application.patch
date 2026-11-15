@@ -1,0 +1,33 @@
+Subject: [PATCH] main: call adw_init() before creating the application
+
+KgxApplication's instance init calls adw_style_manager_get_default(),
+and main() calls gtk_window_set_default_icon_name(), both before
+GtkApplication::startup runs gtk_init(). With GTK 4.22 this aborts:
+
+  Gdk-ERROR: gdk_display_manager_get() was called before gtk_init()
+
+Initialise libadwaita (and thus GTK) at the top of main().
+
+Upstream-Status: Pending
+---
+--- a/src/main.c	2026-11-15 18:32:50.389110494 +0100
++++ b/src/main.c	2026-11-15 18:32:50.403927137 +0100
+@@ -18,6 +18,7 @@
+ 
+ #include <glib/gi18n.h>
+ #include <locale.h>
++#include <adwaita.h>
+ #include <kgx.h>
+ 
+ int
+@@ -31,6 +32,10 @@
+   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+   textdomain (GETTEXT_PACKAGE);
+ 
++  /* GTK >= 4.22 aborts if GDK is used before gtk_init(); KgxApplication
++   * touches AdwStyleManager in its init, so initialise libadwaita first. */
++  adw_init ();
++
+   g_set_prgname (KGX_BIN_NAME);
+   g_set_application_name (KGX_DISPLAY_NAME);
+   gtk_window_set_default_icon_name (KGX_APPLICATION_ID);

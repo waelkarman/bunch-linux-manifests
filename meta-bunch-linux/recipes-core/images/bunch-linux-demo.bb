@@ -43,3 +43,8 @@ IMAGE_INSTALL += " bunch-update custom-kernel-modules "
 # APPS: Qt6/QML apps, GStreamer/GTK player, weston icons and the systemd
 # services (button-service, networkchecker-service, passivebuzzer-service)
 IMAGE_INSTALL += " sensors-app burger-app open-pipe-media-player weston-customization systemdservices"
+
+# FILE MANAGER: Midnight Commander in GNOME Console (kgx). kgx is a Wayland
+# GTK4/VTE terminal with mouse reporting (weston-terminal has none), so mc
+# works with the mouse. No X11 needed (Nautilus/Thunar require it).
+IMAGE_INSTALL += " mc gnome-console"
