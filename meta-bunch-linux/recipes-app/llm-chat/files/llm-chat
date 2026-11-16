@@ -1,0 +1,4 @@
+#!/bin/sh
+# Bunch Linux assistant: chat (GTK3) with the local language model served by llama-server.
+# Options (see --help): --url http://127.0.0.1:8080  --fullscreen
+exec /usr/bin/python3 /usr/share/llm-chat/llm-chat.py "$@"

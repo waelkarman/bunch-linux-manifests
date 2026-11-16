@@ -1,0 +1,32 @@
+[Unit]
+Description=llama.cpp language model server (OpenAI-compatible API)
+Documentation=https://github.com/ggml-org/llama.cpp/tree/master/tools/server
+After=network.target
+# No model package installed: do not start (and do not restart in a loop)
+ConditionPathExists=/usr/share/llama/models
+
+[Service]
+Type=simple
+# Options as LLAMA_ARG_* variables, see the file
+EnvironmentFile=/etc/default/llama-server
+ExecStart=/usr/bin/llama-server
+Restart=on-failure
+RestartSec=10
+
+# Lower priority than the UI and object-detector: the answer gets slower,
+# the desktop and the camera stay responsive.
+Nice=10
+IOSchedulingClass=idle
+
+# Unprivileged throwaway user, read-only system
+DynamicUser=yes
+CacheDirectory=llama-server
+Environment=LLAMA_CACHE=/var/cache/llama-server
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

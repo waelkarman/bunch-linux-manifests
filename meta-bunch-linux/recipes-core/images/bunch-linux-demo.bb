@@ -47,6 +47,10 @@ IMAGE_INSTALL += " sensors-app burger-app open-pipe-media-player weston-customiz
 # OBJECT DETECTION: USB webcam + YOLO11n (ONNX) on OpenCV DNN, Python3
 IMAGE_INSTALL += " object-detector"
 
+# LANGUAGE MODEL: llama.cpp (llama-server on 127.0.0.1:8080, started at boot),
+# Qwen2.5-1.5B-Instruct Q4_0 (~1 GB in the rootfs) and the llm-chat GTK3 app
+IMAGE_INSTALL += " llama-cpp llama-cpp-server llama-model-qwen2.5-1.5b llm-chat"
+
 # FILE MANAGER: Midnight Commander in GNOME Console (kgx). kgx is a Wayland
 # GTK4/VTE terminal with mouse reporting (weston-terminal has none), so mc
 # works with the mouse. No X11 needed (Nautilus/Thunar require it).

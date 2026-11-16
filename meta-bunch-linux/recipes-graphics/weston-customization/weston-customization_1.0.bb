@@ -8,6 +8,7 @@ SRC_URI += "file://gear.png \
             file://burger.png \
             file://player.png \
             file://camera.png \
+            file://chat.png \
             "
 
 S = "${UNPACKDIR}"
@@ -22,4 +23,5 @@ do_install() {
     install -Dm 644 ${UNPACKDIR}/burger.png ${D}${datadir}/weston/burger.png
     install -Dm 644 ${UNPACKDIR}/player.png ${D}${datadir}/weston/player.png
     install -Dm 644 ${UNPACKDIR}/camera.png ${D}${datadir}/weston/camera.png
+    install -Dm 644 ${UNPACKDIR}/chat.png ${D}${datadir}/weston/chat.png
 }

@@ -29,6 +29,7 @@ Apps ~
 - [sensors-app](https://github.com/waelkarman/sensors-app) (C++\17, Qt6/QML)
 - [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) (C, GStreamer, GTK+3) 
 - [object-detector](meta-bunch-linux/recipes-app/object-detector) (Python3, OpenCV DNN, YOLO11n ONNX)
+- [llm-chat](meta-bunch-linux/recipes-app/llm-chat) (Python3, GTK3, [llama.cpp](meta-bunch-linux/recipes-ai/llama-cpp), Qwen2.5-1.5B-Instruct GGUF)
 - [button-service](https://github.com/waelkarman/button-service) (C++/17)
 - [networkchecker-service](https://github.com/waelkarman/networkchecker-service) (Python3)
 - [auto-update-service](https://github.com/waelkarman/bunch-linux-manifests/blob/main/meta-bunch-linux%2Frecipes-core%2Fbunch-update%2Fbunch-update%2Fbunch-update.sh) (Bash Script)
@@ -82,6 +83,20 @@ make qemu-run-gui WEBCAM=3277:0060   # then click the camera icon, or run object
 
 QEMU emulates aarch64 without KVM, so inference runs at about 1 FPS there; the Pi 4 CPU is much faster.
 Inside the guest, `object-detector --camera video.mp4` also works with a video file instead of the webcam.
+
+### Local language model
+`llama-server` (llama.cpp) starts at boot and serves Qwen2.5-1.5B-Instruct (Q4_0, ~1 GB) with an
+OpenAI-compatible API on `127.0.0.1:8080`, CPU only; `llm-chat` (chat icon in the Weston panel) is the GUI.
+Nothing leaves the device. Settings (model, threads, context, port) are in `/etc/default/llama-server`:
+
+```sh
+systemctl status llama-server                     # loading the model takes a few seconds
+curl -s localhost:8080/v1/chat/completions -H 'Content-Type: application/json' \
+     -d '{"messages":[{"role":"user","content":"Ciao!"}]}' | jq -r '.choices[0].message.content'
+llama-cli -m /usr/share/llama/models/default.gguf  # chat in the terminal (stop the service first to save RAM)
+```
+
+On the Pi 4 expect roughly 5-10 token/s. In QEMU (no KVM) it is much slower: fine to check that it works.
 
 Not covered by the simulation: the RPi boot chain (firmware, U-Boot, A/B slots), RAUC updates,
 the buzzer/PCA9685 drivers and Wi-Fi/Bluetooth hardware.

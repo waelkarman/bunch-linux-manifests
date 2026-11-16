@@ -52,6 +52,7 @@ All notable changes to this project will be documented in this file.
 - first release of the SDK: Qt6 cross-compilation toolchain built with `make sdk`
 - QEMU (qemuarm64) target with virgl GPU acceleration (`make qemu`, `make qemu-run-gui`)
 - add object-detector: real-time object detection from a USB webcam (YOLO11n ONNX on OpenCV DNN), also in QEMU via USB passthrough (`make qemu-run-gui WEBCAM=vid:pid`)
+- add a local language model: llama.cpp (`llama-server` service, OpenAI-compatible API on localhost), Qwen2.5-1.5B-Instruct Q4_0 and the llm-chat GTK3 app (chat icon in the Weston panel)
 
 <br><br><br>
 
