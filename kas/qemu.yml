@@ -43,9 +43,19 @@ local_conf_header:
     DISTRO_FEATURES_NATIVE:append = " opengl"
     DISTRO_FEATURES_NATIVESDK:append = " opengl"
     PACKAGECONFIG:append:pn-mesa = " virtio"
+    # USB passthrough of the host webcam (usb-host device, needs libusb) for
+    # object-detector: make qemu-run-gui WEBCAM=vid:pid (see the Makefile).
+    PACKAGECONFIG:append:pn-qemu-system-native = " libusb"
     # No GPU in qemuboot.conf: the Makefile passes virtio-gpu-pci (serial
     # console) or virtio-gpu-gl-pci (SDL + virgl, needs a gl=on display).
     # Override: qemuarm64.conf is parsed after local.conf and sets it with "=".
     QB_GRAPHICS:forcevariable = ""
-    QB_MEM = "-m 4096"
+    # Same memory as the Raspberry Pi 4 Model B: BUNCH_RPI_RAM_MB is the board
+    # variant (1024, 2048, 4096 or 8192) and, as on the Pi, GPU_MEM (config.txt)
+    # is reserved for the VideoCore, so Linux gets BUNCH_RPI_RAM_MB - GPU_MEM.
+    BUNCH_RPI_RAM_MB ?= "8192"
+    QB_MEM = "-m ${@int(d.getVar('BUNCH_RPI_RAM_MB')) - int(d.getVar('GPU_MEM') or 0)}"
+    # Cortex-A72 quad core, as on the Pi 4 (qemuarm64.conf sets cortex-a57 with
+    # "=" after local.conf, hence forcevariable; the a57-tuned image runs on it)
+    QB_CPU:forcevariable = "-cpu cortex-a72"
     QB_SMP = "-smp 4"

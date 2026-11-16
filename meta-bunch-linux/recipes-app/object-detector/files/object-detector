@@ -1,0 +1,6 @@
+#!/bin/sh
+# Bunch Linux object detector: YOLO11n (ONNX) on OpenCV DNN, USB webcam via V4L2.
+# Options (see --help): --camera N|file|url|pipeline  --conf 0.5  --imgsz 320  --fullscreen
+cd "${HOME:-/tmp}"
+exec /usr/bin/python3 /usr/share/object-detector/object-detector.py \
+    --model /usr/share/object-detector/yolo11n.onnx --width 640 --height 480 "$@"

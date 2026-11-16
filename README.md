@@ -28,6 +28,7 @@ Apps ~
 - [burger-app](https://github.com/waelkarman/burger-shop) (C++\17, Qt6/QML, SQLite3)
 - [sensors-app](https://github.com/waelkarman/sensors-app) (C++\17, Qt6/QML)
 - [open-pipe-media-player](https://github.com/waelkarman/open-pipe-media-player) (C, GStreamer, GTK+3) 
+- [object-detector](meta-bunch-linux/recipes-app/object-detector) (Python3, OpenCV DNN, YOLO11n ONNX)
 - [button-service](https://github.com/waelkarman/button-service) (C++/17)
 - [networkchecker-service](https://github.com/waelkarman/networkchecker-service) (Python3)
 - [auto-update-service](https://github.com/waelkarman/bunch-linux-manifests/blob/main/meta-bunch-linux%2Frecipes-core%2Fbunch-update%2Fbunch-update%2Fbunch-update.sh) (Bash Script)
@@ -69,6 +70,18 @@ make qemu-ssh               # from another terminal: ssh root@localhost -p 2222
 make qemu-shell             # bitbake shell in the QEMU build environment
 make qemu-run QEMU_OPTS="nographic tap"         # custom runqemu options (tap needs sudo)
 ```
+
+### Object detector with the host webcam
+`object-detector` (camera icon in the Weston panel) needs a USB (UVC) webcam. On the Pi plug it in;
+in QEMU pass the host one through by its `vid:pid` from `lsusb` (the host cannot use it meanwhile):
+
+```sh
+make webcam-udev WEBCAM=3277:0060    # once: rw access to the USB device for your user (sudo)
+make qemu-run-gui WEBCAM=3277:0060   # then click the camera icon, or run object-detector
+```
+
+QEMU emulates aarch64 without KVM, so inference runs at about 1 FPS there; the Pi 4 CPU is much faster.
+Inside the guest, `object-detector --camera video.mp4` also works with a video file instead of the webcam.
 
 Not covered by the simulation: the RPi boot chain (firmware, U-Boot, A/B slots), RAUC updates,
 the buzzer/PCA9685 drivers and Wi-Fi/Bluetooth hardware.

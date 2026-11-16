@@ -44,6 +44,9 @@ IMAGE_INSTALL += " bunch-update custom-kernel-modules "
 # services (button-service, networkchecker-service, passivebuzzer-service)
 IMAGE_INSTALL += " sensors-app burger-app open-pipe-media-player weston-customization systemdservices"
 
+# OBJECT DETECTION: USB webcam + YOLO11n (ONNX) on OpenCV DNN, Python3
+IMAGE_INSTALL += " object-detector"
+
 # FILE MANAGER: Midnight Commander in GNOME Console (kgx). kgx is a Wayland
 # GTK4/VTE terminal with mouse reporting (weston-terminal has none), so mc
 # works with the mouse. No X11 needed (Nautilus/Thunar require it).

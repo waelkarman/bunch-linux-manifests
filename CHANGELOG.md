@@ -51,6 +51,7 @@ All notable changes to this project will be documented in this file.
 - upgrade to Yocto 6.0 "Wrynose" (LTS)
 - first release of the SDK: Qt6 cross-compilation toolchain built with `make sdk`
 - QEMU (qemuarm64) target with virgl GPU acceleration (`make qemu`, `make qemu-run-gui`)
+- add object-detector: real-time object detection from a USB webcam (YOLO11n ONNX on OpenCV DNN), also in QEMU via USB passthrough (`make qemu-run-gui WEBCAM=vid:pid`)
 
 <br><br><br>
 
